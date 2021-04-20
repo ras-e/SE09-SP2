@@ -1,0 +1,8 @@
+package user;
+
+public class User extends Account {
+
+    public User (String email, String name, int ID) {
+
+    }
+}
