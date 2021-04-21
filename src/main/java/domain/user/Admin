@@ -2,7 +2,7 @@ package domain.user;
 
 public class Admin extends Account {
 
-    public Admin (String email, String name, int ID) {
+    public Admin (String email, String name, int id) {
 
     }
 }

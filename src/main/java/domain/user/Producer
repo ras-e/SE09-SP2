@@ -2,7 +2,7 @@ package domain.user;
 
 public class Producer extends Account {
 
-    public Producer (String email, String name, int ID) {
+    public Producer (String email, String name, int id) {
 
     }
 }
