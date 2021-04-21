@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="SE09-SP2:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/SE09_SP2_jar</output-path>
-    <root id="archive" name="SE09-SP2.jar">
-      <element id="module-output" name="SE09-SP2" />
-    </root>
-  </artifact>
-</component>
