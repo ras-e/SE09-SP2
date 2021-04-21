@@ -2,8 +2,7 @@ package domain.user;
 
 public class User extends Account {
 
-    public User (String email, String name, int id) {
-
-
+    public User(String email,String firstName,String lastName,int id) {
+        super(email,firstName,lastName,id);
     }
 }
