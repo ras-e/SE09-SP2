@@ -1,11 +1,9 @@
-package user;
+package domain.user;
 
 public abstract class Account {
 
-    public Account (String email, String name, int ID) {
+    public Account (String email, String name, int id) {
 
     }
-    public int getID(){
-        return ID;
-    }
+    
 }
