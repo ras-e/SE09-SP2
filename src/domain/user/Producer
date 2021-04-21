@@ -1,0 +1,8 @@
+package user;
+
+public class Producer extends Account {
+
+    public Producer (String email, String name, int ID) {
+
+    }
+}

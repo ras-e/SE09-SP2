@@ -2,7 +2,7 @@ package user;
 
 public class Businessman extends Account {
 
-    public Businessman(String email, String name, int ID) {
+    public Businessman (String email, String name, int ID) {
 
     }
 }

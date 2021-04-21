@@ -1,0 +1,8 @@
+package user;
+
+public class Admin extends Account {
+
+    public Admin (String email, String name, int ID) {
+
+    }
+}
