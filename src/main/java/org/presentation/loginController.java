@@ -1,4 +1,4 @@
 package org.presentation;
 
-public class LoginController {
+public class loginController {
 }
