@@ -9,12 +9,15 @@
         <Pane prefHeight="200.0" prefWidth="200.0" />
         <BorderPane layoutY="-2.0" prefHeight="511.0" prefWidth="752.0" style="-fx-background-color: #ffff;">
             <left>
-                <Pane prefHeight="511.0" prefWidth="326.0" style="-fx-background-color: #5555;" BorderPane.alignment="CENTER" />
+                <Pane prefHeight="511.0" prefWidth="326.0" style="-fx-background-color: #5555;" BorderPane.alignment="CENTER">
+               <children>
+                  <RadioButton fx:id="bntExit" layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#handleMouseEvent" text="Exit" />
+               </children></Pane>
             </left>
             <center>
                 <StackPane prefHeight="511.0" prefWidth="408.0" BorderPane.alignment="CENTER">
                     <children>
-                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                        <Pane fx:id="pgSignUp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
                             <children>
                                 <Button layoutX="75.0" layoutY="256.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Sign up" />
                                 <TextField layoutX="75.0" layoutY="190.0" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" />
@@ -23,13 +26,14 @@
                                         <Font name="System Bold" size="24.0" />
                                     </font>
                                 </Label>
+                        <Button fx:id="btnBack" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#handleMouseEvent" prefHeight="25.0" prefWidth="96.0" text="Back" />
                             </children></Pane>
-                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
+                        <Pane fx:id="pgSignIn" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
                             <children>
-                                <TextField layoutX="88.0" layoutY="130.0" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" />
-                                <TextField layoutX="88.0" layoutY="201.0" prefHeight="45.0" prefWidth="250.0" promptText="Password" />
-                                <Button fx:id="signin" layoutX="229.0" layoutY="274.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="109.0" text="Sign in" />
-                                <Button layoutX="95.0" layoutY="360.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Sign up" />
+                                <TextField fx:id="tfEmail" layoutX="88.0" layoutY="130.0" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" />
+                                <TextField fx:id="tfPass" layoutX="88.0" layoutY="201.0" prefHeight="45.0" prefWidth="250.0" promptText="Password" />
+                                <Button fx:id="btnSignIn" layoutX="229.0" layoutY="274.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="109.0" text="Sign in" />
+                                <Button fx:id="btnSignUp" layoutX="95.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="250.0" text="Sign up" />
                                 <Label layoutX="81.0" layoutY="74.0" prefHeight="43.0" prefWidth="95.0" text="Sign in">
                                     <font>
                                         <Font name="System Bold" size="22.0" />
