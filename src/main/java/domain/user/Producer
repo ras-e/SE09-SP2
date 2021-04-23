@@ -8,4 +8,8 @@ public class Producer extends Account {
         super(email,firstName,lastName,id);
         this.business = business;
     }
+    public void createProgram () {
+
+    }
+
 }
