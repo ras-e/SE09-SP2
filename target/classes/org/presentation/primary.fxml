@@ -5,7 +5,7 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <Button fx:id="creditButton" layoutX="442.0" layoutY="231.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="133.0" text="Mere information" />
+   <Button fx:id="creditButton" layoutX="444.0" layoutY="263.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" text="Tryk for mere" />
    <TextField fx:id="searchTextField" layoutX="210.0" layoutY="142.0" prefHeight="25.0" prefWidth="215.0" promptText="Person, program eller producent" />
    <Button fx:id="searchButton" layoutX="444.0" layoutY="142.0" mnemonicParsing="false" text="Søg" />
    <RadioButton fx:id="personButton" layoutX="305.0" layoutY="113.0" mnemonicParsing="false" text="Person">
@@ -22,5 +22,5 @@
    </Label>
  <Button layoutX="639.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="91.0" text="Tilmeld dig" />
    <Button layoutX="538.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="91.0" text="Login" />
-   <ListView layoutX="217.0" layoutY="231.0" prefHeight="200.0" prefWidth="200.0" />
+   <ListView layoutX="217.0" layoutY="231.0" prefHeight="255.0" prefWidth="215.0" />
 </AnchorPane>
