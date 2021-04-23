@@ -13,16 +13,6 @@
          <center>
             <StackPane prefHeight="511.0" prefWidth="408.0" BorderPane.alignment="CENTER">
                <children>
-                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
-                     <children>
-                        <Button layoutX="75.0" layoutY="256.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Sign up" />
-                        <TextField layoutX="75.0" layoutY="190.0" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" />
-                        <Label layoutX="75.0" layoutY="112.0" prefHeight="51.0" prefWidth="107.0" text="Sign in">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font>
-                        </Label>
-                     </children></Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
                      <children>
                         <TextField layoutX="88.0" layoutY="130.0" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" />
@@ -36,6 +26,16 @@
                         </Label>
                      </children>
                   </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                     <children>
+                        <Button layoutX="75.0" layoutY="256.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Sign up" />
+                        <TextField layoutX="75.0" layoutY="190.0" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" />
+                        <Label layoutX="75.0" layoutY="112.0" prefHeight="51.0" prefWidth="107.0" text="Sign in">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
                </children>
             </StackPane>
          </center>
