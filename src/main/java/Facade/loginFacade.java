@@ -8,13 +8,19 @@ public class loginFacade {
 
 
 
-    public boolean AuthenticationUsername(String username) {
+/*
+    public boolean RealUsername(String username) {
 
         for (f: file) {
 
-            if (file == username)
+            if ()
         }
+
+    public boolean AuthenticationUsername(String username) {
+        return true;
+
     }
 
 }
 */
+
