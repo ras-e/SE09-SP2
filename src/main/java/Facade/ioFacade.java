@@ -4,10 +4,13 @@ import domain.Program.Credits;
 
 import java.io.*;
 import java.util.List;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ioFacade implements Serializable {
+
+    // metoderne skal bruges i javafx-controller klasser
 
     public List ReadObjects(String filename) {
         List<ioFacade> l = null;
@@ -32,17 +35,71 @@ public class ioFacade implements Serializable {
         return l;
     }
 
-    public void writeobjecttofile(Credits credits, String filename) {
+
+//    skrivning af objekter til binærfil
+//    public void writeobjecttofile(Credits credits, String filename) {
+//        try {
+//
+//            FileOutputStream fileOut = new FileOutputStream(filename, true);
+//            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+//            objectOut.writeObject(credits);
+//            objectOut.close();
+//            System.out.println("The Object  was succesfully written to a file:DD");
+//
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
+//    }
+
+    public void writetotextfile(String credit, String filename) {
+
+//         input fra keyboard
+        Scanner in = new Scanner(System.in);
+//        kan give input med mellemrum
+        filename = in.nextLine().trim();
+
+        FileWriter WriteStream = null;
         try {
-
-            FileOutputStream fileOut = new FileOutputStream(filename, true);
-            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
-            objectOut.writeObject(credits);
-            objectOut.close();
-            System.out.println("The Object  was succesfully written to a file:DD");
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
+            WriteStream = new FileWriter(filename, true);
         }
-    }
+        catch (IOException e)
+        { System.out.println("fejl med at åbne filen" + filename); }
+        System.exit(0);
+
+        Scanner incredit = new Scanner(System.in);
+//        kan give input med mellemrum
+        credit = in.nextLine();
+//    indtast tre linjer kode, alt efter hvor meget en kreditering
+        try {
+            WriteStream.write(credit);
+//            WriteStream.flush();
+        }
+        catch (IOException e) {
+            System.out.println("fejl med at åbne filen");
+        }
+        System.exit(0);
+
+
 }
+
+    public String readFile(File inFile) {
+        // File I/O med lukning af filen
+        // stringbuilder = sekvens af karaktere
+        StringBuilder sb = new StringBuilder();
+        Scanner sc = null;
+        try {
+            sc = new Scanner(inFile);
+            while (sc.hasNext()) {
+                sb.append(sc.nextLine() + "\n");
+            }
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        } finally {
+            sc.close();
+        }
+        return sb.toString();
+    }
+
+
+
+    }
