@@ -26,6 +26,6 @@ public class Program {
 
             // actionhandler på "opretkreditering" knap
             ArrayList<Credits> credlist = new ArrayList<Credits>();
-            objectio.writeobjecttofile(new Credits(), "et eller andet krediteringsliste navn");
+           // objectio.writeobjecttofile(new Credits(), "et eller andet krediteringsliste navn");
         }
 }
