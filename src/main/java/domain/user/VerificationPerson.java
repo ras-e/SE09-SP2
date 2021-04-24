@@ -2,7 +2,10 @@ package domain.user;
 
 public class VerificationPerson extends Account{
 
-    int EmpId;
+    public VerificationPerson (String email, String firstName, String lastName, int id) {
+        super(email,firstName,lastName,id);
+    }
+    public void VerifiCredit(){
 
-
+    }
 }

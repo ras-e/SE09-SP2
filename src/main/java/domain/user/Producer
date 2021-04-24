@@ -2,7 +2,14 @@ package domain.user;
 
 public class Producer extends Account {
 
-    int ProdId;
+    public String business;
 
+    public Producer (String email, String firstName, String lastName, int id, String business) {
+        super(email,firstName,lastName,id);
+        this.business = business;
+    }
+    public void createProgram () {
+
+    }
 
 }

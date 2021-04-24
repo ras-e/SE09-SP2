@@ -2,9 +2,10 @@ package domain.user;
 
 public class Admin extends Account {
 
-    int EmpId;
-
-    public Admin (String email, String name, int id) {
+    public Admin (String email, String firstName, String lastName, int id) {
+        super(email,firstName,lastName,id);
+    }
+    public void changeCreidts(){
 
     }
 }
