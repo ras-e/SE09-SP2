@@ -2,6 +2,8 @@ package domain.user;
 
 public class User extends Account {
 
+    int id;
+
     public User (String email, String name, int id) {
 
 
