@@ -22,11 +22,23 @@
             <center>
                 <StackPane prefHeight="511.0" prefWidth="408.0" BorderPane.alignment="CENTER">
                     <children>
+                        <Pane fx:id="pgSignUp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                            <children>
+                                <Button fx:id="btnSignUp2" layoutX="75.0" layoutY="328.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Sign up" />
+                                <TextField layoutX="75.0" layoutY="190.0" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" />
+                                <Label layoutX="57.0" layoutY="121.0" prefHeight="51.0" prefWidth="107.0" text="Sign Up">
+                                    <font>
+                                        <Font name="System Bold" size="24.0" />
+                                    </font>
+                                </Label>
+                        <Button fx:id="btnBack" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#handleMouseEvent" prefHeight="25.0" prefWidth="96.0" text="Back" />
+                        <TextField layoutX="75.0" layoutY="256.0" prefHeight="45.0" prefWidth="250.0" promptText="Password" />
+                            </children></Pane>
                         <Pane fx:id="pgSignIn" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
                             <children>
                                 <TextField fx:id="tfEmail" layoutX="88.0" layoutY="130.0" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" />
                                 <TextField fx:id="tfPass" layoutX="88.0" layoutY="201.0" prefHeight="45.0" prefWidth="250.0" promptText="Password" />
-                                <Button fx:id="btnSignIn" layoutX="229.0" layoutY="274.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="109.0" text="Sign in" />
+                                <Button fx:id="btnSignIn" layoutX="229.0" layoutY="274.0" mnemonicParsing="false" onMouseClicked="#handleSignIn" prefHeight="40.0" prefWidth="109.0" text="Sign in" />
                                 <Button fx:id="btnSignUp" layoutX="95.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="250.0" text="Don't have an account? Sign up!" />
                                 <Label layoutX="81.0" layoutY="74.0" prefHeight="43.0" prefWidth="95.0" text="Sign in">
                                     <font>
@@ -35,17 +47,6 @@
                                 </Label>
                             </children>
                         </Pane>
-                        <Pane fx:id="pgSignUp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
-                            <children>
-                                <Button fx:id="btnSignUp2" layoutX="75.0" layoutY="256.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Sign up" />
-                                <TextField layoutX="75.0" layoutY="190.0" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" />
-                                <Label layoutX="75.0" layoutY="112.0" prefHeight="51.0" prefWidth="107.0" text="Sign in">
-                                    <font>
-                                        <Font name="System Bold" size="24.0" />
-                                    </font>
-                                </Label>
-                        <Button fx:id="btnBack" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#handleMouseEvent" prefHeight="25.0" prefWidth="96.0" text="Back" />
-                            </children></Pane>
                     </children>
                 </StackPane>
             </center>

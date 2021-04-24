@@ -29,6 +29,7 @@ public class ioFacade implements Serializable {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ioFacade.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return null;
     }
 
     public void writeobjecttofile(Credits credits, String filename) {
