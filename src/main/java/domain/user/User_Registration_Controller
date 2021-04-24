@@ -1,6 +1,0 @@
-package domain.user;
-
-public class User_Registration_Controller {
-
-    int UserId;
-}
