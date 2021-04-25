@@ -45,6 +45,14 @@ public class LoginController {
     public Button btnGoGuest;
     @FXML
     public Label txtInvalid;
+    // muligvis de samme: txtInvalid og messagelabel
+    @FXML
+    public Label messagelabel;
+    @FXML
+    public TextField userIdField;
+    @FXML
+    public TextField UserPsField;
+
 
     //Takes you from front login to sign up page (Don't have an account yet? Sign up)
     @FXML
