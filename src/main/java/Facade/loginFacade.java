@@ -10,7 +10,7 @@ public class loginFacade {
 
     LoginController loginPage = new LoginController(idAndPasswords.getProdloginfo());
 
-    public boolean tryLogin(String username, String password) {
+    public static boolean tryLogin(String username, String password) {
 
         return (idAndPasswords.getProdloginfo().containsKey(username) && idAndPasswords.getProdloginfo().get(username).equals(password));
     }
