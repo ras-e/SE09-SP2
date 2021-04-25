@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
@@ -53,9 +54,13 @@ public class LoginController {
     @FXML
     public TextField UserPsField;
 
+    loginFacade loginFacade = new loginFacade();
 
+    HashMap<String, String> loginfo = new HashMap<String, String>();
 
-
+    public LoginController(HashMap<String, String> LogInfoOriginal) {
+        loginfo = LogInfoOriginal;
+    }
 
 
     //Takes you from front login to sign up page (Don't have an account yet? Sign up)

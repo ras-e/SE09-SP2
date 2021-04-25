@@ -6,6 +6,7 @@ import org.presentation.LoginController;
 
 public class loginFacade {
 
+
     IdAndPasswords idAndPasswords = new IdAndPasswords();
 
     LoginController loginPage = new LoginController(idAndPasswords.getProdloginfo());
