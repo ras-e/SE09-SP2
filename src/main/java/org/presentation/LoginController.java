@@ -80,11 +80,8 @@ public class LoginController {
             closeStage();
             loadProducer();
         }
-        System.out.println("Sucess");
         if(email.isEmpty() || password.isEmpty()) {
             System.out.println("One or both fields are empty!");
-            //if (email.equals("demo") && password.equals("demo")); {
-              //  System.out.println("Success");
             }
     }
         /*
@@ -107,9 +104,6 @@ public class LoginController {
         }
     }
 
-    private void closeStage() {
-        ((Stage) btnSignIn.getScene().getWindow()).close();
-    }
     private void loadMain() {
         try {
             Parent parent = FXMLLoader.load(getClass().getResource("guest.fxml"));
@@ -122,7 +116,11 @@ public class LoginController {
         catch (IOException ex) {
         }
     }
+
+    private void closeStage() {
+        ((Stage) btnSignIn.getScene().getWindow()).close();
     }
+}
 
 
 
