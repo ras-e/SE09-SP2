@@ -12,7 +12,7 @@
                 <Pane prefHeight="511.0" prefWidth="326.0" style="-fx-background-color: #5555;" BorderPane.alignment="CENTER">
                <children>
                   <RadioButton fx:id="bntExit" layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#handleMouseEvent" text="Exit" />
-                  <Button fx:id="btnGoGuest" layoutX="38.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #00b25d;" text="Continue as Guest">
+                  <Button fx:id="btnGoGuest" layoutX="38.0" layoutY="355.0" mnemonicParsing="false" onMouseClicked="#handleGuest" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #00b25d;" text="Continue as Guest">
                      <font>
                         <Font size="23.0" />
                      </font>

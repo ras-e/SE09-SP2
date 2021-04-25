@@ -39,17 +39,17 @@ public class LoginController {
     public Button btnBack;
     @FXML
     public RadioButton bntExit;
+    @FXML
+    public Button btnGoGuest;
 
     //Takes you from front login to sign up page (Don't have an account yet? Sign up)
-
-
     @FXML
     private void handleButtonAction (ActionEvent event) {
         if (event.getSource().equals(btnSignUp)) {
             pgSignUp.toFront();
         }
     }
-    //1st if statement: Exit system top left button, 2nd if: Takes you from sign up page -> Front login
+    //Movement on login screen + Guest -> Main Menu
     @FXML
     private void handleMouseEvent (MouseEvent event) {
         if (event.getSource() == bntExit) {
@@ -58,20 +58,28 @@ public class LoginController {
         { pgSignIn.toFront(); }
 
     }
+    // Guest -> Main Menu
+    @FXML
+    private void handleGuest (MouseEvent event) {
+        if (event.getSource() == btnGoGuest) {
+            closeStage();
+            loadMain();
+        }
+    }
 
     @FXML
     private void handleSignIn (MouseEvent event) {
         String email = tfEmail.getText();
         String password = tfPass.getText();
 
-        if(email.equals("demo") && password.equals("demo")) {
+        if (email.equals("demo") && password.equals("demo")) {
             closeStage();
             loadMain();
-        } if (email.equals("producer") && password.equals("producer")) {
-                closeStage();
-                loadProducer();
-            }
-
+        }
+        if (email.equals("producer") && password.equals("producer")) {
+            closeStage();
+            loadProducer();
+        }
         System.out.println("Sucess");
         if(email.isEmpty() || password.isEmpty()) {
             System.out.println("One or both fields are empty!");
