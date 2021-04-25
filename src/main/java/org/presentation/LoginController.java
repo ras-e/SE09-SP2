@@ -67,14 +67,18 @@ public class LoginController {
         if(email.equals("demo") && password.equals("demo")) {
             closeStage();
             loadMain();
-        }
+        } if (email.equals("producer") && password.equals("producer")) {
+                closeStage();
+                loadProducer();
+            }
+
         System.out.println("Sucess");
         if(email.isEmpty() || password.isEmpty()) {
             System.out.println("One or both fields are empty!");
             //if (email.equals("demo") && password.equals("demo")); {
               //  System.out.println("Success");
             }
-
+    }
         /*
         if (event.getSource() == btnSignIn){
             if (tfEmail.getText() == null || tfEmail.getText().trim().isEmpty())
@@ -82,7 +86,18 @@ public class LoginController {
                 System.out.println("Empty");
             }
 */
+
+    private void loadProducer() {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("producer.fxml"));
+            Stage stage = new Stage(StageStyle.DECORATED);
+            stage.setTitle("Producer Panel");
+            stage.setScene(new Scene(parent));
+            stage.show();
+
+        } catch (IOException ex) {
         }
+    }
 
     private void closeStage() {
         ((Stage) btnSignIn.getScene().getWindow()).close();
