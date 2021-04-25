@@ -1,5 +1,6 @@
 package org.presentation;
 
+import Facade.loginFacade;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -53,7 +54,18 @@ public class LoginController {
         }
     }
 
-
+    @FXML
+    private void handleLogin (ActionEvent event) {
+        if (event.getSource() == btnSignIn) {
+            String username = userIdField.getText();
+            String password = UserPsField.getText();
+            if (loginFacade.tryLogin(username, password) == true) {
+                messagelabel.setText("Login Success");
+            } else {
+                messagelabel.setText("WROOONG");
+            }
+        }
+    }
 
     //Movement on login screen + Guest -> Main Menu
     @FXML
