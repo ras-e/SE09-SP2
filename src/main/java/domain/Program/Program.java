@@ -22,12 +22,12 @@ public class Program {
             this.chategory = chategory;
         }
 
-        public static void main(String args[]) {
-
-            ioFacade objectio = new ioFacade();
-
-            // actionhandler på "opretkreditering" knap
-            ArrayList<Credits> credlist = new ArrayList<Credits>();
-            objectio.writeobjecttofile(new Credits(), "et eller andet krediteringsliste navn");
-        }
+//        public static void main(String args[]) {
+//
+//            ioFacade objectio = new ioFacade();
+//
+//            // actionhandler på "opretkreditering" knap
+//            ArrayList<Credits> credlist = new ArrayList<Credits>();
+//            objectio.writeobjecttofile(new Credits(), "et eller andet krediteringsliste navn");
+//        }
 }
