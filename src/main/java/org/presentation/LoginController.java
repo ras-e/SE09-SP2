@@ -39,17 +39,17 @@ public class LoginController {
     public Button btnBack;
     @FXML
     public RadioButton bntExit;
+    @FXML
+    public Button btnGoGuest;
 
     //Takes you from front login to sign up page (Don't have an account yet? Sign up)
-
-
     @FXML
     private void handleButtonAction (ActionEvent event) {
         if (event.getSource().equals(btnSignUp)) {
             pgSignUp.toFront();
         }
     }
-    //1st if statement: Exit system top left button, 2nd if: Takes you from sign up page -> Front login
+    //Movement on login screen + Guest -> Main Menu
     @FXML
     private void handleMouseEvent (MouseEvent event) {
         if (event.getSource() == bntExit) {
@@ -58,15 +58,27 @@ public class LoginController {
         { pgSignIn.toFront(); }
 
     }
+    // Guest -> Main Menu
+    @FXML
+    private void handleGuest (MouseEvent event) {
+        if (event.getSource() == btnGoGuest) {
+            closeStage();
+            loadMain();
+        }
+    }
 
     @FXML
     private void handleSignIn (MouseEvent event) {
         String email = tfEmail.getText();
         String password = tfPass.getText();
 
-        if(email.equals("demo") && password.equals("demo")) {
+        if (email.equals("demo") && password.equals("demo")) {
             closeStage();
             loadMain();
+        }
+        if (email.equals("producer") && password.equals("producer")) {
+            closeStage();
+            loadProducer();
         }
         System.out.println("Sucess");
         if(email.isEmpty() || password.isEmpty()) {
@@ -74,7 +86,7 @@ public class LoginController {
             //if (email.equals("demo") && password.equals("demo")); {
               //  System.out.println("Success");
             }
-
+    }
         /*
         if (event.getSource() == btnSignIn){
             if (tfEmail.getText() == null || tfEmail.getText().trim().isEmpty())
@@ -82,7 +94,18 @@ public class LoginController {
                 System.out.println("Empty");
             }
 */
+
+    private void loadProducer() {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("producer.fxml"));
+            Stage stage = new Stage(StageStyle.DECORATED);
+            stage.setTitle("Producer Panel");
+            stage.setScene(new Scene(parent));
+            stage.show();
+
+        } catch (IOException ex) {
         }
+    }
 
     private void closeStage() {
         ((Stage) btnSignIn.getScene().getWindow()).close();
