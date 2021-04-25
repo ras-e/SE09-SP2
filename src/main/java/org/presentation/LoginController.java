@@ -1,10 +1,10 @@
 package org.presentation;
 
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
-
 import domain.user.loginFacade;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -81,6 +81,5 @@ public class LoginController {
             }
         }
     }
-
-
+}
 

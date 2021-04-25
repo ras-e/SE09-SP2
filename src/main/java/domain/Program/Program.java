@@ -6,20 +6,18 @@ import java.util.ArrayList;
 
 public class Program {
 
-
-
         int ProdID;
         ArrayList<Credits> credlist;
         String Name;
         String prodName;
-        Enum chategory;
+        Enum Category;
 
         public Program(int prodID, ArrayList<Credits> credlist, String name, String prodName, Enum chategory) {
             ProdID = prodID;
             this.credlist = credlist;
             Name = name;
             this.prodName = prodName;
-            this.chategory = chategory;
+            this.Category = chategory;
         }
 
 //        public static void main(String args[]) {
