@@ -1,26 +1,16 @@
 package Facade;
 
-import java.io.File;
-/*
+import org.presentation.LoginController;
+
+
 public class loginFacade {
-    File file;
 
+    IdAndPasswords idAndPasswords = new IdAndPasswords();
 
+    LoginController loginPage = new LoginController(idAndPasswords.getProdloginfo());
 
+    public boolean tryLogin(String username, String password) {
 
-/*
-    public boolean RealUsername(String username) {
-
-        for (f: file) {
-
-            if ()
-        }
-
-    public boolean AuthenticationUsername(String username) {
-        return true;
-
+        return (idAndPasswords.getProdloginfo().containsKey(username) && idAndPasswords.getProdloginfo().get(username).equals(password));
     }
-
 }
-*/
-
