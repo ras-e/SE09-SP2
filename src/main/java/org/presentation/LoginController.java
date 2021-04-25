@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -41,6 +42,8 @@ public class LoginController {
     public RadioButton bntExit;
     @FXML
     public Button btnGoGuest;
+    @FXML
+    public Label txtInvalid;
 
     //Takes you from front login to sign up page (Don't have an account yet? Sign up)
     @FXML
@@ -81,7 +84,8 @@ public class LoginController {
             loadProducer();
         }
         if(email.isEmpty() || password.isEmpty()) {
-            System.out.println("One or both fields are empty!");
+            txtInvalid.setText("One or more text fields are empty. Try again!");
+            txtInvalid.setStyle("-fx-background-color:#d32f2f;-fx-text-fill: white");
             }
     }
         /*
