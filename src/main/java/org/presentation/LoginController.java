@@ -52,6 +52,9 @@ public class LoginController {
             pgSignUp.toFront();
         }
     }
+
+
+
     //Movement on login screen + Guest -> Main Menu
     @FXML
     private void handleMouseEvent (MouseEvent event) {

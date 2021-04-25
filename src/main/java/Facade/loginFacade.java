@@ -1,5 +1,6 @@
 package Facade;
 
+import domain.user.IdAndPasswords;
 import org.presentation.LoginController;
 
 
