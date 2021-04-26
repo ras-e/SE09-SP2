@@ -1,5 +1,7 @@
 package org.presentation;
 
+import domain.user.Account;
+import domain.user.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +16,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import Facade.ioFacade;
 
 import java.io.IOException;
 import java.util.logging.LogManager;
@@ -45,13 +48,54 @@ public class LoginController {
     @FXML
     public Label txtInvalid;
 
+
+    // til signup pane
+    @FXML
+    public TextField signupEmailField;
+    @FXML
+    public TextField signupPassField;
+    @FXML
+    public TextField signupFNamefield;
+    @FXML
+    public TextField signupAgeField;
+    @FXML
+    public TextField signupLNamefield;
+    @FXML
+    public Button signUpOriginal;
+    @FXML
+    public Button signupBackBtn;
+    @FXML
+    public Label signUpLab;
+
+
     //Takes you from front login to sign up page (Don't have an account yet? Sign up)
     @FXML
     private void handleButtonAction (ActionEvent event) {
         if (event.getSource().equals(btnSignUp)) {
             pgSignUp.toFront();
+            String email = signupEmailField.getText();
+            String Fname = signupFNamefield.getText();
+            String Lname = signupLNamefield.getText();
+//            int id = signupIdField.getText();
+//            der skal oprettes et ID
+            User user = new User(email,Fname,Lname);
+            ioFacade io = new ioFacade();
+            io.writeusertofile(user, "someuserUserFile");
         }
     }
+
+    // tænker i at id skal oprettes automatisk og tilfældigt?? ind til videre har jeg udkommenteret id i user klassen
+//    private int GenerateId (int) {
+//        int min = 50;
+//        int max = 100;
+//
+//        //Generate random int value from 50 to 100
+//        System.out.println("Random value in int from " + min + " to " + max + ":");
+//        int random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
+//        System.out.println(random_int);
+//    }
+
+
     //Movement on login screen + Guest -> Main Menu
     @FXML
     private void handleMouseEvent (MouseEvent event) {

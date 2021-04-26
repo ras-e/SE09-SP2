@@ -1,6 +1,7 @@
 package Facade;
 
 import domain.Program.Credits;
+import domain.user.User;
 
 import java.io.*;
 import java.util.List;
@@ -37,7 +38,7 @@ public class ioFacade implements Serializable {
 
 
 //    skrivning af objekter til binærfil
-//    public void writeobjecttofile(Credits credits, String filename) {
+//    public void writeCredittofile(Credits credits, String filename) {
 //        try {
 //
 //            FileOutputStream fileOut = new FileOutputStream(filename, true);
@@ -50,6 +51,20 @@ public class ioFacade implements Serializable {
 //            ex.printStackTrace();
 //        }
 //    }
+
+    public void writeusertofile(User user, String filename) {
+        try {
+
+            FileOutputStream fileOut = new FileOutputStream(filename, true);
+            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+            objectOut.writeObject(user);
+            objectOut.close();
+            System.out.println("The Object  was succesfully written to a file:DD");
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 
     public void writetotextfile(String credit, String filename) {
 

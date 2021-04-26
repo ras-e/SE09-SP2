@@ -6,11 +6,11 @@ public abstract class Account {
         public String lastName;
         public int id;
 
-        public Account (String email, String firstName, String lastName, int id) {
+        public Account (String email, String firstName, String lastName) {
                 this.email = email;
                 this.firstName = firstName;
                 this.lastName = lastName;
-                this.id = id;
+//                this.id = id;
         }
 
 }
