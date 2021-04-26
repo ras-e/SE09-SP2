@@ -2,8 +2,8 @@ package domain.user;
 
 public class VerificationPerson extends Account{
 
-    public VerificationPerson (String email, String firstName, String lastName, int id) {
-        super(email,firstName,lastName,id);
+    public VerificationPerson (String email, String firstName, String lastName) {
+        super(email,firstName,lastName);
     }
     public void VerifiCredit(){
 
