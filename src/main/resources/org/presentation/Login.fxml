@@ -29,18 +29,33 @@
                 <StackPane prefHeight="511.0" prefWidth="408.0" BorderPane.alignment="CENTER">
                     <children>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                         <Pane fx:id="pgSignUp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
                             <children>
                                 <Button fx:id="btnSignUp2" layoutX="75.0" layoutY="328.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Sign up" />
                                 <TextField layoutX="75.0" layoutY="190.0" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" />
                                 <Label layoutX="57.0" layoutY="121.0" prefHeight="51.0" prefWidth="107.0" text="Sign Up">
+=======
+                        <Pane fx:id="pgSignUp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+                            <children>
+                                <Button fx:id="btnSignUp2" layoutX="75.0" layoutY="408.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Sign up" />
+                                <TextField layoutX="75.0" layoutY="123.0" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" />
+                                <Label layoutX="57.0" layoutY="66.0" prefHeight="51.0" prefWidth="107.0" text="Sign Up">
+>>>>>>> Stashed changes
                                     <font>
                                         <Font name="System Bold" size="24.0" />
                                     </font>
                                 </Label>
                         <Button fx:id="btnBack" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#handleMouseEvent" prefHeight="25.0" prefWidth="96.0" text="Back" />
+<<<<<<< Updated upstream
                             </children></Pane>
 =======
+>>>>>>> Stashed changes
+=======
+                        <TextField layoutX="75.0" layoutY="185.0" prefHeight="45.0" prefWidth="250.0" promptText="Password" />
+                        <TextField layoutX="75.0" layoutY="282.0" prefHeight="45.0" prefWidth="250.0" promptText="Navn" />
+                        <TextField layoutX="75.0" layoutY="339.0" prefHeight="45.0" prefWidth="250.0" promptText="Alder" />
+                            </children></Pane>
 >>>>>>> Stashed changes
                         <Pane fx:id="pgSignIn" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
                             <children>
@@ -60,21 +75,6 @@
                         </Label>
                             </children>
                         </Pane>
-                        <Pane fx:id="pgSignUp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
-                            <children>
-                                <Button id="signUpOriginal" fx:id="btnSignUp2" layoutX="75.0" layoutY="423.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" text="Sign up" />
-                                <TextField id="signupEmailField" layoutX="75.0" layoutY="123.0" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" />
-                                <Label id="signUpLab" layoutX="57.0" layoutY="66.0" prefHeight="51.0" prefWidth="107.0" text="Sign Up">
-                                    <font>
-                                        <Font name="System Bold" size="24.0" />
-                                    </font>
-                                </Label>
-                        <Button id="signupBackBtn" fx:id="btnBack" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#handleMouseEvent" prefHeight="25.0" prefWidth="96.0" text="Back" />
-                        <TextField id="signupPassField" layoutX="75.0" layoutY="185.0" prefHeight="45.0" prefWidth="250.0" promptText="Password" />
-                        <TextField id="signupFNamefield" layoutX="75.0" layoutY="239.0" prefHeight="45.0" prefWidth="250.0" promptText="Fornavn" />
-                        <TextField id="signupAgeField" layoutX="75.0" layoutY="352.0" prefHeight="45.0" prefWidth="250.0" promptText="Alder" />
-                        <TextField id="signupLNamefield" layoutX="75.0" layoutY="294.0" prefHeight="45.0" prefWidth="250.0" promptText="Efternavn" />
-                            </children></Pane>
                     </children>
                 </StackPane>
             </center>
