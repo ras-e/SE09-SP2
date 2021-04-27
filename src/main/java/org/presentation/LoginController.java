@@ -16,8 +16,6 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 public class LoginController {
 
@@ -44,6 +42,12 @@ public class LoginController {
     public Button btnGoGuest;
     @FXML
     public Label txtInvalid;
+    @FXML
+    public TextField emailSignUp;
+    @FXML
+    public TextField passSignUp;
+    @FXML
+    public TextField nameSignUp;
 
     //Takes you from front login to sign up page (Don't have an account yet? Sign up)
     @FXML
@@ -68,6 +72,14 @@ public class LoginController {
             closeStage();
             loadMain();
         }
+    }
+
+    @FXML
+    private void handleRegister(ActionEvent event){
+        String email = emailSignUp.getText();
+        String password = passSignUp.getText();
+        String name = nameSignUp.getText();
+        domain.users.AccountManager.createAccount(email, password, name);
     }
 
     @FXML

@@ -1,12 +1,12 @@
-package domain.user;
+package domain.users;
 
 import java.util.UUID;
 
 public abstract class Account {
-        public String email;
-        public String firstName;
-        public String lastName;
-        public UUID id;
+        private String email;
+        private String firstName;
+        private String lastName;
+        private UUID id;
 
         public Account (String email, String firstName, String lastName) {
                 this.email = email;

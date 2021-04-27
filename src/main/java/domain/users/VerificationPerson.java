@@ -1,4 +1,4 @@
-package domain.user;
+package domain.users;
 
 public class VerificationPerson extends Account{
 
