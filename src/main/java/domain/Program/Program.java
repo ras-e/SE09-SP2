@@ -1,7 +1,5 @@
 package domain.Program;
 
-import Facade.ioFacade;
-
 import java.util.ArrayList;
 
 public class Program {
@@ -12,6 +10,10 @@ public class Program {
         String prodName;
         Enum Category;
 
+        public Program(String prodName){
+            this.prodName = prodName;
+        }
+
         public Program(int prodID, ArrayList<Credits> credlist, String name, String prodName, Enum chategory) {
             ProdID = prodID;
             this.credlist = credlist;
@@ -20,12 +22,21 @@ public class Program {
             this.Category = chategory;
         }
 
-        public static void main(String args[]) {
+        public String getProgram(){
+            return this.prodName;
+        }
 
-            ioFacade objectio = new ioFacade();
+//        public static void main(String args[]) {
+//
+//            ioFacade objectio = new ioFacade();
+//
+//            // actionhandler på "opretkreditering" knap
+//            ArrayList<Credits> credlist = new ArrayList<Credits>();
+//           // objectio.writeobjecttofile(new Credits(), "et eller andet krediteringsliste navn");
+//        }
 
-            // actionhandler på "opretkreditering" knap
-            ArrayList<Credits> credlist = new ArrayList<Credits>();
-           // objectio.writeobjecttofile(new Credits(), "et eller andet krediteringsliste navn");
+        @Override
+    public String toString(){
+            return "Program name: "+this.prodName;
         }
 }
