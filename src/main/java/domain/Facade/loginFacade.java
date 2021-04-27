@@ -1,6 +1,5 @@
-package Facade;
+package domain.Facade;
 
-import java.io.File;
 /*
 public class loginFacade {
     File file;

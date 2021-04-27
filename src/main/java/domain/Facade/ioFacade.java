@@ -1,6 +1,4 @@
-package Facade;
-
-import domain.Program.Credits;
+package domain.Facade;
 
 import java.io.*;
 import java.util.List;
