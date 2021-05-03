@@ -14,6 +14,9 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
+import static domain.sysController.createmvPerson;
+import static domain.sysController.getmvPersons;
+
 
 public class producerController {
 
@@ -48,8 +51,12 @@ public class producerController {
         if (mouseEvent.getSource() == add ) {
             if (personSelected) {
 
-                mvPerson person = new mvPerson(searchTextField.getCharacters().toString());
-                System.out.println(person.toString());
+                //mvPerson person = new mvPerson(searchTextField.getCharacters().toString()); //<-
+                //System.out.println(createmvPerson(searchTextField.getCharacters().toString(),"efternavn"));
+                createmvPerson(searchTextField.getCharacters().toString(),"kek");
+
+                System.out.println(getmvPersons());
+
 
 
 
@@ -57,6 +64,7 @@ public class producerController {
 
                 Program program = new Program(searchTextField.getCharacters().toString());
                 System.out.println(program.toString());
+                System.out.println(getmvPersons());
 
 
 
