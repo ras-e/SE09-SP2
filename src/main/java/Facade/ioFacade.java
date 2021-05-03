@@ -1,7 +1,5 @@
 package Facade;
 
-import domain.Program.Credits;
-
 import java.io.*;
 import java.util.List;
 import java.util.Scanner;
@@ -12,7 +10,7 @@ public class ioFacade implements Serializable {
 
     // metoderne skal bruges i javafx-controller klasser
 
-    public List ReadObjects(String filename) {
+    public static List ReadObjects(String filename) {
         List<ioFacade> l = null;
         try (
                 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
