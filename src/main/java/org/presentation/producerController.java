@@ -1,8 +1,15 @@
 package org.presentation;
 
 
+import domain.Program.Program;
+import domain.Program.mvPerson;
+import domain.Program.tvProdRolle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.ObservableMap;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -20,8 +27,18 @@ public class producerController {
     public RadioButton kredditeringButton;
     @FXML
     public TextField searchTextField;
+    @FXML
+    public ChoiceBox addCreditDropdown;
+    @FXML
+    public ObservableMap<mvPerson, tvProdRolle> creditList;
+    @FXML
+    public ObservableList<String> creditString = FXCollections.observableArrayList("option 1");
 
+    @FXML
+    private void initialize(){
 
+       addCreditDropdown.setItems(creditString);
+    }
 
     public void handleMouseAction(MouseEvent mouseEvent) {
         boolean programSelected = programButton.isSelected();
@@ -31,23 +48,31 @@ public class producerController {
         if (mouseEvent.getSource() == add ) {
             if (personSelected) {
 
-                System.out.println("person"); //-> skriv person til en value og lav en form for property binding så det der står på listen reflectree værdi
+                mvPerson person = new mvPerson(searchTextField.getCharacters().toString());
+                System.out.println(person.toString());
+
+
 
             } else if (programSelected) {
-                System.out.println("program");
+
+                Program program = new Program(searchTextField.getCharacters().toString());
+                System.out.println(program.toString());
+
+
 
             } else if (krediteringSelected) {
-                System.out.println("kreditering");
+                    //brug andet setup
             }
 
-            System.out.println(searchTextField.getCharacters());
+            //System.out.println(searchTextField.getCharacters());
                 //if no program type is seleceted throw error
-
-
             //check hvilken case der er valgt -> læs tekst i felt -> gem tekst til appropiate sted
         }
     }
-
+    @FXML
+    public void handleCreditAdd(MouseEvent event){
+        System.out.println();
+    }
 
 
 }
