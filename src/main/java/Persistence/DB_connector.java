@@ -1,4 +1,4 @@
-package Data;
+package Persistence;
 
 import java.sql.*;
 
