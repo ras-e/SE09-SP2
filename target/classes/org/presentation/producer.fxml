@@ -23,6 +23,5 @@
     <Button layoutX="639.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="91.0" text="Vis konto Inf." />
     <Button layoutX="538.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="91.0" text="Logud" />
     <ListView fx:id="creditView" layoutX="227.0" layoutY="231.0" prefHeight="255.0" prefWidth="215.0" />
-   <ListView layoutX="26.0" layoutY="93.0" prefHeight="123.0" prefWidth="133.0" />
    <ChoiceBox fx:id="addCreditDropdown" layoutX="252.0" layoutY="155.0" onMouseClicked="#handleCreditAdd" prefWidth="150.0" />
 </AnchorPane>
