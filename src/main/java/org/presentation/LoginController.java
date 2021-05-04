@@ -121,7 +121,7 @@ public class LoginController {
         }
     }
 
-    private void closeStage() {
+    public void closeStage() {
         ((Stage) btnSignIn.getScene().getWindow()).close();
     }
 }

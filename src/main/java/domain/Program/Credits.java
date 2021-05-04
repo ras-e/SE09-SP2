@@ -1,5 +1,6 @@
 package domain.Program;
 
+
 public class Credits {
 
 
@@ -7,9 +8,14 @@ public class Credits {
     int CreditID;
     mvPerson person;
 
+    public  Credits (){
 
-    public void CreateCredit() {
+    }
 
+    public Credits(String prodRole, int creditID, mvPerson person) {
+        this.CreditID = creditID;
+        this.ProdRole = prodRole;
+        this.person = person;
     }
 
 
