@@ -27,4 +27,6 @@ public class sysController {
         return person;
     }
 
+    //lav funktion der viser objecter i
+
 }

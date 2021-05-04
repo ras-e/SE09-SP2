@@ -3,22 +3,17 @@ package org.presentation;
 
 import domain.Program.Program;
 import domain.Program.mvPerson;
-import domain.Program.tvProdRolle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.ObservableMap;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
 import static domain.sysController.createmvPerson;
 import static domain.sysController.getmvPersons;
 
 
-public class producerController {
+public class producerControllerOld {
 
     @FXML
     public Button add;
@@ -33,14 +28,23 @@ public class producerController {
     @FXML
     public ChoiceBox addCreditDropdown;
     @FXML
-    public ObservableMap<mvPerson, tvProdRolle> creditList;
+    public ListView creditView;
+
+
+//    @FXML
+//    public ObservableMap<mvPerson, tvProdRolle> creditList;
     @FXML
     public ObservableList<String> creditString = FXCollections.observableArrayList("option 1");
+    @FXML
+    ObservableList<mvPerson> personList = FXCollections.observableArrayList();
+    @FXML
+    ObservableList<Program> programList = FXCollections.observableArrayList();
 
     @FXML
     private void initialize(){
-
        addCreditDropdown.setItems(creditString);
+       creditView.setItems(programList); //<- ændre fra creditview til program view eller fra programlist til creditList
+
     }
 
     public void handleMouseAction(MouseEvent mouseEvent) {
@@ -54,7 +58,6 @@ public class producerController {
                 //mvPerson person = new mvPerson(searchTextField.getCharacters().toString()); //<-
                 //System.out.println(createmvPerson(searchTextField.getCharacters().toString(),"efternavn"));
                 createmvPerson(searchTextField.getCharacters().toString(),"kek");
-
                 System.out.println(getmvPersons());
 
 
@@ -63,6 +66,8 @@ public class producerController {
             } else if (programSelected) {
 
                 Program program = new Program(searchTextField.getCharacters().toString());
+                programList.add(program);
+
                 System.out.println(program.toString());
                 System.out.println(getmvPersons());
 
