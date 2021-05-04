@@ -12,7 +12,7 @@ import java.util.Objects;
 
 public class adminController {
     public void loadAddMemberUI(MouseEvent mouseEvent) {
-        loadWindow("addAcc.fxml", "Add New Acc");
+        //loadWindow("addAcc.fxml", "Add New Acc");
     }
 
     public void loadDeleteMemberUI(ActionEvent actionEvent) {
