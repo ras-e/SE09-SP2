@@ -1,5 +1,6 @@
 package Persistence;
 
+import domain.user.Account;
 import domain.user.Producer;
 
 import java.sql.*;
@@ -8,7 +9,7 @@ import java.util.List;
 
 public class PersistenceHandler {
 
-    public class PersistanceHandler {
+    public static class PersistanceHandler {
 //        private static PersistanceHandler instance;
         private String url = "localhost";
         private int port = 5432;
@@ -16,18 +17,18 @@ public class PersistenceHandler {
         private String username = "postgres";
         private String password = "Huskmig1";
         private Connection connection = null;
+        private static PersistanceHandler instance = null;
 
-//        private PersistanceHandler(){
-//            initializePostgresqlDatabase();
-//        }
+        private PersistanceHandler(){
+            initializePostgresqlDatabase();
+        }
 
-//        public static PersistanceHandler getInstance(){
-//            if (instance == null) {
-//                instance = new PersistanceHandler();
-//            }
-//            return instance;
-//        }
-
+        public static PersistanceHandler getInstance(){
+            if (instance == null) {
+                instance = new PersistanceHandler();
+            }
+            return instance;
+        }
         private void initializePostgresqlDatabase() {
             try {
                 DriverManager.registerDriver(new org.postgresql.Driver());
@@ -57,20 +58,37 @@ public class PersistenceHandler {
 //        }
 
 
-        public Producer getProducer(int id) {
+//        public Producer getAccount(int id) {
+//            try {
+//                PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Account WHERE id = ?");
+//                stmt.setInt(1, id);
+//                ResultSet sqlReturnValues = stmt.executeQuery();
+//                if (!sqlReturnValues.next()){
+//                    return null;
+//                }
+//                return new Producer(sqlReturnValues.getInt(1), sqlReturnValues.getString(2), sqlReturnValues.getInt(3), sqlReturnValues.getInt(4), sqlReturnValues.getInt(5), sqlReturnValues.getInt(6));
+//            } catch (SQLException ex) {
+//                ex.printStackTrace();
+//                return null;
+//            }
+//        }
+
+        public Account getAccount(String username, String password) {
             try {
-                PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Producers WHERE id = ?");
-                stmt.setInt(1, id);
+                PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Account WHERE username = ? && password = ?");
+                stmt.setString(1, username);
+                stmt.setString(2, password);
                 ResultSet sqlReturnValues = stmt.executeQuery();
                 if (!sqlReturnValues.next()){
                     return null;
                 }
-                return new Producer(sqlReturnValues.getInt(1), sqlReturnValues.getString(2), sqlReturnValues.getInt(3), sqlReturnValues.getInt(4), sqlReturnValues.getInt(5), sqlReturnValues.getInt(6));
+                return new Account(sqlReturnValues.getString(2), sqlReturnValues.getString(3), sqlReturnValues.getString(2), sqlReturnValues.getInt(1), sqlReturnValues.getInt(6));
             } catch (SQLException ex) {
                 ex.printStackTrace();
                 return null;
             }
         }
+
 
 //        @Override
 //        public boolean createProducer(Producer producer) {
@@ -87,7 +105,7 @@ public class PersistenceHandler {
 //            }
 //        }
 
-    public void addEmployee(String Fname, String Lname, int id, String business, String email) {
+    public void addProducer(String Fname, String Lname, int id, String business, String email) {
         try {
             PreparedStatement insertStatement = connection.prepareStatement(
                     "INSERT INTO user (name, cpr) VALUES (?,?,?,?,?)");
