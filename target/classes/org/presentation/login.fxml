@@ -13,7 +13,7 @@
                 <Pane prefHeight="511.0" prefWidth="326.0" style="-fx-background-color: #5555;" BorderPane.alignment="CENTER">
                <children>
                   <RadioButton fx:id="bntExit" layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#handleMouseEvent" text="Exit" />
-                  <Button fx:id="btnGoGuest" layoutX="33.0" layoutY="401.0" mnemonicParsing="false" onMouseClicked="#handleGuest" opacity="0.76" prefHeight="54.0" prefWidth="260.0" style="-fx-background-color: #00b25d;" text="Continue as Guest">
+                  <Button fx:id="btnGoGuest" layoutX="33.0" layoutY="386.0" mnemonicParsing="false" onMouseClicked="#handleGuest" opacity="0.76" prefHeight="54.0" prefWidth="260.0" style="-fx-background-color: #00b25d;" text="Continue as Guest">
                      <font>
                         <Font size="23.0" />
                      </font>
@@ -47,7 +47,7 @@
                                 <TextField fx:id="tfEmail" layoutX="88.0" layoutY="130.0" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" />
                                 <TextField fx:id="tfPass" layoutX="88.0" layoutY="201.0" prefHeight="45.0" prefWidth="250.0" promptText="Password" />
                                 <Button fx:id="btnSignIn" layoutX="229.0" layoutY="296.0" mnemonicParsing="false" onMouseClicked="#handleSignIn" prefHeight="40.0" prefWidth="109.0" text="Sign in" />
-                                <Button fx:id="btnSignUp" layoutX="88.0" layoutY="374.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="250.0" text="Don't have an account? Sign up!" />
+                                <Button fx:id="btnSignUp" layoutX="88.0" layoutY="391.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="250.0" text="Don't have an account? Sign up!" />
                                 <Label layoutX="52.0" layoutY="66.0" prefHeight="43.0" prefWidth="95.0" text="Sign in">
                                     <font>
                                         <Font name="System Bold" size="22.0" />

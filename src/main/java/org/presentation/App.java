@@ -6,14 +6,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- * JavaFX App
- */
 public class App extends Application {
 
     @Override
     public void start(Stage stage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("producer.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("adminUI.fxml"));
         //primaryStage.setTitle("Hello World");
         Scene scene = new Scene(root);
 

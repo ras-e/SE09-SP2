@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.adminController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <top>
@@ -37,7 +37,7 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <AreaChart layoutX="34.0" layoutY="93.0" prefHeight="296.0" prefWidth="325.0">
+                              <AreaChart layoutX="29.0" layoutY="103.0" prefHeight="296.0" prefWidth="325.0">
                                 <xAxis>
                                   <CategoryAxis side="BOTTOM" />
                                 </xAxis>
@@ -58,7 +58,7 @@
                               <TextField layoutX="543.0" layoutY="42.0" prefHeight="28.0" prefWidth="183.0" promptText="Role" />
                               <TextField layoutX="182.0" layoutY="102.0" prefHeight="28.0" prefWidth="138.0" promptText="Date" />
                               <TextField layoutX="355.0" layoutY="102.0" prefHeight="28.0" prefWidth="161.0" promptText="Name of Program" />
-                              <TableView layoutX="182.0" layoutY="153.0" prefHeight="248.0" prefWidth="527.0">
+                              <TableView layoutX="182.0" layoutY="153.0" prefHeight="267.0" prefWidth="544.0">
                                  <columns>
                                     <TableColumn prefWidth="75.0" text="C1" />
                                     <TableColumn prefWidth="75.0" text="C2" />
@@ -70,38 +70,38 @@
                                  </columns>
                               </TableView>
                               <TextField layoutX="543.0" layoutY="102.0" prefHeight="28.0" prefWidth="183.0" promptText="Country" />
-                              <VBox layoutX="-2.0" layoutY="40.0" prefHeight="398.0" prefWidth="163.0">
+                              <VBox layoutY="41.0" prefHeight="356.0" prefWidth="133.0">
                                  <children>
-                                    <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="121.0" prefWidth="173.0" text="Add Member">
+                                    <Button fx:id="addMember" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#loadAddMemberUI" prefHeight="96.0" prefWidth="133.0" text="Add Member">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                        <graphic>
-                                          <ImageView fitHeight="73.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="57.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../images/insert_member.jpg" />
                                              </image>
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="163.0" text="Add Member">
+                                    <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="134.0" text="Edit Member">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                        <graphic>
-                                          <ImageView fitHeight="85.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="72.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../images/edit_member.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button contentDisplay="TOP" layoutX="10.0" layoutY="127.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="163.0" text="Add Member">
+                                    <Button contentDisplay="TOP" layoutX="10.0" layoutY="127.0" mnemonicParsing="false" onAction="#loadDeleteMemberUI" prefHeight="84.0" prefWidth="133.0" text="Delete Member">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                        <graphic>
-                                          <ImageView fitHeight="85.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="71.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../images/delete_user.png" />
                                              </image>
@@ -135,11 +135,11 @@
                                 </columns>
                               </TableView>
                               <TextField layoutX="543.0" layoutY="102.0" prefHeight="28.0" prefWidth="183.0" promptText="Category" />
-                              <VBox layoutX="-2.0" layoutY="40.0" prefHeight="398.0" prefWidth="163.0">
+                              <VBox layoutX="-2.0" layoutY="40.0" prefHeight="398.0" prefWidth="140.0">
                                  <children>
-                                    <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="118.0" prefWidth="166.0" text="Add Program">
+                                    <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="107.0" prefWidth="136.0" text="Add Program">
                                        <graphic>
-                                          <ImageView fitHeight="79.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="66.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../images/tv_icon.png" />
                                              </image>
@@ -149,9 +149,9 @@
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Button>
-                                    <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="119.0" prefWidth="165.0" text="Edit Program">
+                                    <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="137.0" text="Edit Program">
                                        <graphic>
-                                          <ImageView fitHeight="102.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="61.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../images/edit_program.png" />
                                              </image>
@@ -161,12 +161,12 @@
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Button>
-                                    <Button contentDisplay="TOP" layoutX="10.0" layoutY="124.0" mnemonicParsing="false" prefHeight="124.0" prefWidth="172.0" text="Delete Program">
+                                    <Button contentDisplay="TOP" layoutX="10.0" layoutY="124.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="138.0" text="Delete Program">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                        <graphic>
-                                          <ImageView fitHeight="102.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="73.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../images/delete_program.png" />
                                              </image>
