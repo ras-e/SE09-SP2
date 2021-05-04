@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.producerController">
+    <Button fx:id="creditButton" layoutX="463.0" layoutY="231.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" text="Tryk for mere" />
+    <TextField fx:id="searchTextField" layoutX="207.0" layoutY="105.0" prefHeight="25.0" prefWidth="215.0" promptText="Person, program eller producent" />
+    <Button fx:id="add" layoutX="442.0" layoutY="105.0" mnemonicParsing="false" onMouseClicked="#handleMouseAction" text="Tilføj" />
+    <RadioButton fx:id="personButton" layoutX="306.0" layoutY="76.0" mnemonicParsing="false" onMouseClicked="#handleMouseAction" text="Person">
+        <toggleGroup>
+            <ToggleGroup fx:id="searchGroup" />
+        </toggleGroup></RadioButton>
+    <RadioButton fx:id="programButton" layoutX="207.0" layoutY="76.0" mnemonicParsing="false" onMouseClicked="#handleMouseAction" selected="true" text="Program" toggleGroup="$searchGroup" />
+    <RadioButton fx:id="kredditeringButton" layoutX="402.0" layoutY="76.0" mnemonicParsing="false" onMouseClicked="#handleMouseAction" text="Kreditering" toggleGroup="$searchGroup" />
+
+    <Label layoutX="227.0" layoutY="193.0" text="kreditteringsliste:">
+        <font>
+            <Font size="20.0" />
+        </font>
+    </Label>
+    <Button layoutX="639.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="91.0" text="Vis konto Inf." />
+    <Button layoutX="538.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="91.0" text="Logud" />
+    <ListView fx:id="creditView" layoutX="227.0" layoutY="231.0" prefHeight="255.0" prefWidth="215.0" />
+   <ListView layoutX="26.0" layoutY="93.0" prefHeight="123.0" prefWidth="133.0" />
+   <ChoiceBox fx:id="addCreditDropdown" layoutX="252.0" layoutY="155.0" onMouseClicked="#handleCreditAdd" prefWidth="150.0" />
+</AnchorPane>
