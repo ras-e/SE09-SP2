@@ -53,11 +53,11 @@
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TextField layoutX="182.0" layoutY="42.0" prefHeight="28.0" prefWidth="137.0" promptText="E-mail" />
-                              <TextField layoutX="354.0" layoutY="42.0" prefHeight="28.0" prefWidth="162.0" promptText="Name" />
-                              <TextField layoutX="543.0" layoutY="42.0" prefHeight="28.0" prefWidth="183.0" promptText="Role" />
-                              <TextField layoutX="182.0" layoutY="102.0" prefHeight="28.0" prefWidth="138.0" promptText="Date" />
-                              <TextField layoutX="355.0" layoutY="102.0" prefHeight="28.0" prefWidth="161.0" promptText="Name of Program" />
+                              <TextField fx:id="accEmail" layoutX="182.0" layoutY="42.0" prefHeight="28.0" prefWidth="137.0" promptText="E-mail" />
+                              <TextField fx:id="accName" layoutX="354.0" layoutY="42.0" prefHeight="28.0" prefWidth="162.0" promptText="Name" />
+                              <TextField fx:id="accRole" layoutX="543.0" layoutY="42.0" prefHeight="28.0" prefWidth="183.0" promptText="Role" />
+                              <TextField fx:id="accDate" layoutX="182.0" layoutY="102.0" prefHeight="28.0" prefWidth="138.0" promptText="Date" />
+                              <TextField fx:id="accJoinPro" layoutX="355.0" layoutY="102.0" prefHeight="28.0" prefWidth="161.0" promptText="Name of Program" />
                               <TableView layoutX="182.0" layoutY="153.0" prefHeight="267.0" prefWidth="544.0">
                                  <columns>
                                     <TableColumn prefWidth="75.0" text="C1" />
@@ -69,10 +69,10 @@
                                     <TableColumn prefWidth="75.0" text="C1" />
                                  </columns>
                               </TableView>
-                              <TextField layoutX="543.0" layoutY="102.0" prefHeight="28.0" prefWidth="183.0" promptText="Country" />
-                              <VBox layoutY="41.0" prefHeight="356.0" prefWidth="133.0">
+                              <TextField fx:id="accCountry" layoutX="543.0" layoutY="102.0" prefHeight="28.0" prefWidth="183.0" promptText="Country" />
+                              <VBox fx:id="accEditMem" layoutY="41.0" prefHeight="356.0" prefWidth="133.0">
                                  <children>
-                                    <Button fx:id="addMember" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#loadAddMemberUI" prefHeight="96.0" prefWidth="133.0" text="Add Member">
+                                    <Button fx:id="btnAccAdd" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#loadAddMemberUI" prefHeight="96.0" prefWidth="133.0" stylesheets="@../../css/style.css" text="Add Member">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
@@ -84,19 +84,19 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="134.0" text="Edit Member">
+                                    <Button fx:id="editMember" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="134.0" stylesheets="@../../css/style.css" text="Edit Member">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                        <graphic>
-                                          <ImageView fitHeight="72.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fx:id="btnAccEdit" fitHeight="72.0" fitWidth="66.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../images/edit_member.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button contentDisplay="TOP" layoutX="10.0" layoutY="127.0" mnemonicParsing="false" onAction="#loadDeleteMemberUI" prefHeight="84.0" prefWidth="133.0" text="Delete Member">
+                                    <Button fx:id="btnDeleteMem" contentDisplay="TOP" layoutX="10.0" layoutY="127.0" mnemonicParsing="false" onAction="#loadDeleteMemberUI" prefHeight="84.0" prefWidth="133.0" stylesheets="@../../css/style.css" text="Delete Member">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
@@ -118,11 +118,11 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TextField layoutX="182.0" layoutY="42.0" prefHeight="28.0" prefWidth="137.0" promptText="ID" />
-                              <TextField layoutX="354.0" layoutY="42.0" prefHeight="28.0" prefWidth="162.0" promptText="Title" />
-                              <TextField layoutX="543.0" layoutY="42.0" prefHeight="28.0" prefWidth="183.0" promptText="Participants" />
-                              <TextField layoutX="182.0" layoutY="102.0" prefHeight="28.0" prefWidth="138.0" promptText="Date" />
-                              <TextField layoutX="355.0" layoutY="102.0" prefHeight="28.0" prefWidth="161.0" promptText="Program" />
+                              <TextField fx:id="proID" layoutX="182.0" layoutY="42.0" prefHeight="28.0" prefWidth="137.0" promptText="ID" />
+                              <TextField fx:id="proTitle" layoutX="354.0" layoutY="42.0" prefHeight="28.0" prefWidth="162.0" promptText="Title" />
+                              <TextField fx:id="proPar" layoutX="543.0" layoutY="42.0" prefHeight="28.0" prefWidth="183.0" promptText="Participants" />
+                              <TextField fx:id="proDate" layoutX="182.0" layoutY="102.0" prefHeight="28.0" prefWidth="138.0" promptText="Date" />
+                              <TextField fx:id="proPro" layoutX="355.0" layoutY="102.0" prefHeight="28.0" prefWidth="161.0" promptText="Program" />
                               <TableView layoutX="182.0" layoutY="153.0" prefHeight="248.0" prefWidth="527.0">
                                 <columns>
                                   <TableColumn prefWidth="75.0" text="C1" />
@@ -134,10 +134,10 @@
                                     <TableColumn prefWidth="75.0" text="C1" />
                                 </columns>
                               </TableView>
-                              <TextField layoutX="543.0" layoutY="102.0" prefHeight="28.0" prefWidth="183.0" promptText="Category" />
+                              <TextField fx:id="proCategory" layoutX="543.0" layoutY="102.0" prefHeight="28.0" prefWidth="183.0" promptText="Category" />
                               <VBox layoutX="-2.0" layoutY="40.0" prefHeight="398.0" prefWidth="140.0">
                                  <children>
-                                    <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="107.0" prefWidth="136.0" text="Add Program">
+                                    <Button fx:id="btnAddPro" contentDisplay="TOP" mnemonicParsing="false" prefHeight="107.0" prefWidth="136.0" stylesheets="@../../css/style.css" text="Add Program">
                                        <graphic>
                                           <ImageView fitHeight="66.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -149,7 +149,7 @@
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Button>
-                                    <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="137.0" text="Edit Program">
+                                    <Button fx:id="btnEditPro" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="137.0" stylesheets="@../../css/style.css" text="Edit Program">
                                        <graphic>
                                           <ImageView fitHeight="61.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -161,7 +161,7 @@
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Button>
-                                    <Button contentDisplay="TOP" layoutX="10.0" layoutY="124.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="138.0" text="Delete Program">
+                                    <Button fx:id="btnDelPro" contentDisplay="TOP" layoutX="10.0" layoutY="124.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="138.0" stylesheets="@../../css/style.css" text="Delete Program">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>

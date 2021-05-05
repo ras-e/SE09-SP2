@@ -4,24 +4,25 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.addAccController">
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
     <children>
-        <TextField fx:id="email" layoutX="40.0" layoutY="124.0" prefHeight="27.0" prefWidth="160.0" promptText="Title" text="E-mail" />
-        <TextField fx:id="country" layoutX="40.0" layoutY="164.0" prefHeight="27.0" prefWidth="160.0" promptText="Date" text="Name" />
-        <TextField fx:id="inProgram" layoutX="40.0" layoutY="208.0" prefHeight="27.0" prefWidth="160.0" promptText="In Program" text="Program" />
-        <TextField fx:id="date" layoutX="290.0" layoutY="164.0" prefHeight="27.0" prefWidth="160.0" promptText="Participants" text="Role " />
-        <TextField fx:id="role" layoutX="290.0" layoutY="208.0" prefHeight="27.0" prefWidth="160.0" promptText="Category" text="Date" />
-        <TextField layoutX="290.0" layoutY="125.0" prefHeight="25.0" prefWidth="160.0" text="Country" />
+        <TextField fx:id="Edit_email" layoutX="40.0" layoutY="124.0" prefHeight="27.0" prefWidth="160.0" promptText="E-mail" />
+        <TextField fx:id="country" layoutX="40.0" layoutY="164.0" prefHeight="27.0" prefWidth="160.0" promptText="Name" />
+        <TextField fx:id="inProgram" layoutX="40.0" layoutY="208.0" prefHeight="27.0" prefWidth="160.0" promptText="Program" />
+        <TextField fx:id="date" layoutX="290.0" layoutY="164.0" prefHeight="27.0" prefWidth="160.0" promptText="Role " />
+        <TextField fx:id="role" layoutX="290.0" layoutY="208.0" prefHeight="27.0" prefWidth="160.0" promptText="Birth Date" />
+        <TextField layoutX="290.0" layoutY="125.0" prefHeight="25.0" prefWidth="160.0" promptText="Country" />
         <HBox layoutY="275.0" prefHeight="80.0" prefWidth="500.0">
             <children>
-                <Button fx:id="saveButton" mnemonicParsing="false" prefHeight="80.0" prefWidth="250.0" style="-fx-background-color: #32CD32;" text="Save">
+                <JFXButton fx:id="saveButton" mnemonicParsing="false" prefHeight="80.0" prefWidth="250.0" stylesheets="@../../css/style.css" text="Save">
                     <font>
                         <Font name="System Bold Italic" size="20.0" />
-                    </font></Button>
-                <Button fx:id="cancelButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancelAction" prefHeight="80.0" prefWidth="250.0" style="-fx-background-color: #FF0000;" text="Cancel">
+                    </font></JFXButton>
+                <JFXButton fx:id="cancelButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancelAction" prefHeight="80.0" prefWidth="250.0" stylesheets="@../../css/style.css" text="Cancel">
                     <font>
                         <Font name="System Bold Italic" size="20.0" />
-                    </font></Button>
+                    </font></JFXButton>
             </children>
         </HBox>
       <Label layoutX="141.0" layoutY="43.0" prefHeight="30.0" prefWidth="218.0" text="Ændre kredit for person ">
