@@ -10,12 +10,12 @@ import javafx.stage.Stage;
 
 public class addAccController {
 
-    public JFXTextField email;
-    public JFXTextField country;
-    public JFXTextField inProgram;
-    public JFXTextField name;
-    public JFXTextField date;
-    public JFXTextField role;
+    public TextField email;
+    public TextField country;
+    public TextField inProgram;
+    public TextField name;
+    public TextField date;
+    public TextField role;
     public JFXButton saveButton;
     public JFXButton cancelButton;
 
