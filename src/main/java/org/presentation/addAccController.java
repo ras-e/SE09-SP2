@@ -25,8 +25,7 @@ public class addAccController {
 
 
     }
-    public void closeStage() {
-        ((Stage) cancelButton.getScene().getWindow()).close();
+    public void closeStage() { ((Stage) cancelButton.getScene().getWindow()).close();
     }
 }
 
