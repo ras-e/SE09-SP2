@@ -1,5 +1,7 @@
 package org.presentation;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -14,8 +16,8 @@ public class addAccController {
     public TextField name;
     public TextField date;
     public TextField role;
-    public Button saveButton;
-    public Button cancelButton;
+    public JFXButton saveButton;
+    public JFXButton cancelButton;
 
     public void cancelAction(ActionEvent actionEvent) {
     closeStage();
@@ -25,8 +27,7 @@ public class addAccController {
 
 
     }
-    public void closeStage() {
-        ((Stage) cancelButton.getScene().getWindow()).close();
+    private void closeStage() { ((Stage) cancelButton.getScene().getWindow()).close();
     }
 }
 
