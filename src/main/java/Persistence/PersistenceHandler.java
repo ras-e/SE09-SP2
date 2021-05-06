@@ -9,7 +9,6 @@ import java.util.List;
 
 public class PersistenceHandler {
 
-    public static class PersistanceHandler {
 //        private static PersistanceHandler instance;
         private String url = "localhost";
         private int port = 5432;
@@ -17,15 +16,15 @@ public class PersistenceHandler {
         private String username = "postgres";
         private String password = "Huskmig1";
         private Connection connection = null;
-        private static PersistanceHandler instance = null;
+        private static PersistenceHandler instance;
 
-        private PersistanceHandler(){
+        private PersistenceHandler(){
             initializePostgresqlDatabase();
         }
 
-        public static PersistanceHandler getInstance(){
+        public static PersistenceHandler getInstance(){
             if (instance == null) {
-                instance = new PersistanceHandler();
+                instance = new PersistenceHandler();
             }
             return instance;
         }
@@ -73,16 +72,17 @@ public class PersistenceHandler {
 //            }
 //        }
 
-        public Account getAccount(String username, String password) {
+        public Account getAccountobj(String username, String password) {
             try {
-                PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Account WHERE username = ? && password = ?");
+                PreparedStatement stmt = connection.prepareStatement("SELECT * FROM account WHERE username = ? AND password = ?");
                 stmt.setString(1, username);
                 stmt.setString(2, password);
+//                stmt.setInt(3, type);
                 ResultSet sqlReturnValues = stmt.executeQuery();
                 if (!sqlReturnValues.next()){
                     return null;
                 }
-                return new Account(sqlReturnValues.getString(2), sqlReturnValues.getString(3), sqlReturnValues.getString(2), sqlReturnValues.getInt(1), sqlReturnValues.getInt(6));
+                return new Account(sqlReturnValues.getInt(1), sqlReturnValues.getString(2), sqlReturnValues.getString(3), sqlReturnValues.getString(4), sqlReturnValues.getString(5), sqlReturnValues.getString(6), sqlReturnValues.getInt(7));
             } catch (SQLException ex) {
                 ex.printStackTrace();
                 return null;
@@ -120,9 +120,11 @@ public class PersistenceHandler {
         }
     }
 
+
+
     }
 
 
 
 
-}
+

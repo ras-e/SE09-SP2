@@ -4,10 +4,11 @@ public class Producer extends Account {
 
     public String business;
 
-    public Producer (String email, String firstName, String lastName, int id, String business) {
-        super(email,firstName,lastName,id);
-        this.business = business;
+    public Producer(int id, String name, String username, String password, String email, String business, int type) {
+        super(id, name, username, password, email, business, type);
     }
+
+
     public void createProgram () {
 
     }

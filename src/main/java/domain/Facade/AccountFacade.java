@@ -5,8 +5,8 @@ import domain.user.Account;
 
 public class AccountFacade {
 
-    public Account login(String username, String password) {
-        return PersistenceHandler.PersistanceHandler.getInstance().getAccount(username, password);
+    public static Account login(String username, String password) {
+        return PersistenceHandler.getInstance().getAccountobj(username, password);
     }
 
 
