@@ -1,12 +1,12 @@
 package domain;
 
-import Facade.ioFacade;
 import domain.Program.Credits;
 import domain.Program.Program;
 import domain.Program.mvPerson;
 import domain.user.Account;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 
 import java.util.ArrayList;
 
@@ -23,6 +23,7 @@ public class sysController {
 
 
 
+
     public static ArrayList<mvPerson> getmvPersons(){
         return mvPersons;
     }
@@ -32,7 +33,7 @@ public class sysController {
         mvPersons.add(person);
         oPersonList.add(person);
 
-        ioFacade.writeObjectToFiles(person,"C:\\Users\\ander\\IdeaProjects\\SE09-SP2_ny\\src\\main\\resources\\files\\personBinaryFileList");
+       // ioFacade.writeObjectToFiles(person,"C:\\Users\\ander\\IdeaProjects\\SE09-SP2_ny\\src\\main\\resources\\files\\personBinaryFileList");
 
         return person;
     }
