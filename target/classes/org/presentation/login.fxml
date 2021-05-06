@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="layersignup" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.LoginController">
+<AnchorPane fx:id="layersignup" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.loginController">
     <children>
         <Pane prefHeight="200.0" prefWidth="200.0" />
         <BorderPane layoutY="-2.0" prefHeight="511.0" prefWidth="752.0" style="-fx-background-color: #ffff;">

@@ -1,7 +1,7 @@
 package org.presentation;
 
 import animatefx.animation.ZoomIn;
-import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,24 +9,21 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import java.util.Objects;
 
-public class adminController {
+public class guestController {
 
+    @FXML
+    private Button btnLogin;
 
-
-    //Loading the add/del/edit scenes when button pressed
-    public void loadAddMemberUI(MouseEvent mouseEvent) {
-        //loadWindow("addAcc.fxml", "Add New Acc");
+    @FXML
+    private void goLoginPage (MouseEvent event) {
+        if(event.getSource() == btnLogin) {
+            closeStage();
+            loadWindow("login.fxml","Login");
+        }
     }
-    public void loadDeleteMemberUI(MouseEvent mouseEvent) {
 
-    }
-    public void loadEditMemberUI(ActionEvent actionEvent) {
-    }
-
-    //Method used to load new windows (here functions; add,del,edit windows)
     void loadWindow(String path, String title)
     {
         try {
@@ -39,5 +36,8 @@ public class adminController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public void closeStage() {
+        ((Stage) btnLogin.getScene().getWindow()).close();
     }
 }

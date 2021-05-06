@@ -18,10 +18,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
-
-public class LoginController {
+public class loginController {
 
 
     @FXML
@@ -35,13 +32,14 @@ public class LoginController {
     @FXML
     private Button btnSignUp;
     @FXML
-    private Pane pgSignUp;
+    public Pane pgSignUp;
     @FXML
     private Pane pgSignIn;
     @FXML
     private Button btnGoGuest;
     @FXML
     private Label txtInvalid;
+    @FXML
     private ImageView imgBack;
 
     //Takes you from front login to sign up page (Don't have an account yet? Sign up)
