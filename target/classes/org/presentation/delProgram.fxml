@@ -23,7 +23,7 @@
                </font></JFXButton>
          </children>
       </HBox>
-      <Text layoutX="121.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Specify the ID for your program" wrappingWidth="257.13671875">
+      <Text layoutX="138.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Specify the ID for your program" wrappingWidth="257.13671875">
          <font>
             <Font size="16.0" />
          </font>
