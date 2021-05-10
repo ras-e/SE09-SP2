@@ -41,6 +41,12 @@ public class loginController {
     private Label txtInvalid;
     @FXML
     private ImageView imgBack;
+    @FXML
+    private TextField passSignUp;
+    @FXML
+    private TextField emailSignUp;
+    @FXML
+    private TextField nameSignUp;
 
     //Takes you from front login to sign up page (Don't have an account yet? Sign up)
     @FXML
@@ -66,6 +72,13 @@ public class loginController {
             closeStage();
             loadMain();
         }
+    }
+    @FXML
+    private void handleRegister(ActionEvent event){
+        String email = emailSignUp.getText();
+        String password = passSignUp.getText();
+        String name = nameSignUp.getText();
+        domain.users.AccountManager.createAccount(email, password, name);
     }
 
     @FXML
