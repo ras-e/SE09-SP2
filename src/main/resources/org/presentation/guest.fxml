@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.GuestController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.GuestControllerAoe">
    <Button fx:id="creditButton" layoutX="463.0" layoutY="231.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" text="Tryk for mere" />
    <TextField fx:id="searchTextField" layoutX="227.0" layoutY="142.0" onKeyTyped="#searchViewFilter" prefHeight="25.0" prefWidth="215.0" promptText="Person, program eller producent" />
    <Button fx:id="searchButton" layoutX="462.0" layoutY="142.0" mnemonicParsing="false" text="Søg" />

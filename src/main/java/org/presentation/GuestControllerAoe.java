@@ -15,7 +15,7 @@ import javafx.scene.input.MouseEvent;
 import static domain.sysController.*;
 
 
-public class GuestController {
+public class GuestControllerAoe {
     @FXML
     public RadioButton programButton;
     @FXML
