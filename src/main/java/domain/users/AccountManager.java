@@ -23,4 +23,7 @@ public class AccountManager {
         User user = new User(email, firstName, lastName);
 
     }
+    public static void checkLogin(String email, String password){
+        
+    }
 }

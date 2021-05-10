@@ -86,18 +86,20 @@ public class loginController {
         String email = tfEmail.getText();
         String password = tfPass.getText();
 
-        if (email.equals("demo") && password.equals("demo")) {
+        /*if (email.equals("demo") && password.equals("demo")) {
             closeStage();
             loadMain();
         }
         if (email.equals("producer") && password.equals("producer")) {
             closeStage();
             loadProducer();
-        }
+        }*/
         if(email.isEmpty() || password.isEmpty()) {
             txtInvalid.setText("One or more text fields are empty. Try again!");
             txtInvalid.setStyle("-fx-background-color:#d32f2f;-fx-text-fill: white");
-            }
+            }else{
+            //call login method in domain.users.AccountManager.checkLogin
+        }
     }
         /*
         if (event.getSource() == btnSignIn){
