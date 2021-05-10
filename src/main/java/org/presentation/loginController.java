@@ -1,5 +1,6 @@
 package org.presentation;
 
+import animatefx.animation.ZoomIn;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -16,53 +18,45 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+public class loginController {
 
-public class LoginController {
-
 
     @FXML
-    public AnchorPane layersignup;
+    private AnchorPane layersignup;
     @FXML
-    public TextField tfEmail;
+    private TextField tfEmail;
     @FXML
-    public TextField tfPass;
+    private TextField tfPass;
     @FXML
-    public Button btnSignIn;
+    private Button btnSignIn;
     @FXML
-    public Button btnSignUp;
+    private Button btnSignUp;
     @FXML
     public Pane pgSignUp;
     @FXML
-    public Pane pgSignIn;
+    private Pane pgSignIn;
     @FXML
-    public Button btnBack;
+    private Button btnGoGuest;
     @FXML
-    public RadioButton bntExit;
+    private Label txtInvalid;
     @FXML
-    public Button btnGoGuest;
-    @FXML
-    public Label txtInvalid;
-    @FXML
-    public TextField emailSignUp;
-    @FXML
-    public TextField passSignUp;
-    @FXML
-    public TextField nameSignUp;
+    private ImageView imgBack;
 
     //Takes you from front login to sign up page (Don't have an account yet? Sign up)
     @FXML
     private void handleButtonAction (ActionEvent event) {
         if (event.getSource().equals(btnSignUp)) {
+            new ZoomIn(pgSignUp).play();
             pgSignUp.toFront();
         }
     }
+
     //Movement on login screen + Guest -> Main Menu
     @FXML
     private void handleMouseEvent (MouseEvent event) {
-        if (event.getSource() == bntExit) {
-            System.exit(0); }
-        if (event.getSource().equals(btnBack))
-        { pgSignIn.toFront(); }
+        if (event.getSource().equals(imgBack)) {
+            new ZoomIn(pgSignIn).play();
+            pgSignIn.toFront(); }
 
     }
     // Guest -> Main Menu
@@ -72,14 +66,6 @@ public class LoginController {
             closeStage();
             loadMain();
         }
-    }
-
-    @FXML
-    private void handleRegister(ActionEvent event){
-        String email = emailSignUp.getText();
-        String password = passSignUp.getText();
-        String name = nameSignUp.getText();
-        domain.users.AccountManager.createAccount(email, password, name);
     }
 
     @FXML
@@ -133,7 +119,7 @@ public class LoginController {
         }
     }
 
-    private void closeStage() {
+    public void closeStage() {
         ((Stage) btnSignIn.getScene().getWindow()).close();
     }
 }
