@@ -6,7 +6,6 @@ import domain.Program.mvPerson;
 import domain.user.Account;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
 
 import java.util.ArrayList;
 
@@ -19,10 +18,6 @@ public class sysController {
    public static ObservableList<mvPerson> oPersonList = FXCollections.observableArrayList();
    public static ObservableList<Program> oProgramList = FXCollections.observableArrayList();
    public static ObservableList<Credits> oCreditList =FXCollections.observableArrayList();
-
-
-
-
 
     public static ArrayList<mvPerson> getmvPersons(){
         return mvPersons;
@@ -37,9 +32,5 @@ public class sysController {
 
         return person;
     }
-
-
-
-    //lav funktion der viser objecter i
 
 }

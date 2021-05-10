@@ -36,23 +36,22 @@ public class GuestController {
             createmvPerson("Jens"+i,"jensen");
             oCreditList.add(new Credits());
 
-            FilteredList<mvPerson> fPersonList = new FilteredList<>(FXCollections.observableArrayList(oPersonList));
 
-
-            fPersonList.setPredicate(p ->{
-                return true;
-            });
-
-            searchView.setItems(fPersonList);
 
         }
+        //Search filter work in progress
+        FilteredList<mvPerson> fPersonList = new FilteredList<>(FXCollections.observableArrayList(oPersonList));
+        fPersonList.setPredicate(p ->{
+            return true;
+        });
+        searchView.setItems(fPersonList);
     }
 
 
 
     public void PPKselect(MouseEvent event){
         if(event.getSource().equals(personButton)){
-            //searchView.setItems(oPersonList);
+            searchView.setItems(oPersonList);
         } else if (event.getSource().equals(programButton)) {
             searchView.setItems(oProgramList);
         } else if (event.getSource().equals(kreditButton)){
