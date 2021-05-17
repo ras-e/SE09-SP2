@@ -2,9 +2,6 @@ package org.presentation;
 
 import domain.Program.Credits;
 import domain.Program.Program;
-import domain.Program.mvPerson;
-import javafx.collections.FXCollections;
-import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
@@ -36,15 +33,13 @@ public class GuestControllerAoe {
             createmvPerson("Jens"+i,"jensen");
             oCreditList.add(new Credits());
 
-
-
         }
-        //Search filter work in progress
-        FilteredList<mvPerson> fPersonList = new FilteredList<>(FXCollections.observableArrayList(oPersonList));
-        fPersonList.setPredicate(p ->{
-            return true;
-        });
-        searchView.setItems(fPersonList);
+//        Search filter work in progress
+//        FilteredList<mvPerson> fPersonList = new FilteredList<>(FXCollections.observableArrayList(oPersonList));
+//        fPersonList.setPredicate(p ->{
+//            return true;
+//        });
+//        searchView.setItems(fPersonList);
     }
 
 

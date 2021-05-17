@@ -13,7 +13,7 @@ import static domain.sysController.createmvPerson;
 import static domain.sysController.getmvPersons;
 
 
-public class producerControllerOld {
+public class ProducerControllerOld {
 
     @FXML
     public Button add;

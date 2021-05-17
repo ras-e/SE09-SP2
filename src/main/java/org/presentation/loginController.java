@@ -16,8 +16,10 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
-public class LoginController {
+public class loginController {
 
 
     @FXML
@@ -96,7 +98,7 @@ public class LoginController {
 
     private void loadProducer() {
         try {
-            Parent parent = FXMLLoader.load(getClass().getResource("producerOld.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("producer.fxml"));
             Stage stage = new Stage(StageStyle.DECORATED);
             stage.setTitle("Producer Panel");
             stage.setScene(new Scene(parent));
