@@ -1,5 +1,7 @@
 package Facade;
 
+import domain.Program.mvPerson;
+
 import java.io.*;
 import java.util.List;
 import java.util.Scanner;
@@ -7,6 +9,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ioFacade implements Serializable {
+
+    public static void hello123 (){
+        System.out.println("hello");
+    }
 
     // metoderne skal bruges i javafx-controller klasser
 
@@ -34,22 +40,22 @@ public class ioFacade implements Serializable {
     }
 
 
-//    skrivning af objekter til binærfil
-//    public void writeobjecttofile(Credits credits, String filename) {
-//        try {
-//
-//            FileOutputStream fileOut = new FileOutputStream(filename, true);
-//            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
-//            objectOut.writeObject(credits);
-//            objectOut.close();
-//            System.out.println("The Object  was succesfully written to a file:DD");
-//
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
-//    }
+   // skrivning af objekter til binærfil
+    public static void writeObjectToFiles(mvPerson person, String filename) {
+        try {
 
-    public void writetotextfile(String credit, String filename) {
+            FileOutputStream fileOut = new FileOutputStream(filename, true);
+            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+            objectOut.writeObject(person);
+            objectOut.close();
+            System.out.println("The Object  was succesfully written to a file:DD");
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static void writetotextfile(String credit, String filename) {
 
 //         input fra keyboard
         Scanner in = new Scanner(System.in);

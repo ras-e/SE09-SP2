@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.delProgramController">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.DelProgramController">
    <children>
       <TextField fx:id="email" alignment="CENTER" layoutX="158.0" layoutY="136.0" prefHeight="31.0" prefWidth="184.0" promptText="Enter Program ID">
          <font>

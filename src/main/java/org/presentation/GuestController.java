@@ -1,6 +1,5 @@
 package org.presentation;
 
-import animatefx.animation.ZoomIn;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,9 +8,10 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
 import java.util.Objects;
 
-public class guestController {
+public class GuestController {
 
     @FXML
     private Button btnLogin;
