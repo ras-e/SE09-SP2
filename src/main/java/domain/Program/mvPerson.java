@@ -1,13 +1,16 @@
 package domain.Program;
 
-public class mvPerson {
+import java.io.Serializable;
+
+public class mvPerson implements Serializable {
 
     String Fname;
     String Lname;
     int mvPersonID;
 
-    public mvPerson(String Fname){
-        this.Fname = Fname;
+    public mvPerson(String fName, String lName){
+        this.Fname = fName;
+        this.Lname = lName;
     }
 
     public mvPerson(String fname, String Lname, int mvPersonID) {
@@ -29,7 +32,7 @@ public class mvPerson {
     }
 
     public String toString(){
-        return "FName: "+this.Fname;
+        return "First name: "+this.Fname +" Last name: "+this.Lname;
     }
 }
 
