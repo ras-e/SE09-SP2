@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.GuestControllerAoe">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.GuestController">
    <Button fx:id="creditButton" layoutX="463.0" layoutY="231.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" text="Tryk for mere" />
    <TextField fx:id="searchTextField" layoutX="227.0" layoutY="142.0" onKeyTyped="#searchViewFilter" prefHeight="25.0" prefWidth="215.0" promptText="Person, program eller producent" />
    <Button fx:id="searchButton" layoutX="462.0" layoutY="142.0" mnemonicParsing="false" text="Søg" />
@@ -20,8 +21,12 @@
          <Font size="20.0" />
       </font>
    </Label>
- <Button layoutX="639.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="91.0" text="Tilmeld dig" />
-   <Button layoutX="538.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="91.0" text="Login" />
+   <Button fx:id="btnLogin" layoutX="587.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#goLoginPage" prefHeight="30.0" prefWidth="116.0" text="Login / Tilmeld dig" />
    <ListView fx:id="searchView" layoutX="227.0" layoutY="231.0" prefHeight="255.0" prefWidth="215.0" />
-   <Button layoutX="55.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="133.0" text="Favorit Programmer" />
+   <Button layoutX="433.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="133.0" text="Favorit Programmer" />
+   <ImageView fitHeight="56.0" fitWidth="110.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../images/tv2_logo.png" />
+      </image>
+   </ImageView>
 </AnchorPane>
