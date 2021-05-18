@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.guestController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.GuestController">
    <Button fx:id="creditButton" layoutX="463.0" layoutY="231.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="182.0" text="Tryk for mere" />
-   <TextField fx:id="searchTextField" layoutX="227.0" layoutY="142.0" prefHeight="25.0" prefWidth="215.0" promptText="Person, program eller producent" />
+   <TextField fx:id="searchTextField" layoutX="227.0" layoutY="142.0" onKeyTyped="#searchViewFilter" prefHeight="25.0" prefWidth="215.0" promptText="Person, program eller producent" />
    <Button fx:id="searchButton" layoutX="462.0" layoutY="142.0" mnemonicParsing="false" text="Søg" />
-   <JFXRadioButton fx:id="personButton" layoutX="305.0" layoutY="113.0" mnemonicParsing="false" text="Person">
+   <RadioButton fx:id="personButton" layoutX="305.0" layoutY="113.0" mnemonicParsing="false" onMousePressed="#PPKselect" text="Person">
       <toggleGroup>
          <ToggleGroup fx:id="searchGroup" />
-      </toggleGroup></JFXRadioButton>
-   <JFXRadioButton fx:id="programButton" layoutX="210.0" layoutY="113.0" mnemonicParsing="false" selected="true" text="Program" toggleGroup="$searchGroup" />
-   <JFXRadioButton fx:id="producentButton" layoutX="386.0" layoutY="113.0" mnemonicParsing="false" text="Kreditering" toggleGroup="$searchGroup" />
+      </toggleGroup></RadioButton>
+   <RadioButton fx:id="programButton" layoutX="210.0" layoutY="113.0" mnemonicParsing="false" onMousePressed="#PPKselect" selected="true" text="Program" toggleGroup="$searchGroup" />
+   <RadioButton fx:id="kreditButton" layoutX="386.0" layoutY="113.0" mnemonicParsing="false" onMouseClicked="#PPKselect" onMousePressed="#PPKselect" text="Kreditering" toggleGroup="$searchGroup" />
 
    <Label layoutX="227.0" layoutY="193.0" text="Søgeresultater:">
       <font>
          <Font size="20.0" />
       </font>
    </Label>
-   <Button fx:id="btnLogin" layoutX="600.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#goLoginPage" prefHeight="30.0" prefWidth="122.0" text="Login / Sign Up" />
-   <ListView fx:id="creditView" layoutX="227.0" layoutY="231.0" prefHeight="255.0" prefWidth="215.0" />
-   <Button layoutX="55.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="133.0" text="Favorit Programmer" />
+   <Button fx:id="btnLogin" layoutX="587.0" layoutY="33.0" mnemonicParsing="false" onMouseClicked="#goLoginPage" prefHeight="30.0" prefWidth="116.0" text="Login / Tilmeld dig" />
+   <ListView fx:id="searchView" layoutX="227.0" layoutY="231.0" prefHeight="255.0" prefWidth="215.0" />
+   <Button layoutX="433.0" layoutY="33.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="133.0" text="Favorit Programmer" />
+   <ImageView fitHeight="56.0" fitWidth="110.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../images/tv2_logo.png" />
+      </image>
+   </ImageView>
 </AnchorPane>

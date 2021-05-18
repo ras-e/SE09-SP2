@@ -1,6 +1,5 @@
 package org.presentation;
 
-import animatefx.animation.ZoomIn;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -18,27 +16,32 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+
 public class loginController {
 
 
     @FXML
-    private AnchorPane layersignup;
+    public AnchorPane layersignup;
     @FXML
-    private TextField tfEmail;
+    public TextField tfEmail;
     @FXML
-    private TextField tfPass;
+    public TextField tfPass;
     @FXML
-    private Button btnSignIn;
+    public Button btnSignIn;
     @FXML
-    private Button btnSignUp;
+    public Button btnSignUp;
     @FXML
     public Pane pgSignUp;
     @FXML
-    private Pane pgSignIn;
+    public Pane pgSignIn;
     @FXML
-    private Button btnGoGuest;
+    public Button btnBack;
     @FXML
-    private Label txtInvalid;
+    public RadioButton bntExit;
+    @FXML
+    public Button btnGoGuest;
     @FXML
     private ImageView imgBack;
     @FXML
@@ -47,22 +50,24 @@ public class loginController {
     private TextField emailSignUp;
     @FXML
     private TextField nameSignUp;
+    @FXML
+    public Label txtInvalid;
+
 
     //Takes you from front login to sign up page (Don't have an account yet? Sign up)
     @FXML
     private void handleButtonAction (ActionEvent event) {
         if (event.getSource().equals(btnSignUp)) {
-            new ZoomIn(pgSignUp).play();
             pgSignUp.toFront();
         }
     }
-
     //Movement on login screen + Guest -> Main Menu
     @FXML
     private void handleMouseEvent (MouseEvent event) {
-        if (event.getSource().equals(imgBack)) {
-            new ZoomIn(pgSignIn).play();
-            pgSignIn.toFront(); }
+        if (event.getSource() == bntExit) {
+            System.exit(0); }
+        if (event.getSource().equals(btnBack))
+        { pgSignIn.toFront(); }
 
     }
     // Guest -> Main Menu
@@ -134,7 +139,7 @@ public class loginController {
         }
     }
 
-    public void closeStage() {
+    private void closeStage() {
         ((Stage) btnSignIn.getScene().getWindow()).close();
     }
 }
