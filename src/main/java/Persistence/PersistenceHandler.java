@@ -26,6 +26,7 @@ public class PersistenceHandler {
             }
             return instance;
         }
+
         private void initializePostgresqlDatabase() {
             try {
                 DriverManager.registerDriver(new org.postgresql.Driver());
@@ -38,36 +39,41 @@ public class PersistenceHandler {
         }
 
 
-       // Account
+       // check for specified user Object
 
         public User getLoginUserObj(String username, String password) {
             try {
                 PreparedStatement stmt = connection.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
                 stmt.setString(1, username);
                 stmt.setString(2, password);
-//                stmt.setInt(3, type);
-
-
+// Useless (Already specified in DB)                stmt.setInt(3, type);
 
                 ResultSet sqlReturnValues = stmt.executeQuery();
                 if (!sqlReturnValues.next()){
                     return null;
                 }
+                return new User(
+                        sqlReturnValues.getInt(1),
+                        sqlReturnValues.getString(2),
+                        sqlReturnValues.getString(3),
+                        sqlReturnValues.getString(4),
+                        sqlReturnValues.getString(5),
+                        sqlReturnValues.getString(6),
+                        sqlReturnValues.getInt(7));
 
-
-                return new User(sqlReturnValues.getInt(1), sqlReturnValues.getString(2), sqlReturnValues.getString(3), sqlReturnValues.getString(4), sqlReturnValues.getString(5), sqlReturnValues.getString(6), sqlReturnValues.getInt(7));
             } catch (SQLException ex) {
                 ex.printStackTrace();
                 return null;
             }
         }
 
- /*   public User addUser(String username, String password) {
+ /*
+ public User addUser(String username, String password) {
         try {
             PreparedStatement stmt = connection.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ? AND type ");
             stmt.setString(1, username);
             stmt.setString(2, password);
-//                stmt.setInt(3, type);
+//Useless          stmt.setInt(3, type);
             ResultSet sqlReturnValues = stmt.executeQuery();
             if (!sqlReturnValues.next()){
                 return null;
@@ -77,7 +83,8 @@ public class PersistenceHandler {
             ex.printStackTrace();
             return null;
         }
-    }*/
+    }
+    */
 
     //Producer
 
@@ -92,11 +99,8 @@ public class PersistenceHandler {
             insertStatement.setString(3, user.getPassword());
             insertStatement.setString(4, user.getEmail());
             insertStatement.setString(5, user.getDate());
-
             //insertStatement.setInt(4, user.getType());
-
-
-//            insertStatement.setInt(7, user.getId());
+            //insertStatement.setInt(7, user.getId());
 
             insertStatement.execute();
 

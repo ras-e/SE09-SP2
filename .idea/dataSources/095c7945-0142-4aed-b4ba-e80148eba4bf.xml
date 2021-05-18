@@ -807,7 +807,7 @@ false Zulu
 13158||-9223372036854775808|U|G
 13158||10|U|G</Grants>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>973</IntrospectionStateNumber>
+      <IntrospectionStateNumber>988</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|41082|41079|1
 sequence|table|41090|41084|1
@@ -891,7 +891,7 @@ sequence|table|41249|41219|1
       <Comment>standard public schema</Comment>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>974</IntrospectionStateNumber>
+      <IntrospectionStateNumber>989</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="19" parent="2" name="plpgsql">
@@ -1093,7 +1093,7 @@ sequence|table|41249|41219|1
     <table id="49" parent="18" name="users">
       <ObjectId>41219</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>953</StateNumber>
+      <StateNumber>987</StateNumber>
     </table>
     <column id="50" parent="40" name="id">
       <Position>1</Position>
@@ -1532,10 +1532,11 @@ sequence|table|41249|41219|1
     </column>
     <column id="104" parent="49" name="dato">
       <Position>6</Position>
-      <DataType>date|0s</DataType>
+      <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>953</StateNumber>
-      <TypeId>1082</TypeId>
+      <StateNumber>987</StateNumber>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <TypeId>1184</TypeId>
     </column>
     <column id="105" parent="49" name="account_type">
       <Position>7</Position>
@@ -1547,7 +1548,7 @@ sequence|table|41249|41219|1
     </column>
     <index id="106" parent="49" name="users_pkey">
       <ObjectId>41225</ObjectId>
-      <StateNumber>953</StateNumber>
+      <StateNumber>987</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
