@@ -24,6 +24,6 @@ public class AccountManager {
 
     }
     public static void checkLogin(String email, String password){
-
+        System.out.println(email + " " +password);
     }
 }

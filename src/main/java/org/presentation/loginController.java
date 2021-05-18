@@ -5,10 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -27,7 +24,7 @@ public class loginController {
     @FXML
     public TextField tfEmail;
     @FXML
-    public TextField tfPass;
+    public PasswordField tfPass;
     @FXML
     public Button btnSignIn;
     @FXML
@@ -43,9 +40,7 @@ public class loginController {
     @FXML
     public Button btnGoGuest;
     @FXML
-    private ImageView imgBack;
-    @FXML
-    private TextField passSignUp;
+    private PasswordField passSignUp;
     @FXML
     private TextField emailSignUp;
     @FXML
@@ -100,10 +95,11 @@ public class loginController {
             loadProducer();
         }*/
         if(email.isEmpty() || password.isEmpty()) {
+
             txtInvalid.setText("One or more text fields are empty. Try again!");
             txtInvalid.setStyle("-fx-background-color:#d32f2f;-fx-text-fill: white");
             }else{
-            //call login method in domain.users.AccountManager.checkLogin
+            domain.users.AccountManager.checkLogin(email, password);
         }
     }
         /*
