@@ -1,9 +1,11 @@
 package org.presentation;
 
 
+import domain.Facade.ProducerFacade;
 import domain.Program.Program;
 import domain.Program.mvPerson;
 import domain.Program.tvProdRolle;
+import domain.user.Producer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
@@ -33,11 +35,25 @@ public class producerController {
     public ObservableMap<mvPerson, tvProdRolle> creditList;
     @FXML
     public ObservableList<String> creditString = FXCollections.observableArrayList("option 1");
+    @FXML
+    public TextField tfusername;
+    @FXML
+    public TextField tfname;
+    @FXML
+    public TextField tfemail;
+    @FXML
+    public TextField tfid;
+    @FXML
+    public TextField tftype;
+    @FXML
+    public TextField tfpassword;
+    @FXML
+    public TextField tfbusiness;
 
     @FXML
-    private void initialize(){
+    private void initialize() {
 
-       addCreditDropdown.setItems(creditString);
+        addCreditDropdown.setItems(creditString);
     }
 
     public void handleMouseAction(MouseEvent mouseEvent) {
@@ -45,13 +61,11 @@ public class producerController {
         boolean personSelected = personButton.isSelected();
         boolean krediteringSelected = kredditeringButton.isSelected();
 
-        if (mouseEvent.getSource() == add ) {
+        if (mouseEvent.getSource() == add) {
             if (personSelected) {
 
                 mvPerson person = new mvPerson(searchTextField.getCharacters().toString());
                 System.out.println(person.toString());
-
-
 
 
             } else if (programSelected) {
@@ -60,20 +74,35 @@ public class producerController {
                 System.out.println(program.toString());
 
 
-
             } else if (krediteringSelected) {
-                    //brug andet setup
+                //brug andet setup
             }
 
             //System.out.println(searchTextField.getCharacters());
-                //if no program type is seleceted throw error
+            //if no program type is seleceted throw error
             //check hvilken case der er valgt -> læs tekst i felt -> gem tekst til appropiate sted
         }
     }
-    @FXML
-    public void handleCreditAdd(MouseEvent event){
-        System.out.println();
+
+        @FXML
+        private void createProducer (MouseEvent event){
+            String id = tfid.getText();
+            int type = tftype.getText();
+            String username = tfusername.getText();
+            String name = tfname.getText();
+            String password = tfpassword.getText();
+            String email = tfemail.getText();
+            String business = tfbusiness.getText();
+
+            Producer producer = new Producer(id, type, username, name, password, email, business)
+            ProducerFacade.addedProd()
+//            @FXML
+//            public void handleCreditAdd (MouseEvent event){
+//                System.out.println();
+//            }
+
+
+        }
     }
 
-
-}
+//}

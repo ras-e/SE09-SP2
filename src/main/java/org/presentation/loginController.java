@@ -1,8 +1,8 @@
 package org.presentation;
 
 import animatefx.animation.ZoomIn;
-import domain.Facade.AccountFacade;
-import domain.user.Account;
+import domain.Facade.LoginFacade;
+import domain.user.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +10,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -18,9 +17,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import domain.Facade.AccountFacade;
+
 import java.io.IOException;
-import java.security.AccessControlContext;
 
 public class loginController {
 
@@ -78,7 +76,7 @@ public class loginController {
         String password = tfPass.getText();
 
 
-        Account loggedIn = AccountFacade.login(username, password);
+        User loggedIn = LoginFacade.login(username, password);
         if (loggedIn == null) {
             System.out.println("FAILURE");
         }

@@ -1,11 +1,9 @@
 package Persistence;
 
-import domain.user.Account;
+import domain.user.User;
 import domain.user.Producer;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class PersistenceHandler {
 
@@ -39,42 +37,12 @@ public class PersistenceHandler {
             }
         }
 
-//        @Override
-//        public List<Producer> getproducers() {
-//            try {
-//                PreparedStatement stmt = connection.prepareStatement("SELECT * FROM employees");
-//                ResultSet sqlReturnValues = stmt.executeQuery();
-//                int rowcount = 0;
-//                List<Producer> returnValue = new ArrayList<>();
-//                while (sqlReturnValues.next()){
-//                    returnValue.add(new Producer(sqlReturnValues.getInt(1), sqlReturnValues.getString(2), sqlReturnValues.getInt(3), sqlReturnValues.getInt(4), sqlReturnValues.getInt(5), sqlReturnValues.getInt(6)));
-//                }
-//                return returnValue;
-//            } catch (SQLException ex) {
-//                ex.printStackTrace();
-//                return null;
-//            }
-//        }
 
+       // Account
 
-//        public Producer getAccount(int id) {
-//            try {
-//                PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Account WHERE id = ?");
-//                stmt.setInt(1, id);
-//                ResultSet sqlReturnValues = stmt.executeQuery();
-//                if (!sqlReturnValues.next()){
-//                    return null;
-//                }
-//                return new Producer(sqlReturnValues.getInt(1), sqlReturnValues.getString(2), sqlReturnValues.getInt(3), sqlReturnValues.getInt(4), sqlReturnValues.getInt(5), sqlReturnValues.getInt(6));
-//            } catch (SQLException ex) {
-//                ex.printStackTrace();
-//                return null;
-//            }
-//        }
-
-        public Account getAccountobj(String username, String password) {
+        public User getLoginUserObj(String username, String password) {
             try {
-                PreparedStatement stmt = connection.prepareStatement("SELECT * FROM account WHERE username = ? AND password = ?");
+                PreparedStatement stmt = connection.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ? AND type ");
                 stmt.setString(1, username);
                 stmt.setString(2, password);
 //                stmt.setInt(3, type);
@@ -82,47 +50,83 @@ public class PersistenceHandler {
                 if (!sqlReturnValues.next()){
                     return null;
                 }
-                return new Account(sqlReturnValues.getInt(1), sqlReturnValues.getString(2), sqlReturnValues.getString(3), sqlReturnValues.getString(4), sqlReturnValues.getString(5), sqlReturnValues.getString(6), sqlReturnValues.getInt(7));
+                return new User(sqlReturnValues.getInt(1), sqlReturnValues.getString(2), sqlReturnValues.getString(3), sqlReturnValues.getString(4), sqlReturnValues.getString(5), sqlReturnValues.getString(6), sqlReturnValues.getInt(7));
             } catch (SQLException ex) {
                 ex.printStackTrace();
                 return null;
             }
         }
 
-
-//        @Override
-//        public boolean createProducer(Producer producer) {
-//
-//            try {
-//                PreparedStatement insertStatement = connection.prepareStatement(
-//                        "INSERT INTO producer (name, cpr) VALUES (?,?)");
-//                insertStatement.setString(1, "jennerboy"); //"INSERT INTO users (name, cpr) VALUES ("jennerboy", ?)" indsætter stringen under 1 spørgsmålstegn
-//                //Husk set.String
-//                insertStatement.setString(2,"1234567890");
-//                insertStatement.execute();
-//            } catch (SQLException throwables) {
-//                throwables.printStackTrace();
-//            }
-//        }
-
-    public void addProducer(String Fname, String Lname, int id, String business, String email) {
+    public User addUser(String username, String password) {
         try {
-            PreparedStatement insertStatement = connection.prepareStatement(
-                    "INSERT INTO user (name, cpr) VALUES (?,?,?,?,?)");
-            insertStatement.setString(1, Fname); //"INSERT INTO users (name, cpr) VALUES ("jennerboy", ?)" indsætter stringen under 1 spørgsmålstegn
-            insertStatement.setString(2, Lname);
-            insertStatement.setInt(3, id);
-            insertStatement.setString(4,business);
-            insertStatement.setString(5,email);
-            insertStatement.execute();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ? AND type ");
+            stmt.setString(1, username);
+            stmt.setString(2, password);
+//                stmt.setInt(3, type);
+            ResultSet sqlReturnValues = stmt.executeQuery();
+            if (!sqlReturnValues.next()){
+                return null;
+            }
+            return new User(sqlReturnValues.getInt(1), sqlReturnValues.getString(2), sqlReturnValues.getString(3), sqlReturnValues.getString(4), sqlReturnValues.getString(5), sqlReturnValues.getString(6), sqlReturnValues.getInt(7));
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return null;
         }
     }
 
+    //Producer
 
+    public User addUser(User user) {
+            int account_type = 1;
+        try {
+            PreparedStatement insertStatement = connection.prepareStatement(
+                    "INSERT INTO users(email, password, name, account_type) VALUES (?,?,?,?)");
+            insertStatement.setInt(1, user.getId()); //"INSERT INTO users (name, cpr) VALUES ("jennerboy", ?)" indsætter stringen under 1 spørgsmålstegn
+            insertStatement.setString(2, user.getEmail());
+            insertStatement.setString(3, user.getPassword());
+            insertStatement.setString(4, user.getName());
+            insertStatement.setInt(4, user.getType());
+
+
+//            insertStatement.setInt(7, user.getId());
+
+            insertStatement.execute();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
+
+
+    public boolean addProducer(Producer producer) {
+        try {
+            PreparedStatement insertStatement = connection.prepareStatement(
+                    "INSERT producers user (name, cpr) VALUES (?,?,?,?,?)");
+            insertStatement.setInt(1, producer.getId()); //"INSERT INTO users (name, cpr) VALUES ("jennerboy", ?)" indsætter stringen under 1 spørgsmålstegn
+            insertStatement.setString(2, producer.getName());
+            insertStatement.setString(3, producer.getUsername());
+            insertStatement.setString(4, producer.getPassword());
+            insertStatement.setString(5, producer.getEmail());
+            insertStatement.setString(6, producer.getBusiness());
+            insertStatement.setInt(7, producer.getId());
+
+            insertStatement.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+        }
+
+    //credits
+
+
+
+}
+
+
+
 
 
 

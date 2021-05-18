@@ -1,6 +1,6 @@
 package domain.user;
 
-public class Account {
+public class User {
         int id;
         String name;
         String username;
@@ -10,7 +10,7 @@ public class Account {
         int type;
 
 
-        public Account(int id, String name, String username, String password, String email, String business, int type) {
+        public User(int id, String name, String username, String password, String email, String business, int type) {
                 this.id = id;
                 this.name = name;
                 this.username = username;

@@ -53,14 +53,14 @@ false Africa/Blantyre
 false Africa/Brazzaville
 false Africa/Bujumbura
 false Africa/Cairo
-true Africa/Casablanca
+false Africa/Casablanca
 true Africa/Ceuta
 false Africa/Conakry
 false Africa/Dakar
 false Africa/Dar_es_Salaam
 false Africa/Djibouti
 false Africa/Douala
-true Africa/El_Aaiun
+false Africa/El_Aaiun
 false Africa/Freetown
 false Africa/Gaborone
 false Africa/Harare
@@ -792,7 +792,7 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1620082308</StartupTime>
+      <StartupTime>1621285187</StartupTime>
     </root>
     <database id="2" parent="1" name="DB_Projekt">
       <ObjectId>49479</ObjectId>
@@ -807,9 +807,17 @@ false Zulu
 13158||-9223372036854775808|U|G
 13158||10|U|G</Grants>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>643</IntrospectionStateNumber>
+      <IntrospectionStateNumber>900</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|49486|49488|1
+      <Relations>sequence|table|74152|74154|1
+sequence|table|74192|74194|1
+sequence|table|74200|74202|1
+sequence|table|74219|74221|1
+sequence|table|74241|74243|1
+sequence|table|74275|74277|1
+sequence|table|74312|74314|1
+sequence|table|74350|74352|1
+sequence|table|74368|74370|1
 </Relations>
     </database>
     <database id="3" parent="1" name="DB_test">
@@ -901,7 +909,7 @@ false Zulu
       <Comment>standard public schema</Comment>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>644</IntrospectionStateNumber>
+      <IntrospectionStateNumber>901</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="21" parent="2" name="plpgsql">
@@ -1001,60 +1009,595 @@ false Zulu
       <HandlerId>335</HandlerId>
       <Type>index</Type>
     </access-method>
-    <sequence id="33" parent="20" name="account_id_seq">
-      <ObjectId>49486</ObjectId>
+    <sequence id="33" parent="20" name="account_types_id_seq">
+      <ObjectId>74192</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>637</StateNumber>
+      <StateNumber>872</StateNumber>
       <DataType>integer|0s</DataType>
     </sequence>
-    <table id="34" parent="20" name="account">
-      <ObjectId>49488</ObjectId>
+    <sequence id="34" parent="20" name="business_id_seq">
+      <ObjectId>74152</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>637</StateNumber>
+      <StateNumber>868</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="35" parent="20" name="kredittering_id_seq">
+      <ObjectId>74312</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>888</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="36" parent="20" name="medvirkende_id_seq">
+      <ObjectId>74241</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>877</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="37" parent="20" name="producers_id_seq">
+      <ObjectId>74350</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>892</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="38" parent="20" name="program_kategori_id_seq">
+      <ObjectId>74219</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>875</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="39" parent="20" name="programz_id_seq">
+      <ObjectId>74200</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>873</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="40" parent="20" name="reg_prod_id_seq">
+      <ObjectId>74368</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>893</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <sequence id="41" parent="20" name="users_id_seq">
+      <ObjectId>74275</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>881</StateNumber>
+      <DataType>integer|0s</DataType>
+    </sequence>
+    <table id="42" parent="20" name="account_types">
+      <ObjectId>74194</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>881</StateNumber>
     </table>
-    <column id="35" parent="34" name="id">
+    <table id="43" parent="20" name="business">
+      <ObjectId>74154</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>893</StateNumber>
+    </table>
+    <table id="44" parent="20" name="kredittering">
+      <ObjectId>74314</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>888</StateNumber>
+    </table>
+    <table id="45" parent="20" name="medvirkende">
+      <ObjectId>74243</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>888</StateNumber>
+    </table>
+    <table id="46" parent="20" name="producers">
+      <ObjectId>74352</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>892</StateNumber>
+    </table>
+    <table id="47" parent="20" name="program_kategori">
+      <ObjectId>74221</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>886</StateNumber>
+    </table>
+    <table id="48" parent="20" name="programkategorier">
+      <ObjectId>74292</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>886</StateNumber>
+    </table>
+    <table id="49" parent="20" name="programz">
+      <ObjectId>74202</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>886</StateNumber>
+    </table>
+    <table id="50" parent="20" name="reg_prod">
+      <ObjectId>74370</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>893</StateNumber>
+    </table>
+    <table id="51" parent="20" name="users">
+      <ObjectId>74277</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>881</StateNumber>
+    </table>
+    <column id="52" parent="42" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>637</StateNumber>
-      <DefaultExpression>nextval(&apos;account_id_seq&apos;::regclass)</DefaultExpression>
+      <StateNumber>872</StateNumber>
+      <DefaultExpression>nextval(&apos;account_types_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="36" parent="34" name="name">
+    <column id="53" parent="42" name="account_type">
       <Position>2</Position>
-      <DataType>varchar(75)|0s</DataType>
-      <StateNumber>637</StateNumber>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>872</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="37" parent="34" name="username">
-      <Position>3</Position>
-      <DataType>varchar(75)|0s</DataType>
-      <StateNumber>637</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="38" parent="34" name="password">
-      <Position>4</Position>
-      <DataType>varchar(76)|0s</DataType>
-      <StateNumber>637</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="39" parent="34" name="email">
-      <Position>5</Position>
-      <DataType>varchar(75)|0s</DataType>
-      <StateNumber>637</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="40" parent="34" name="business">
-      <Position>6</Position>
-      <DataType>varchar(75)|0s</DataType>
-      <StateNumber>637</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <column id="41" parent="34" name="type">
-      <Position>7</Position>
+    <index id="54" parent="42" name="account_types_pkey">
+      <ObjectId>74198</ObjectId>
+      <StateNumber>872</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="55" parent="42" name="account_types_pkey">
+      <ObjectId>74199</ObjectId>
+      <StateNumber>872</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>account_types_pkey</UnderlyingIndexName>
+    </key>
+    <column id="56" parent="43" name="id">
+      <Position>1</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>637</StateNumber>
+      <NotNull>1</NotNull>
+      <StateNumber>868</StateNumber>
+      <DefaultExpression>nextval(&apos;business_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
+    <column id="57" parent="43" name="business">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>868</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="58" parent="43" name="business_pkey">
+      <ObjectId>74161</ObjectId>
+      <StateNumber>868</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="59" parent="43" name="business_pkey">
+      <ObjectId>74162</ObjectId>
+      <StateNumber>868</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>business_pkey</UnderlyingIndexName>
+    </key>
+    <column id="60" parent="44" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>888</StateNumber>
+      <DefaultExpression>nextval(&apos;kredittering_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="61" parent="44" name="tvrolle">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>888</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="62" parent="44" name="medvirkendeid">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>888</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="63" parent="44" name="programzid">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>888</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="64" parent="44" name="kredittering_pkey">
+      <ObjectId>74321</ObjectId>
+      <StateNumber>888</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="65" parent="44" name="kredittering_pkey">
+      <ObjectId>74322</ObjectId>
+      <StateNumber>888</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>kredittering_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="66" parent="44" name="kredittering_medvirkendeid_fkey">
+      <ObjectId>74323</ObjectId>
+      <StateNumber>888</StateNumber>
+      <ColNames>medvirkendeid</ColNames>
+      <RefTableId>74243</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>medvirkende</RefTableName>
+      <RefKeyName>medvirkende_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="67" parent="44" name="kredittering_programzid_fkey">
+      <ObjectId>74328</ObjectId>
+      <StateNumber>888</StateNumber>
+      <ColNames>programzid</ColNames>
+      <RefTableId>74202</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>programz</RefTableName>
+      <RefKeyName>programz_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="68" parent="45" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>877</StateNumber>
+      <DefaultExpression>nextval(&apos;medvirkende_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="69" parent="45" name="name">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>877</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="70" parent="45" name="email">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>877</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="71" parent="45" name="medvirkende_pkey">
+      <ObjectId>74250</ObjectId>
+      <StateNumber>877</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="72" parent="45" name="medvirkende_pkey">
+      <ObjectId>74251</ObjectId>
+      <StateNumber>877</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>medvirkende_pkey</UnderlyingIndexName>
+    </key>
+    <column id="73" parent="46" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>892</StateNumber>
+      <DefaultExpression>nextval(&apos;producers_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="74" parent="46" name="userid">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>892</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="75" parent="46" name="programzid">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>892</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="76" parent="46" name="producers_pkey">
+      <ObjectId>74356</ObjectId>
+      <StateNumber>892</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="77" parent="46" name="producers_pkey">
+      <ObjectId>74357</ObjectId>
+      <StateNumber>892</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>producers_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="78" parent="46" name="producers_userid_fkey">
+      <ObjectId>74358</ObjectId>
+      <StateNumber>892</StateNumber>
+      <ColNames>userid</ColNames>
+      <RefTableId>74277</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="79" parent="46" name="producers_programzid_fkey">
+      <ObjectId>74363</ObjectId>
+      <StateNumber>892</StateNumber>
+      <ColNames>programzid</ColNames>
+      <RefTableId>74202</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>programz</RefTableName>
+      <RefKeyName>programz_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="80" parent="47" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>875</StateNumber>
+      <DefaultExpression>nextval(&apos;program_kategori_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="81" parent="47" name="kategori">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>875</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="82" parent="47" name="program_kategori_pkey">
+      <ObjectId>74228</ObjectId>
+      <StateNumber>875</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="83" parent="47" name="program_kategori_pkey">
+      <ObjectId>74229</ObjectId>
+      <StateNumber>875</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>program_kategori_pkey</UnderlyingIndexName>
+    </key>
+    <column id="84" parent="48" name="programid">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>886</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="85" parent="48" name="program_kategoriid">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>886</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="86" parent="48" name="kreditteringid">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>886</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="87" parent="48" name="programkategorier_programid_fkey">
+      <ObjectId>74295</ObjectId>
+      <StateNumber>886</StateNumber>
+      <ColNames>programid</ColNames>
+      <RefTableId>74202</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>programz</RefTableName>
+      <RefKeyName>programz_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="88" parent="48" name="programkategorier_program_kategoriid_fkey">
+      <ObjectId>74300</ObjectId>
+      <StateNumber>886</StateNumber>
+      <ColNames>program_kategoriid</ColNames>
+      <RefTableId>74221</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>program_kategori</RefTableName>
+      <RefKeyName>program_kategori_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="89" parent="48" name="programkategorier_kreditteringid_fkey">
+      <ObjectId>74305</ObjectId>
+      <StateNumber>886</StateNumber>
+      <ColNames>kreditteringid</ColNames>
+      <RefTableId>74202</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>programz</RefTableName>
+      <RefKeyName>programz_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="90" parent="49" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>873</StateNumber>
+      <DefaultExpression>nextval(&apos;programz_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="91" parent="49" name="name">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>873</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="92" parent="49" name="dato">
+      <Position>3</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>873</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <index id="93" parent="49" name="programz_pkey">
+      <ObjectId>74209</ObjectId>
+      <StateNumber>873</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="94" parent="49" name="programz_pkey">
+      <ObjectId>74210</ObjectId>
+      <StateNumber>873</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>programz_pkey</UnderlyingIndexName>
+    </key>
+    <column id="95" parent="50" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>893</StateNumber>
+      <DefaultExpression>nextval(&apos;reg_prod_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="96" parent="50" name="businessid">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>893</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="97" parent="50" name="producerid">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>893</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="98" parent="50" name="reg_prod_pkey">
+      <ObjectId>74374</ObjectId>
+      <StateNumber>893</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="99" parent="50" name="reg_prod_pkey">
+      <ObjectId>74375</ObjectId>
+      <StateNumber>893</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>reg_prod_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="100" parent="50" name="reg_prod_businessid_fkey">
+      <ObjectId>74376</ObjectId>
+      <StateNumber>893</StateNumber>
+      <ColNames>businessid</ColNames>
+      <RefTableId>74154</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>business</RefTableName>
+      <RefKeyName>business_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="101" parent="50" name="reg_prod_producerid_fkey">
+      <ObjectId>74381</ObjectId>
+      <StateNumber>893</StateNumber>
+      <ColNames>producerid</ColNames>
+      <RefTableId>74352</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>producers</RefTableName>
+      <RefKeyName>producers_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="102" parent="51" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>881</StateNumber>
+      <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="103" parent="51" name="account_type">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>881</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="104" parent="51" name="name">
+      <Position>3</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>881</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="105" parent="51" name="username">
+      <Position>4</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>881</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="106" parent="51" name="email">
+      <Position>5</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>881</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="107" parent="51" name="password">
+      <Position>6</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>881</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="108" parent="51" name="dato">
+      <Position>7</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>881</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <index id="109" parent="51" name="users_pkey">
+      <ObjectId>74281</ObjectId>
+      <StateNumber>881</StateNumber>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+      <Primary>1</Primary>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>0</CollationIds>
+      <ClassIds>1978</ClassIds>
+    </index>
+    <key id="110" parent="51" name="users_pkey">
+      <ObjectId>74282</ObjectId>
+      <StateNumber>881</StateNumber>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
+    </key>
+    <foreign-key id="111" parent="51" name="users_account_type_fkey">
+      <ObjectId>74283</ObjectId>
+      <StateNumber>881</StateNumber>
+      <ColNames>account_type</ColNames>
+      <RefTableId>74194</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>account_types</RefTableName>
+      <RefKeyName>account_types_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>
