@@ -97,8 +97,35 @@ public class loginController {
 
             }
         }
+    }
 
 
+    private void handleSignUp (MouseEvent event) {
+        String username = tfEmail.getText();
+        String password = tfPass.getText();
+
+
+        User loggedIn = LoginFacade.login(username, password);
+        if (loggedIn == null) {
+            System.out.println("FAILURE");
+        }
+        else {
+            switch (loggedIn.getType()) {
+                case 1:
+                    System.out.println("vis admin vindue");
+                    break;
+                case 2:
+                    System.out.println("vis prod vindue");
+                    break;
+                case 3:
+                    System.out.println("vis sheep vindue");
+                    break;
+                case 4:
+                    System.out.println("user");
+                    break;
+
+            }
+        }
     }
         /*
         if (event.getSource() == btnSignIn){

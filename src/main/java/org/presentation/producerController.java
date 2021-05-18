@@ -86,16 +86,17 @@ public class producerController {
 
         @FXML
         private void createProducer (MouseEvent event){
-            String id = tfid.getText();
-            int type = tftype.getText();
+            int id =  Integer.parseInt(tfid.getText());
+            int type =  Integer.parseInt(tftype.getText());
             String username = tfusername.getText();
             String name = tfname.getText();
             String password = tfpassword.getText();
             String email = tfemail.getText();
             String business = tfbusiness.getText();
 
-            Producer producer = new Producer(id, type, username, name, password, email, business)
-            ProducerFacade.addedProd()
+
+            Producer producer = new Producer(id, name, username, password, email, business, type);
+           // ProducerFacade.addedProd()
 //            @FXML
 //            public void handleCreditAdd (MouseEvent event){
 //                System.out.println();

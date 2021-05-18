@@ -6,17 +6,17 @@ public class User {
         String username;
         String password;
         String email;
-        String business;
+        String date;
         int type;
 
 
-        public User(int id, String name, String username, String password, String email, String business, int type) {
+        public User(int id, String name, String username, String password, String email, String date, int type) {
                 this.id = id;
                 this.name = name;
                 this.username = username;
                 this.password = password;
                 this.email = email;
-                this.business = business;
+                this.date = date;
                 this.type = type;
         }
 
@@ -60,12 +60,12 @@ public class User {
                 this.email = email;
         }
 
-        public String getBusiness() {
-                return business;
+        public String getDate() {
+                return date;
         }
 
-        public void setBusiness(String business) {
-                this.business = business;
+        public void setDate(String date) {
+                this.date = date;
         }
 
         public int getType() {

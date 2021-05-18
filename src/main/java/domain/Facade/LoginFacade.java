@@ -8,7 +8,7 @@ public class LoginFacade {
     public static User login(String username, String password) {
         return PersistenceHandler.getInstance().getLoginUserObj(username, password);
     }
-    public static User adduser(User user) {
+    public static User addUser(User user) {
         return PersistenceHandler.getInstance().addUser(user);
     }
 }

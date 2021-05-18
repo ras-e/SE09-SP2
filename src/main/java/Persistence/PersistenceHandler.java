@@ -10,9 +10,9 @@ public class PersistenceHandler {
 //        private static PersistanceHandler instance;
         private String url = "localhost";
         private int port = 5432;
-        private String databaseName = "DB_Projekt";
+        private String databaseName = "SE03";
         private String username = "postgres";
-        private String password = "Huskmig1";
+        private String password = "aaaa2104A100";
         private Connection connection = null;
         private static PersistenceHandler instance;
 
@@ -42,14 +42,19 @@ public class PersistenceHandler {
 
         public User getLoginUserObj(String username, String password) {
             try {
-                PreparedStatement stmt = connection.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ? AND type ");
+                PreparedStatement stmt = connection.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
                 stmt.setString(1, username);
                 stmt.setString(2, password);
 //                stmt.setInt(3, type);
+
+
+
                 ResultSet sqlReturnValues = stmt.executeQuery();
                 if (!sqlReturnValues.next()){
                     return null;
                 }
+
+
                 return new User(sqlReturnValues.getInt(1), sqlReturnValues.getString(2), sqlReturnValues.getString(3), sqlReturnValues.getString(4), sqlReturnValues.getString(5), sqlReturnValues.getString(6), sqlReturnValues.getInt(7));
             } catch (SQLException ex) {
                 ex.printStackTrace();
@@ -57,7 +62,7 @@ public class PersistenceHandler {
             }
         }
 
-    public User addUser(String username, String password) {
+ /*   public User addUser(String username, String password) {
         try {
             PreparedStatement stmt = connection.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ? AND type ");
             stmt.setString(1, username);
@@ -72,20 +77,23 @@ public class PersistenceHandler {
             ex.printStackTrace();
             return null;
         }
-    }
+    }*/
 
     //Producer
 
     public User addUser(User user) {
-            int account_type = 1;
+
         try {
             PreparedStatement insertStatement = connection.prepareStatement(
-                    "INSERT INTO users(email, password, name, account_type) VALUES (?,?,?,?)");
-            insertStatement.setInt(1, user.getId()); //"INSERT INTO users (name, cpr) VALUES ("jennerboy", ?)" indsætter stringen under 1 spørgsmålstegn
-            insertStatement.setString(2, user.getEmail());
+                    "INSERT INTO users(name, username, password, email, dato) VALUES (?,?,?,?,?)");
+            //insertStatement.setInt(1, user.getId()); //"INSERT INTO users (name, cpr) VALUES ("jennerboy", ?)" indsætter stringen under 1 spørgsmålstegn
+            insertStatement.setString(1, user.getName());
+            insertStatement.setString(2, user.getUsername());
             insertStatement.setString(3, user.getPassword());
-            insertStatement.setString(4, user.getName());
-            insertStatement.setInt(4, user.getType());
+            insertStatement.setString(4, user.getEmail());
+            insertStatement.setString(5, user.getDate());
+
+            //insertStatement.setInt(4, user.getType());
 
 
 //            insertStatement.setInt(7, user.getId());
@@ -95,7 +103,7 @@ public class PersistenceHandler {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        return null;
     }
 
 
@@ -108,7 +116,7 @@ public class PersistenceHandler {
             insertStatement.setString(3, producer.getUsername());
             insertStatement.setString(4, producer.getPassword());
             insertStatement.setString(5, producer.getEmail());
-            insertStatement.setString(6, producer.getBusiness());
+           // insertStatement.setString(6, producer.getBusiness());
             insertStatement.setInt(7, producer.getId());
 
             insertStatement.execute();
