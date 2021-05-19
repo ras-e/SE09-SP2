@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <MenuBar prefHeight="34.0" prefWidth="750.0" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="Logout">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Acc Details">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Settings">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab text="Producer Page">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  </content>
+                </Tab>
+                  <Tab text=" Management">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField layoutX="184.0" layoutY="64.0" prefHeight="28.0" prefWidth="137.0" text="E-mail" />
+                              <TextField layoutX="356.0" layoutY="64.0" prefHeight="28.0" prefWidth="162.0" text="Navn" />
+                              <TextField layoutX="543.0" layoutY="64.0" prefHeight="28.0" prefWidth="183.0" text="TV-Role" />
+                              <TextField layoutX="183.0" layoutY="108.0" prefHeight="28.0" prefWidth="138.0" text="Årstal" />
+                              <TextField layoutX="356.0" layoutY="108.0" prefHeight="28.0" prefWidth="161.0" text="Program" />
+                              <TableView layoutX="182.0" layoutY="153.0" prefHeight="248.0" prefWidth="527.0">
+                                 <columns>
+                                    <TableColumn prefWidth="75.0" text="ID" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
+                                    <TableColumn prefWidth="75.0" text="C1" />
+                                 </columns>
+                              </TableView>
+                              <TextField layoutX="543.0" layoutY="108.0" prefHeight="28.0" prefWidth="183.0" text="Kategori" />
+                              <VBox layoutX="-2.0" layoutY="40.0" prefHeight="398.0" prefWidth="163.0">
+                                 <children>
+                                    <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="84.0" prefWidth="163.0" text="Add Contributors ">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="73.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@insert_member.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="163.0" text="Edit contributors">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="85.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@edit_member.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button contentDisplay="TOP" layoutX="10.0" layoutY="127.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="163.0" text="Delete contributors">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="85.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@delete_user.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                <Tab text="Program Management">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField layoutX="182.0" layoutY="42.0" prefHeight="28.0" prefWidth="137.0" text="ID" />
+                              <TextField layoutX="354.0" layoutY="42.0" prefHeight="28.0" prefWidth="162.0" text="Titel" />
+                              <TextField layoutX="543.0" layoutY="42.0" prefHeight="28.0" prefWidth="183.0" text="Medvirkende" />
+                              <TextField layoutX="182.0" layoutY="102.0" prefHeight="28.0" prefWidth="138.0" text="Årstal" />
+                              <TextField layoutX="355.0" layoutY="102.0" prefHeight="28.0" prefWidth="161.0" text="Program" />
+                              <TableView layoutX="182.0" layoutY="153.0" prefHeight="248.0" prefWidth="527.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="ID" />
+                                  <TableColumn prefWidth="75.0" text="C2" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
+                                    <TableColumn prefWidth="75.0" text="C1" />
+                                </columns>
+                              </TableView>
+                              <TextField layoutX="543.0" layoutY="102.0" prefHeight="28.0" prefWidth="183.0" text="Kategori" />
+                              <VBox layoutX="-2.0" layoutY="40.0" prefHeight="398.0" prefWidth="163.0">
+                                 <children>
+                                    <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="118.0" prefWidth="166.0" text="Add Program">
+                                       <graphic>
+                                          <ImageView fitHeight="79.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@tv_icon.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="119.0" prefWidth="165.0" text="Edit Program">
+                                       <graphic>
+                                          <ImageView fitHeight="102.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@edit_program.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                    <Button contentDisplay="TOP" layoutX="10.0" layoutY="124.0" mnemonicParsing="false" prefHeight="124.0" prefWidth="172.0" text="Delete Program">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="102.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@delete_program.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>
