@@ -15,7 +15,6 @@ public class App extends Application {
 
         //primaryStage.setTitle("Hello World");
         Scene scene = new Scene(root);
-
         //scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
 
         stage.setScene(scene);
