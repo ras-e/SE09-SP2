@@ -1,14 +1,11 @@
 package org.presentation;
 
-
-import animatefx.animation.ZoomIn;
-import domain.Facade.LoginFacade;
-import domain.user.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -20,7 +17,8 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
-
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 public class loginController {
 
@@ -30,7 +28,7 @@ public class loginController {
     @FXML
     public TextField tfEmail;
     @FXML
-    public TextField tfPass;
+    public PasswordField tfPass;
     @FXML
     public Button btnSignIn;
     @FXML
@@ -46,7 +44,14 @@ public class loginController {
     @FXML
     public Button btnGoGuest;
     @FXML
+    private PasswordField passSignUp;
+    @FXML
+    private TextField emailSignUp;
+    @FXML
+    private TextField nameSignUp;
+    @FXML
     public Label txtInvalid;
+
 
     //Takes you from front login to sign up page (Don't have an account yet? Sign up)
     @FXML
@@ -72,62 +77,33 @@ public class loginController {
             loadMain();
         }
     }
+    @FXML
+    private void handleRegister(ActionEvent event){
+        String email = emailSignUp.getText();
+        String password = passSignUp.getText();
+        String name = nameSignUp.getText();
+        domain.users.AccountManager.createAccount(email, password, name);
+    }
 
     @FXML
     private void handleSignIn (MouseEvent event) {
-        String username = tfEmail.getText();
+        String email = tfEmail.getText();
         String password = tfPass.getText();
 
-
-        User loggedIn = LoginFacade.login(username, password);
-        if (loggedIn == null) {
-            System.out.println("FAILURE");
+        /*if (email.equals("demo") && password.equals("demo")) {
+            closeStage();
+            loadMain();
         }
-        else {
-            switch (loggedIn.getType()) {
-                case 1:
-                    System.out.println("vis admin vindue");
-                    break;
-                case 2:
-                    System.out.println("vis prod vindue");
-                    break;
-                case 3:
-                    System.out.println("vis sheep vindue");
-                    break;
-                case 4:
-                    System.out.println("user");
-                    break;
+        if (email.equals("producer") && password.equals("producer")) {
+            closeStage();
+            loadProducer();
+        }*/
+        if(email.isEmpty() || password.isEmpty()) {
 
-            }
-        }
-    }
-
-
-    private void handleSignUp (MouseEvent event) {
-        String username = tfEmail.getText();
-        String password = tfPass.getText();
-
-
-        User loggedIn = LoginFacade.login(username, password);
-        if (loggedIn == null) {
-            System.out.println("FAILURE");
-        }
-        else {
-            switch (loggedIn.getType()) {
-                case 1:
-                    System.out.println("vis admin vindue");
-                    break;
-                case 2:
-                    System.out.println("vis prod vindue");
-                    break;
-                case 3:
-                    System.out.println("vis sheep vindue");
-                    break;
-                case 4:
-                    System.out.println("user");
-                    break;
-
-            }
+            txtInvalid.setText("One or more text fields are empty. Try again!");
+            txtInvalid.setStyle("-fx-background-color:#d32f2f;-fx-text-fill: white");
+            }else{
+            domain.users.AccountManager.checkLogin(email, password);
         }
     }
         /*
