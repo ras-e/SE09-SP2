@@ -1,5 +1,9 @@
 package org.presentation;
 
+
+import animatefx.animation.ZoomIn;
+import domain.Facade.LoginFacade;
+import domain.user.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,7 +11,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -16,8 +19,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
+
 
 public class loginController {
 
@@ -72,21 +74,60 @@ public class loginController {
 
     @FXML
     private void handleSignIn (MouseEvent event) {
-        String email = tfEmail.getText();
+        String username = tfEmail.getText();
         String password = tfPass.getText();
 
-        if (email.equals("demo") && password.equals("demo")) {
-            closeStage();
-            loadMain();
+
+        User loggedIn = LoginFacade.login(username, password);
+        if (loggedIn == null) {
+            System.out.println("FAILURE");
         }
-        if (email.equals("producer") && password.equals("producer")) {
-            closeStage();
-            loadProducer();
-        }
-        if(email.isEmpty() || password.isEmpty()) {
-            txtInvalid.setText("One or more text fields are empty. Try again!");
-            txtInvalid.setStyle("-fx-background-color:#d32f2f;-fx-text-fill: white");
+        else {
+            switch (loggedIn.getType()) {
+                case 1:
+                    System.out.println("vis admin vindue");
+                    break;
+                case 2:
+                    System.out.println("vis prod vindue");
+                    break;
+                case 3:
+                    System.out.println("vis sheep vindue");
+                    break;
+                case 4:
+                    System.out.println("user");
+                    break;
+
             }
+        }
+    }
+
+
+    private void handleSignUp (MouseEvent event) {
+        String username = tfEmail.getText();
+        String password = tfPass.getText();
+
+
+        User loggedIn = LoginFacade.login(username, password);
+        if (loggedIn == null) {
+            System.out.println("FAILURE");
+        }
+        else {
+            switch (loggedIn.getType()) {
+                case 1:
+                    System.out.println("vis admin vindue");
+                    break;
+                case 2:
+                    System.out.println("vis prod vindue");
+                    break;
+                case 3:
+                    System.out.println("vis sheep vindue");
+                    break;
+                case 4:
+                    System.out.println("user");
+                    break;
+
+            }
+        }
     }
         /*
         if (event.getSource() == btnSignIn){
