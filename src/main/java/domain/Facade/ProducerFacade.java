@@ -8,7 +8,6 @@ public class ProducerFacade {
     public static boolean addedProd(Producer producer) {
         return PersistenceHandler.getInstance().addProducer(producer);
     }
-
-
+    
 
 }
