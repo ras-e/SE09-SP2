@@ -27,6 +27,19 @@
             <center>
                 <StackPane prefHeight="511.0" prefWidth="408.0" BorderPane.alignment="CENTER">
                     <children>
+                        <Pane fx:id="pgSignIn" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
+                            <children>
+                                <TextField fx:id="tfEmail" layoutX="88.0" layoutY="162.0" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" />
+                                <TextField fx:id="tfPass" layoutX="88.0" layoutY="240.0" prefHeight="45.0" prefWidth="250.0" promptText="Password" />
+                                <Button fx:id="btnSignIn" layoutX="229.0" layoutY="313.0" mnemonicParsing="false" onMouseClicked="#handleSignIn" prefHeight="40.0" prefWidth="109.0" styleClass="buttonSignIn" stylesheets="@../../css/login_style.css" text="Sign in" />
+                                <Button fx:id="btnSignUp" layoutX="88.0" layoutY="408.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="250.0" styleClass="buttonSignIn" stylesheets="@../../css/login_style.css" text="Don't have an user? Sign up!" />
+                                <Label layoutX="53.0" layoutY="91.0" prefHeight="43.0" prefWidth="95.0" text="Sign in">
+                                    <font>
+                                        <Font name="System Bold" size="22.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </Pane>
                         <Pane fx:id="pgSignUp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
                             <children>
                                 <Button fx:id="btnSignUp2" layoutX="88.0" layoutY="408.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="250.0" styleClass="buttonSignIn" stylesheets="@../../css/login_style.css" text="Sign up" />
@@ -45,19 +58,6 @@
                            </image>
                         </ImageView>
                             </children></Pane>
-                        <Pane fx:id="pgSignIn" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffff;">
-                            <children>
-                                <TextField fx:id="tfEmail" layoutX="88.0" layoutY="162.0" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" />
-                                <TextField fx:id="tfPass" layoutX="88.0" layoutY="240.0" prefHeight="45.0" prefWidth="250.0" promptText="Password" />
-                                <Button fx:id="btnSignIn" layoutX="229.0" layoutY="313.0" mnemonicParsing="false" onMouseClicked="#handleSignIn" prefHeight="40.0" prefWidth="109.0" styleClass="buttonSignIn" stylesheets="@../../css/login_style.css" text="Sign in" />
-                                <Button fx:id="btnSignUp" layoutX="88.0" layoutY="408.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="250.0" styleClass="buttonSignIn" stylesheets="@../../css/login_style.css" text="Don't have an user? Sign up!" />
-                                <Label layoutX="53.0" layoutY="91.0" prefHeight="43.0" prefWidth="95.0" text="Sign in">
-                                    <font>
-                                        <Font name="System Bold" size="22.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                        </Pane>
                     </children>
                 </StackPane>
             </center>
