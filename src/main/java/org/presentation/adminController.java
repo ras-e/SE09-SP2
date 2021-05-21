@@ -1,6 +1,8 @@
 package org.presentation;
 
 import animatefx.animation.ZoomIn;
+import domain.user.User;
+import domain.user.UserManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +22,8 @@ public class adminController {
     public TextField compName;
     @FXML
     public TextField cvrNumb;
+    @FXML
+    public Button btnAddComp;
 
     //Loading the add/del/edit scenes when button pressed
     public void loadAddMemberUI(MouseEvent mouseEvent) {
@@ -30,7 +34,12 @@ public class adminController {
     }
     public void loadEditMemberUI(ActionEvent actionEvent) {
     }
-
+    @FXML
+    private void handleAddComp (ActionEvent event) {
+    String name = compName.getText();
+    String cvr = cvrNumb.getText();
+        UserManager.addCompanys(name, cvr);
+    }
     //Method used to load new windows (here functions; add,del,edit windows)
     void loadWindow(String path, String title)
     {
