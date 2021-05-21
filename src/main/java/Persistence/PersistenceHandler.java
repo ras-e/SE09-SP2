@@ -1,5 +1,7 @@
 package Persistence;
 
+import domain.Program.Category;
+import domain.Program.Program;
 import domain.user.User;
 import domain.user.Producer;
 
@@ -10,9 +12,9 @@ public class PersistenceHandler {
 //        private static PersistanceHandler instance;
         private String url = "localhost";
         private int port = 5432;
-        private String databaseName = "SE03";
+        private String databaseName = "test";
         private String username = "postgres";
-        private String password = "aaaa2104A100";
+        private String password = "Huskmig1";
         private Connection connection = null;
         private static PersistenceHandler instance;
 
@@ -88,48 +90,94 @@ public class PersistenceHandler {
 
     //Producer
 
+    public boolean addProducer(Producer producer) {
+        try {
+            PreparedStatement insertStatement = connection.prepareStatement(
+                    "INSERT INTO producers (ddd) VALUES (?,?,?,?,?)");
+            //"INSERT INTO users (name, cpr) VALUES ("jennerboy", ?)" indsætter stringen under 1 spørgsmålstegn
+            insertStatement.setString(2, producer.getName());
+            insertStatement.setString(3, producer.getUsername());
+            insertStatement.setString(4, producer.getPassword());
+            insertStatement.setString(5, producer.getEmail());
+            // insertStatement.setString(6, producer.getBusiness());
+
+
+            return insertStatement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
+
     public User addUser(User user) {
+        int account_type = 1;
 
         try {
             PreparedStatement insertStatement = connection.prepareStatement(
-                    "INSERT INTO users(name, username, password, email, dato) VALUES (?,?,?,?,?)");
+                    "INSERT INTO users(name, username, password, email, dato, account_type ) VALUES (?,?,?,?,?,?)");
             //insertStatement.setInt(1, user.getId()); //"INSERT INTO users (name, cpr) VALUES ("jennerboy", ?)" indsætter stringen under 1 spørgsmålstegn
             insertStatement.setString(1, user.getName());
             insertStatement.setString(2, user.getUsername());
             insertStatement.setString(3, user.getPassword());
             insertStatement.setString(4, user.getEmail());
-            insertStatement.setString(5, user.getDate());
-            //insertStatement.setInt(4, user.getType());
+            insertStatement.setDate(5, new Date(620611200000L));
+            insertStatement.setInt(6, account_type);
             //insertStatement.setInt(7, user.getId());
+            insertStatement.execute();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
+    public String addbusiness(String business) {
+        try {
+            PreparedStatement insertStatement = connection.prepareStatement(
+                    "INSERT INTO business (business) VALUES (?)");
+            //"INSERT INTO users (name, cpr) VALUES ("jennerboy", ?)" indsætter stringen under 1 spørgsmålstegn
+            insertStatement.setString(1, business);
 
             insertStatement.execute();
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+       return business;
+    }
+
+    // program&kategori
+
+    public String addprogram (String name) {
+        try {
+            PreparedStatement insertStatement = connection.prepareStatement("INSERT INTO programz(name, dato) VALUES (?,?)");
+            //insertStatement.setInt(1, user.getId()); //"INSERT INTO users (name, cpr) VALUES ("jennerboy", ?)" indsætter stringen under 1 spørgsmålstegn
+            insertStatement.setString(1, name);
+            insertStatement.setDate(2, new Date(620611200000L));
+            //insertStatement.setInt(7, user.getId());
+            insertStatement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+return name;
+    }
+    public String addprogramkategori (String kategori) {
+        try {
+            PreparedStatement insertStatement = connection.prepareStatement(
+                    "INSERT INTO program_kategori(kategori) VALUES (?)");
+            //insertStatement.setInt(1, user.getId()); //"INSERT INTO users (name, cpr) VALUES ("jennerboy", ?)" indsætter stringen under 1 spørgsmålstegn
+            insertStatement.setString(1, kategori);
+            //insertStatement.setInt(7, user.getId());
+            insertStatement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return kategori;
     }
 
 
-    public boolean addProducer(Producer producer) {
-        try {
-            PreparedStatement insertStatement = connection.prepareStatement(
-                    "INSERT producers user (name, cpr) VALUES (?,?,?,?,?)");
-            insertStatement.setInt(1, producer.getId()); //"INSERT INTO users (name, cpr) VALUES ("jennerboy", ?)" indsætter stringen under 1 spørgsmålstegn
-            insertStatement.setString(2, producer.getName());
-            insertStatement.setString(3, producer.getUsername());
-            insertStatement.setString(4, producer.getPassword());
-            insertStatement.setString(5, producer.getEmail());
-           // insertStatement.setString(6, producer.getBusiness());
-            insertStatement.setInt(7, producer.getId());
-
-            insertStatement.execute();
-            return true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-        }
 
     //credits
 
