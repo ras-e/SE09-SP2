@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SE09-SP2_ny" />
-        <module name="SE09-SP2" />
         <module name="SE_09_" />
       </profile>
     </annotationProcessing>

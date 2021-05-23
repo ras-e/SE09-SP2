@@ -13,6 +13,7 @@ public class LoginFacade {
     public static User addUser(User user) {
         return PersistenceHandler.getInstance().addUser(user);
     }
+
     public static String addbusiness(String business) {
         return PersistenceHandler.getInstance().addbusiness(business);
     }

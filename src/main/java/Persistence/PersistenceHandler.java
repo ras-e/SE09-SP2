@@ -1,9 +1,7 @@
 package Persistence;
 
-import domain.Program.Category;
-import domain.Program.Program;
-import domain.user.User;
 import domain.user.Producer;
+import domain.user.User;
 
 import java.sql.*;
 
@@ -12,9 +10,9 @@ public class PersistenceHandler {
 //        private static PersistanceHandler instance;
         private String url = "localhost";
         private int port = 5432;
-        private String databaseName = "test";
+        private String databaseName = "postgres";
         private String username = "postgres";
-        private String password = "Huskmig1";
+        private String password = "Pletmus123";
         private Connection connection = null;
         private static PersistenceHandler instance;
 
