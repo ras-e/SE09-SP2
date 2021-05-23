@@ -53,13 +53,13 @@ public class PersistenceHandler {
                     return null;
                 }
                 return new User(
-                        sqlReturnValues.getInt(1),
+                        //sqlReturnValues.getInt(1),
                         sqlReturnValues.getString(2),
                         sqlReturnValues.getString(3),
                         sqlReturnValues.getString(4),
-                        sqlReturnValues.getString(5),
-                        sqlReturnValues.getString(6),
-                        sqlReturnValues.getInt(7));
+                        sqlReturnValues.getString(5));
+                       // sqlReturnValues.getString(6);
+                        //sqlReturnValues.getInt(7));
 
             } catch (SQLException ex) {
                 ex.printStackTrace();

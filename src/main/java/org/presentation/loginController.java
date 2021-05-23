@@ -10,10 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -34,6 +31,9 @@ public class loginController {
     @FXML
     public TextField tfEmail;
     @FXML
+
+    public PasswordField tfPass;
+
     public TextField tfPassword;
     @FXML
     public TextField tfAge;
@@ -41,10 +41,7 @@ public class loginController {
     public TextField tfName;
     @FXML
     public TextField tfBusiness;
-
     // sign in
-    @FXML
-    public TextField tfPass;
     @FXML
     public TextField tfEmail1;
 
