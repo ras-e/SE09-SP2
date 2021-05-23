@@ -130,6 +130,7 @@ public class loginController {
         Object source = event.getSource();
         if (source.equals(btnSignUp2)) {
 
+
             if (tfAge.getText() == "" || tfPassword.getText() == "" || tfName.getText() == "" || tfEmail.getText() == "") {
                 System.out.println("Missing info (Should be from message helper system)");
             } else {
