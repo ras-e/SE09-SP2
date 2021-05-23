@@ -1,6 +1,8 @@
 package org.presentation;
 
 
+import animatefx.animation.ZoomIn;
+import animatefx.animation.ZoomOut;
 import domain.Facade.LoginFacade;
 import domain.user.User;
 import javafx.event.ActionEvent;
@@ -57,7 +59,7 @@ public class loginController {
     @FXML
     public Pane pgSignIn;
     @FXML
-    public Button signUpToLogin;
+    public Button btnBack;
     @FXML
     public RadioButton bntExit;
     @FXML
@@ -65,22 +67,21 @@ public class loginController {
     @FXML
     public Label txtInvalid1;
 
-    //Takes you from front login to sign up page (Don't have an account yet? Sign up)
+    //Signup -> Login
     @FXML
     private void handleButtonAction (ActionEvent event) {
         if (event.getSource().equals(btnSignUp)) {
+            new ZoomIn(pgSignUp).play();
             pgSignUp.toFront();
         }
     }
-    //Movement on login screen + Guest -> Main Menu
+    //Login -> Signup
     @FXML
     private void handleMouseEvent (MouseEvent event) {
-        if (event.getSource() == bntExit) {
-            System.exit(0); }
-        if (event.getSource().equals(signUpToLogin)) {
-            pgSignIn.toFront();
-        }
+        new ZoomIn(pgSignIn).play();
+        pgSignIn.toFront();
     }
+
     // Guest -> Main Menu
     @FXML
     private void handleGuest (MouseEvent event) {
@@ -128,16 +129,21 @@ public class loginController {
     private void signUpUser(ActionEvent event) {
         Object source = event.getSource();
         if (source.equals(btnSignUp2)) {
-            String name = tfAge.getText();
-            String password = tfPassword.getText();
-            String userName = tfName.getText();
-            String email = tfEmail.getText();
-            //String business = tfBusiness.getText();
-            System.out.println(tfEmail.getText());
-            User user = new User(name, userName, password, email);
+
+            if (tfAge.getText() == "" || tfPassword.getText() == "" || tfName.getText() == "" || tfEmail.getText() == "") {
+                System.out.println("Missing info (Should be from message helper system)");
+            } else {
+                String name = tfAge.getText();
+                String password = tfPassword.getText();
+                String userName = tfName.getText();
+                String email = tfEmail.getText();
+                //String business = tfBusiness.getText();
+                System.out.println("user created!");
+                User user = new User(name, userName, password, email);
                 LoginFacade.addUser(user);
             }
         }
+    }
 
 
 
