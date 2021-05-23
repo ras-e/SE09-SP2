@@ -7,7 +7,6 @@
 
 <AnchorPane fx:id="layersignup" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.loginController">
     <children>
-        <Pane prefHeight="200.0" prefWidth="200.0" />
         <BorderPane layoutY="-2.0" prefHeight="511.0" prefWidth="752.0" style="-fx-background-color: #ffff;">
             <left>
                 <Pane prefHeight="511.0" prefWidth="326.0" style="-fx-background-color: #5555;" BorderPane.alignment="CENTER">
@@ -56,6 +55,12 @@
                         <TextField fx:id="tfName" layoutX="88.0" layoutY="280.0" onAction="#signUpUser" prefHeight="45.0" prefWidth="250.0" promptText="Navn" />
                         <TextField fx:id="tfAge" layoutX="88.0" layoutY="339.0" onAction="#signUpUser" prefHeight="45.0" prefWidth="250.0" promptText="Alder" />
                         <ImageView fx:id="imgBack" fitHeight="49.0" fitWidth="46.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#handleMouseEvent" pickOnBounds="true" preserveRatio="true">
+
+                       // <TextField fx:id="tfPassword" layoutX="88.0" layoutY="185.0" onAction="#signUpUser" prefHeight="45.0" prefWidth="250.0" promptText="Password" />
+                      //  <TextField fx:id="tfName" layoutX="88.0" layoutY="280.0" onAction="#signUpUser" prefHeight="45.0" prefWidth="250.0" promptText="Username" />
+                       // <TextField fx:id="tfAge" layoutX="88.0" layoutY="339.0" onAction="#signUpUser" prefHeight="45.0" prefWidth="250.0" promptText="Real name" />
+                        <ImageView fx:id="signUp_toLogin" fitHeight="49.0" fitWidth="46.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#handleMouseEvent" pickOnBounds="true" preserveRatio="true">
+
                            <image>
                               <Image url="@../../images/back_arrow.png" />
                            </image>
@@ -78,5 +83,6 @@
                 </StackPane>
             </center>
         </BorderPane>
+        <Pane prefHeight="200.0" prefWidth="200.0" />
     </children>
 </AnchorPane>
