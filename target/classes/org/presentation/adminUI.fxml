@@ -31,7 +31,7 @@
             </MenuBar>
          </top>
          <center>
-            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <TabPane prefHeight="488.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
               <tabs>
                 <Tab text="Admin Page">
                   <content>
@@ -179,6 +179,16 @@
                         </AnchorPane>
                   </content>
                 </Tab>
+                  <Tab text="Production Company Management">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="btnAddComp" layoutX="-2.0" layoutY="40.0" mnemonicParsing="false" onAction="#handleAddComp" prefHeight="107.0" prefWidth="136.0" text="Add Compeny" />
+                              <TextField fx:id="compName" layoutX="187.0" layoutY="69.0" promptText="Company Name" />
+                              <TextField fx:id="cvrNumb" layoutX="361.0" layoutY="69.0" promptText="CVR-number" />
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
               </tabs>
             </TabPane>
          </center>
