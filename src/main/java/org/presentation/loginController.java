@@ -3,6 +3,7 @@ package org.presentation;
 
 import animatefx.animation.ZoomIn;
 import domain.Facade.LoginFacade;
+import domain.user.Producer;
 import domain.user.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,14 +25,35 @@ public class loginController {
 
     @FXML
     public AnchorPane layersignup;
+
+
+    //signup
     @FXML
     public TextField tfEmail;
     @FXML
+
     public PasswordField tfPass;
+
+    public TextField tfPassword;
+    @FXML
+    public TextField tfAge;
+    @FXML
+    public TextField tfName;
+    @FXML
+    public TextField tfBusiness;
+    // sign in
+    @FXML
+    public TextField tfEmail1;
+
+
+
     @FXML
     public Button btnSignIn;
     @FXML
     public Button btnSignUp;
+    @FXML
+    public Button btnSignUp2;
+
     @FXML
     public Pane pgSignUp;
     @FXML
@@ -43,7 +65,7 @@ public class loginController {
     @FXML
     public Button btnGoGuest;
     @FXML
-    public Label txtInvalid;
+    public Label txtInvalid1;
 
     //Takes you from front login to sign up page (Don't have an account yet? Sign up)
     @FXML
@@ -72,7 +94,7 @@ public class loginController {
 
     @FXML
     private void handleSignIn (MouseEvent event) {
-        String username = tfEmail.getText();
+        String username = tfEmail1.getText();
         String password = tfPass.getText();
 
 
@@ -99,34 +121,29 @@ public class loginController {
         }
     }
 
+    @FXML
+    private void signUpproducer(ActionEvent event) {
 
-    private void handleSignUp (MouseEvent event) {
-        String username = tfEmail.getText();
-        String password = tfPass.getText();
+    }
 
+    @FXML
+    private void signUpUser(ActionEvent event) {
+        Object source = event.getSource();
+        if (source.equals(btnSignUp2)) {
+            String age = tfAge.getText();
+            String password = tfPassword.getText();
+            String name = tfName.getText();
+            String email = tfEmail.getText();
+            //String business = tfBusiness.getText();
 
-        User loggedIn = LoginFacade.login(username, password);
-        if (loggedIn == null) {
-            System.out.println("FAILURE");
-        }
-        else {
-            switch (loggedIn.getType()) {
-                case 1:
-                    System.out.println("vis admin vindue");
-                    break;
-                case 2:
-                    System.out.println("vis prod vindue");
-                    break;
-                case 3:
-                    System.out.println("vis sheep vindue");
-                    break;
-                case 4:
-                    System.out.println("user");
-                    break;
-
+                User user = new User(age, password, name, email);
+                LoginFacade.addUser(user);
             }
         }
-    }
+
+
+
+
         /*
         if (event.getSource() == btnSignIn){
             if (tfEmail.getText() == null || tfEmail.getText().trim().isEmpty())

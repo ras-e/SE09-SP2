@@ -3,6 +3,7 @@ package domain;
 import domain.Program.Credits;
 import domain.Program.Program;
 import domain.Program.mvPerson;
+import domain.user.User;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,6 +14,7 @@ public class sysController {
    static ArrayList<mvPerson> mvPersons = new ArrayList<>();
    static ArrayList<Credits> credits;
    static ArrayList<Program> programs;
+   static ArrayList<User> user;
 
 
    public static ObservableList<mvPerson> oPersonList = FXCollections.observableArrayList();

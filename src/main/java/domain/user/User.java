@@ -10,20 +10,17 @@ public class User {
         int type;
 
 
-        public User( String name, String username, String password, String email) {
+        public User(String name, String username, String password, String email) {
+
                 this.name = name;
                 this.username = username;
                 this.password = password;
                 this.email = email;
         }
 
-        public int getId() {
-                return id;
+        public User(int id, String name, String username, String password, String email, String business, int type) {
         }
 
-        public void setId(int id) {
-                this.id = id;
-        }
 
         public String getName() {
                 return name;

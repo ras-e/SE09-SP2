@@ -5,7 +5,7 @@ import domain.user.Producer;
 
 public class ProducerFacade {
 
-    public static boolean addedProd(Producer producer) {
+    public static boolean addprod(Producer producer) {
         return PersistenceHandler.getInstance().addProducer(producer);
     }
 
