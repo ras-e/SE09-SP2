@@ -1,9 +1,7 @@
 package org.presentation;
 
 
-import animatefx.animation.ZoomIn;
 import domain.Facade.LoginFacade;
-import domain.user.Producer;
 import domain.user.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -62,7 +60,7 @@ public class loginController {
     @FXML
     public Pane pgSignIn;
     @FXML
-    public Button btnBack;
+    public Button signUpToLogin;
     @FXML
     public RadioButton bntExit;
     @FXML
@@ -82,9 +80,9 @@ public class loginController {
     private void handleMouseEvent (MouseEvent event) {
         if (event.getSource() == bntExit) {
             System.exit(0); }
-        if (event.getSource().equals(btnBack))
-        { pgSignIn.toFront(); }
-
+        if (event.getSource().equals(signUpToLogin)) {
+            pgSignIn.toFront();
+        }
     }
     // Guest -> Main Menu
     @FXML
@@ -133,13 +131,13 @@ public class loginController {
     private void signUpUser(ActionEvent event) {
         Object source = event.getSource();
         if (source.equals(btnSignUp2)) {
-            String age = tfAge.getText();
+            String name = tfAge.getText();
             String password = tfPassword.getText();
-            String name = tfName.getText();
+            String userName = tfName.getText();
             String email = tfEmail.getText();
             //String business = tfBusiness.getText();
-
-                User user = new User(age, password, name, email);
+            System.out.println(tfEmail.getText());
+            User user = new User(name, userName, password, email);
                 LoginFacade.addUser(user);
             }
         }
