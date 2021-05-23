@@ -114,14 +114,14 @@ public class PersistenceHandler {
 
         try {
             PreparedStatement insertStatement = connection.prepareStatement(
-                    "INSERT INTO users(name, username, password, email, dato, account_type ) VALUES (?,?,?,?,?,?)");
+                    "INSERT INTO users(name, username, password, email, account_type ) VALUES (?,?,?,?,?)");
             //insertStatement.setInt(1, user.getId()); //"INSERT INTO users (name, cpr) VALUES ("jennerboy", ?)" indsætter stringen under 1 spørgsmålstegn
             insertStatement.setString(1, user.getName());
             insertStatement.setString(2, user.getUsername());
             insertStatement.setString(3, user.getPassword());
             insertStatement.setString(4, user.getEmail());
-            insertStatement.setDate(5, new Date(620611200000L));
-            insertStatement.setInt(6, account_type);
+            //.setDate(5, new Date(620611200000L));
+            insertStatement.setInt(5, account_type);
             //insertStatement.setInt(7, user.getId());
             insertStatement.execute();
 
