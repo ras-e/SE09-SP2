@@ -45,8 +45,6 @@ public class loginController {
     @FXML
     public TextField tfEmail1;
 
-
-
     @FXML
     public Button btnSignIn;
     @FXML
@@ -92,7 +90,7 @@ public class loginController {
     }
 
     @FXML
-    private void handleSignIn (MouseEvent event) {
+    private void handleSignIn (MouseEvent event) { //SignIn - tfEmail 1 + tfPass
         String username = tfEmail1.getText();
         String password = tfPass.getText();
 
@@ -126,7 +124,7 @@ public class loginController {
     }
 
     @FXML
-    private void signUpUser(ActionEvent event) {
+    private void signUpUser(ActionEvent event) { //tfEmail - tfpassword
         Object source = event.getSource();
         if (source.equals(btnSignUp2)) {
 
