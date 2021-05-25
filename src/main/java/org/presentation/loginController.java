@@ -67,6 +67,10 @@ public class loginController {
     public Button btnGoGuest;
     @FXML
     public Label txtInvalid1;
+    @FXML
+    public Label signInInvalid;
+    @FXML
+    public Label signUpInvalid;
 
     //Signup -> Login
     @FXML
@@ -97,10 +101,10 @@ public class loginController {
         String username = tfEmail1.getText();
         String password = tfPass.getText();
 
-
         User loggedIn = LoginFacade.login(username, password);
         if (loggedIn == null) {
-            System.out.println("FAILURE");
+            signInInvalid.setText("One or more text fields are empty. Try again!");
+            signInInvalid.setStyle("-fx-background-color:#d32f2f;-fx-text-fill: white");
         }
         else {
             switch (loggedIn.getType()) {
@@ -135,9 +139,13 @@ public class loginController {
         if (source.equals(btnSignUp2)) {
 
 
-            if (tfAge.getText() == "" || tfPassword.getText() == "" || tfName.getText() == "" || tfEmail.getText() == "") {
-                System.out.println("Missing info (Should be from message helper system)");
-            } else {
+           // if (tfAge.getText() == "" || tfPassword.getText() == "" || tfName.getText() == "" || tfEmail.getText() == "") {
+             //   System.out.println("Missing info (Should be from message helper system)");
+            if (tfAge.getText().trim().isEmpty() || tfPassword.getText().trim().isEmpty()|| tfName.getText().trim().isEmpty() || tfEmail.getText().isEmpty()) {
+                signUpInvalid.setText("One or more text fields are empty. Try again!");
+                signUpInvalid.setStyle("-fx-background-color:#d32f2f;-fx-text-fill: white");
+
+        } else {
                 String name = tfAge.getText();
                 String password = tfPassword.getText();
                 String userName = tfName.getText();
