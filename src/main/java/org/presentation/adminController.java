@@ -27,13 +27,15 @@ public class adminController {
 
     //Loading the add/del/edit scenes when button pressed
     public void loadAddMemberUI(MouseEvent mouseEvent) {
-        //loadWindow("addAcc.fxml", "Add New Acc");
+        loadWindow("addAcc.fxml", "Add New Acc");
     }
     public void loadDeleteMemberUI(MouseEvent mouseEvent) {
+        loadWindow("delMember.fxml","Delete Member");
+    }
+    public void loadEditMemberUI(MouseEvent mouseEvent) {
+        loadWindow("editMember.fxml","Edit Member");
+    }
 
-    }
-    public void loadEditMemberUI(ActionEvent actionEvent) {
-    }
     @FXML
     private void handleAddComp (ActionEvent event) {
     String name = compName.getText();

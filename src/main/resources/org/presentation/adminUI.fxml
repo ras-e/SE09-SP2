@@ -84,7 +84,7 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button fx:id="editMember" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="134.0" stylesheets="@../../css/style.css" text="Edit Member">
+                                    <Button fx:id="editMember" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#loadEditMemberUI" prefHeight="120.0" prefWidth="134.0" stylesheets="@../../css/style.css" text="Edit Member">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
@@ -96,7 +96,7 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Button fx:id="btnDeleteMem" contentDisplay="TOP" layoutX="10.0" layoutY="127.0" mnemonicParsing="false" onAction="#loadDeleteMemberUI" prefHeight="84.0" prefWidth="133.0" stylesheets="@../../css/style.css" text="Delete Member">
+                                    <Button fx:id="btnDeleteMem" contentDisplay="TOP" layoutX="10.0" layoutY="127.0" mnemonicParsing="false" onMouseClicked="#loadDeleteMemberUI" prefHeight="84.0" prefWidth="133.0" stylesheets="@../../css/style.css" text="Delete Member">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
