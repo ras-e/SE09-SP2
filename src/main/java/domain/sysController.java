@@ -16,6 +16,8 @@ public class sysController {
    static ArrayList<Program> programs;
    static ArrayList<User> user;
 
+   public static int userSession;
+
 
    public static ObservableList<mvPerson> oPersonList = FXCollections.observableArrayList();
    public static ObservableList<Program> oProgramList = FXCollections.observableArrayList();

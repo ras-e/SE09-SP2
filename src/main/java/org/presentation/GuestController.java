@@ -42,6 +42,10 @@ public class GuestController {
             createmvPerson("Jens"+i,"jensen");
             oCreditList.add(new Credits());
 
+            if (userSession == 1){
+                btnLogin.setVisible(false);
+            }
+
         }
 //        Search filter work in progress
 //        FilteredList<mvPerson> fPersonList = new FilteredList<>(FXCollections.observableArrayList(oPersonList));

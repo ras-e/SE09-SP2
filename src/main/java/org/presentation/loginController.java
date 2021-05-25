@@ -4,6 +4,7 @@ package org.presentation;
 import animatefx.animation.ZoomIn;
 import animatefx.animation.ZoomOut;
 import domain.Facade.LoginFacade;
+import domain.sysController;
 import domain.user.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,6 +19,8 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+
+import static domain.sysController.userSession;
 
 
 public class loginController {
@@ -90,7 +93,7 @@ public class loginController {
     }
 
     @FXML
-    private void handleSignIn (MouseEvent event) { //SignIn - tfEmail 1 + tfPass
+    private void handleSignIn (MouseEvent event) {
         String username = tfEmail1.getText();
         String password = tfPass.getText();
 
@@ -102,16 +105,19 @@ public class loginController {
         else {
             switch (loggedIn.getType()) {
                 case 1:
-                    System.out.println("vis admin vindue");
+                    userSession = loggedIn.getType();
+                    closeStage();
+                    loadMain();
+                    System.out.println("vis logged in guest vindue");
                     break;
                 case 2:
                     System.out.println("vis prod vindue");
                     break;
                 case 3:
-                    System.out.println("vis sheep vindue");
+                    System.out.println("vis admin vindue");
                     break;
                 case 4:
-                    System.out.println("user");
+                    //System.out.println("user");
                     break;
 
             }
@@ -124,7 +130,7 @@ public class loginController {
     }
 
     @FXML
-    private void signUpUser(ActionEvent event) { //tfEmail - tfpassword
+    private void signUpUser(ActionEvent event) {
         Object source = event.getSource();
         if (source.equals(btnSignUp2)) {
 
