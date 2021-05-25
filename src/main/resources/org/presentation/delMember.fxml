@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<?import com.jfoenix.controls.JFXButton?>
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.delMemberController">
     <children>
-        <TextField fx:id="email" layoutX="40.0" layoutY="124.0" prefHeight="27.0" prefWidth="160.0" promptText="E-mail" />
-        <TextField fx:id="country" layoutX="40.0" layoutY="164.0" prefHeight="27.0" prefWidth="160.0" promptText="Name" />
-        <TextField fx:id="inProgram" layoutX="40.0" layoutY="202.0" prefHeight="27.0" prefWidth="160.0" promptText="Program" />
-        <TextField fx:id="date" layoutX="290.0" layoutY="164.0" prefHeight="27.0" prefWidth="160.0" promptText="Role " />
-        <TextField fx:id="role" layoutX="290.0" layoutY="202.0" prefHeight="27.0" prefWidth="160.0" promptText="Date" />
-        <TextField layoutX="290.0" layoutY="125.0" prefHeight="25.0" prefWidth="160.0" promptText="Country" />
         <HBox layoutY="275.0" prefHeight="80.0" prefWidth="500.0">
             <children>
                 <JFXButton fx:id="saveButton" mnemonicParsing="false" prefHeight="80.0" prefWidth="250.0" stylesheets="@../../css/style.css" text="Save">
@@ -25,11 +19,12 @@
                     </font></JFXButton>
             </children>
         </HBox>
-      <Label layoutX="134.0" layoutY="31.0" prefHeight="35.0" prefWidth="232.0" text="Slet person fra kreditering">
+      <Label layoutX="134.0" layoutY="31.0" prefHeight="35.0" prefWidth="232.0" text="Slet konto fra system">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
       <TextField fx:id="email1" alignment="CENTER" layoutX="170.0" layoutY="85.0" prefHeight="27.0" prefWidth="160.0" promptText="Person ID" />
+      <ListView layoutX="107.0" layoutY="125.0" prefHeight="138.0" prefWidth="286.0" />
     </children>
 </AnchorPane>

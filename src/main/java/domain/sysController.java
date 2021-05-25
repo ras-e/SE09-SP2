@@ -4,7 +4,6 @@ import domain.Program.Credits;
 import domain.Program.Program;
 import domain.Program.mvPerson;
 import domain.user.User;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -16,12 +15,21 @@ public class sysController {
    static ArrayList<Program> programs;
    static ArrayList<User> user;
 
-   public static int userSession;
+   //user session - bestemmer vindue der åbnes. 0=ikkeRegistreret,1=logged ind, 2= producer, 3=admin. bør lave en enum.
+   public static int userSession = 0;
+   public static User session;
 
 
    public static ObservableList<mvPerson> oPersonList = FXCollections.observableArrayList();
    public static ObservableList<Program> oProgramList = FXCollections.observableArrayList();
    public static ObservableList<Credits> oCreditList =FXCollections.observableArrayList();
+   public static ObservableList<User> oUserList = FXCollections.observableArrayList();
+
+   public static ObservableList<String> testList = FXCollections.observableArrayList();
+
+
+
+
 
     public static ArrayList<mvPerson> getmvPersons(){
         return mvPersons;

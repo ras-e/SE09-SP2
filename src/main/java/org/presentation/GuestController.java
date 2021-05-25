@@ -2,14 +2,14 @@ package org.presentation;
 
 import domain.Program.Credits;
 import domain.Program.Program;
+import javafx.beans.property.SimpleListProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -33,6 +33,12 @@ public class GuestController {
     public TextField searchTextField;
     @FXML
     public Button btnLogin;
+    @FXML
+    public Button delBrugerInf;
+    @FXML
+    public Button btnGdpr;
+    @FXML
+    public Label lSearchResults;
 
     @FXML
     public void initialize(){
@@ -44,6 +50,8 @@ public class GuestController {
 
             if (userSession == 1){
                 btnLogin.setVisible(false);
+            } else if (userSession == 0) {
+                delBrugerInf.setVisible(false);
             }
 
         }
@@ -94,5 +102,35 @@ public class GuestController {
         ((Stage) btnLogin.getScene().getWindow()).close();
     }
 
+    //delete user info
+    public void delUserRequest(){
+        System.out.println("delete logging user info");
+    }
+
+    //show user info
+    public void showGDPR(MouseEvent event){
+        System.out.println("show gdpr rules via error popup?");
+        testList = new SimpleListProperty<>();
+
+        ObservableList<String> userInf = FXCollections.observableArrayList();
+
+
+
+
+        userInf.add("name: "+session.getName());
+        userInf.add("dato: "+session.getDate());
+        userInf.add("user name: "+session.getUsername());
+        userInf.add("email: "+session.getEmail());
+        userInf.add("password: "+session.getPassword());
+        userInf.add("konto type: "+ String.valueOf(session.getType()));
+        searchView.setItems(userInf);
+        lSearchResults.setText("Konto information");
+
+
+    }
+
+    public void logud (){
+
+    }
 
 }

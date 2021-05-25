@@ -20,6 +20,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
+import static domain.sysController.session;
 import static domain.sysController.userSession;
 
 
@@ -106,6 +107,7 @@ public class loginController {
             switch (loggedIn.getType()) {
                 case 1:
                     userSession = loggedIn.getType();
+                    session = loggedIn; //-opmærksom på design konsekvens
                     closeStage();
                     loadMain();
                     System.out.println("vis logged in guest vindue");
