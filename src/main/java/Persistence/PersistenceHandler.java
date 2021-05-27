@@ -14,9 +14,9 @@ public class PersistenceHandler {
 //        private static PersistanceHandler instance;
         private String url = "localhost";
         private int port = 5432;
-        private String databaseName = "postgres";
+        private String databaseName = "SE03";
         private String username = "postgres";
-        private String password = "Pletmus123";
+        private String password = "aaaa2104A100";
         private Connection connection = null;
         private static PersistenceHandler instance;
 
