@@ -57,7 +57,6 @@ public class PersistenceHandler {
                     return null;
                 }
                 return new User(
-                        //sqlReturnValues.getInt(1),
                         sqlReturnValues.getString(2),
                         sqlReturnValues.getString(3),
                         sqlReturnValues.getString(4),
