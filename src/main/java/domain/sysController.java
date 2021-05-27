@@ -25,7 +25,6 @@ public class sysController {
    public static ObservableList<Credits> oCreditList =FXCollections.observableArrayList();
    public static ObservableList<User> oUserList = FXCollections.observableArrayList();
 
-   public static ObservableList<String> testList = FXCollections.observableArrayList();
 
 
 

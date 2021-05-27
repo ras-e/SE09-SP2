@@ -2,9 +2,6 @@ package org.presentation;
 
 import domain.Program.Credits;
 import domain.Program.Program;
-import javafx.beans.property.SimpleListProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -52,6 +49,7 @@ public class GuestController {
                 btnLogin.setVisible(false);
             } else if (userSession == 0) {
                 delBrugerInf.setVisible(false);
+                btnGdpr.setVisible(false);
             }
 
         }
@@ -66,6 +64,7 @@ public class GuestController {
 
 
     public void PPKselect(MouseEvent event){
+        lSearchResults.setText("Søgeresultater");
         if(event.getSource().equals(personButton)){
             searchView.setItems(oPersonList);
         } else if (event.getSource().equals(programButton)) {
@@ -109,28 +108,15 @@ public class GuestController {
 
     //show user info
     public void showGDPR(MouseEvent event){
-        System.out.println("show gdpr rules via error popup?");
-        testList = new SimpleListProperty<>();
+        searchView.setItems(session.returnUserInf());
+        System.out.println(session.returnUserInf());
 
-        ObservableList<String> userInf = FXCollections.observableArrayList();
-
-
-
-
-        userInf.add("name: "+session.getName());
-        userInf.add("dato: "+session.getDate());
-        userInf.add("user name: "+session.getUsername());
-        userInf.add("email: "+session.getEmail());
-        userInf.add("password: "+session.getPassword());
-        userInf.add("konto type: "+ String.valueOf(session.getType()));
-        searchView.setItems(userInf);
         lSearchResults.setText("Konto information");
-
-
     }
 
-    public void logud (){
-
+    public void logUd (){
+        closeStage();
+        loadWindow("login.fxml","Login");
     }
 
 }

@@ -1,13 +1,18 @@
 package domain.user;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class User {
-        int id;
-        String name;
-        String username;
-        String password;
-        String email;
-        String date;
-        int type;
+        private int id;
+        private String name;
+        private String username;
+        private String password;
+        private String email;
+        private String date;
+        private int type;
+        private ObservableList<String> infList = FXCollections.observableArrayList();
+
 
 
 
@@ -18,6 +23,7 @@ public class User {
                 this.password = password;
                 this.email = email;
                 type = 1;
+                infList.addAll("Name: "+name,"Username: "+username,"password: "+password,"email: "+email);
         }
 
         public User(int id, String name, String username, String password, String email, String business, int type) {
@@ -72,6 +78,7 @@ public class User {
                 this.type = type;
         }
 
-
-
+        public ObservableList<String> returnUserInf(){
+                return infList;
+        }
 }
