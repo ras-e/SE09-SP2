@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.addProgramController">
+    <children>
+        <HBox layoutY="275.0" prefHeight="80.0" prefWidth="500.0">
+            <children>
+                <JFXButton fx:id="saveButton" mnemonicParsing="false" onAction="#addprogramandcategory" prefHeight="80.0" prefWidth="250.0" stylesheets="@../../css/style.css" text="Save">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font></JFXButton>
+                <JFXButton fx:id="cancelButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancelAction" prefHeight="80.0" prefWidth="250.0" stylesheets="@../../css/style.css" text="Cancel">
+                    <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                    </font></JFXButton>
+            </children>
+        </HBox>
+        <Label layoutX="14.0" layoutY="14.0" prefHeight="36.0" prefWidth="235.0" text="Opret program">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+      <TextField fx:id="datetf1" layoutX="170.0" layoutY="178.0" prefHeight="27.0" prefWidth="160.0" promptText="kategori" />
+        <TextField fx:id="countrytf" layoutX="170.0" layoutY="108.0" prefHeight="27.0" prefWidth="160.0" promptText="country" />
+        <TextField fx:id="nametf" layoutX="170.0" layoutY="76.0" onAction="#addprogramandcategory" prefHeight="25.0" prefWidth="160.0" promptText="navn" />
+        <TextField fx:id="datetf" layoutX="169.0" layoutY="143.0" prefHeight="27.0" prefWidth="160.0" promptText="Dato" />
+      <ChoiceBox fx:id="kategorich" layoutX="170.0" layoutY="214.0" onMouseClicked="#choicebox" prefHeight="25.0" prefWidth="160.0" />
+    </children>
+</AnchorPane>
