@@ -1,5 +1,6 @@
 package org.presentation;
 
+import domain.Facade.LoginFacade;
 import domain.Program.Credits;
 import domain.Program.Program;
 import javafx.fxml.FXML;
@@ -13,6 +14,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.util.Objects;
+import java.util.Optional;
 
 import static domain.sysController.*;
 
@@ -31,11 +33,13 @@ public class GuestController {
     @FXML
     public Button btnLogin;
     @FXML
-    public Button delBrugerInf;
+    public Button delUser;
     @FXML
     public Button btnGdpr;
     @FXML
     public Label lSearchResults;
+    @FXML
+    private Button favPro;
 
     @FXML
     public void initialize(){
@@ -48,8 +52,9 @@ public class GuestController {
             if (userSession == 1){
                 btnLogin.setVisible(false);
             } else if (userSession == 0) {
-                delBrugerInf.setVisible(false);
+                delUser.setVisible(false);
                 btnGdpr.setVisible(false);
+                favPro.setVisible(false);
             }
 
         }
@@ -103,6 +108,26 @@ public class GuestController {
 
     //delete user info
     public void delUserRequest(){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation Dialog");
+        alert.setHeaderText("ATTENTION: DO YOU WANT TO PROCEED?\n" +
+                "THIS WILL DELETE YOUR ACCOUNT AND ALL ITS RELATED DETAILS.");
+        alert.setContentText("In accordance with GDPR we provide the option to delete your account and related information\n\n" +
+                "Pressing 'OK' will delete all details saved of you AND your acc. \n" +
+                "If you change your mind press 'CANCEL'\n\n" +
+                "We at TV 2 care highly about your private details. Feel free to sign up again and enjoy all the benefits as a registered user");
+
+        Optional<ButtonType> result = alert.showAndWait();
+
+        // ... user chose OK
+        if (result.get() == ButtonType.OK){
+            LoginFacade.delUser(session);
+
+        } else {
+            // ... user chose CANCEL or closed the dialog
+            if (result.get() == ButtonType.CANCEL);
+        }
+
         System.out.println("delete logging user info");
     }
 
@@ -116,7 +141,7 @@ public class GuestController {
 
     public void logUd (){
         closeStage();
-        loadWindow("LLogin.fxml","Login");
+        loadWindow("Logins.fxml","Login");
     }
 
 }

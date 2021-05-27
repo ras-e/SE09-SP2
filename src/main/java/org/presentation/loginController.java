@@ -3,10 +3,14 @@ package org.presentation;
 
 import animatefx.animation.ZoomIn;
 import animatefx.animation.ZoomOut;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXDialog;
+import com.jfoenix.controls.JFXDialogLayout;
 import domain.Facade.LoginFacade;
 import domain.sysController;
 import domain.user.User;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,10 +19,14 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.util.Optional;
 
 import static domain.sysController.session;
 import static domain.sysController.userSession;
@@ -47,6 +55,10 @@ public class loginController {
     public TextField tfBusiness;
     @FXML
     private Label signUpInvalid;
+    @FXML
+    private StackPane stackPane;
+    @FXML
+    private Button btnDialog;
 
     // Sign-in
     @FXML
@@ -64,33 +76,29 @@ public class loginController {
     @FXML
     public Pane pgSignIn;
     @FXML
-    public Button btnBack;
-    @FXML
-    public RadioButton bntExit;
-    @FXML
     public Button btnGoGuest;
-
     @FXML
     private Label signInInvalid;
 
     //Signup -> Login
     @FXML
-    private void handleButtonAction (ActionEvent event) {
+    private void handleButtonAction(ActionEvent event) {
         if (event.getSource().equals(btnSignUp)) {
             new ZoomIn(pgSignUp).play();
             pgSignUp.toFront();
         }
     }
+
     //Login -> Signup
     @FXML
-    private void handleMouseEvent (MouseEvent event) {
+    private void handleMouseEvent(MouseEvent event) {
         new ZoomIn(pgSignIn).play();
         pgSignIn.toFront();
     }
 
     // Guest -> Main Menu
     @FXML
-    private void handleGuest (MouseEvent event) {
+    private void handleGuest(MouseEvent event) {
         if (event.getSource() == btnGoGuest) {
             closeStage();
             loadMain();
@@ -98,7 +106,7 @@ public class loginController {
     }
 
     @FXML
-    private void handleSignIn (MouseEvent event) {
+    private void handleSignIn(MouseEvent event) {
         String username = tfEmail1.getText();
         String password = tfPass.getText();
 
@@ -107,11 +115,10 @@ public class loginController {
         if (loggedIn == null) {
             signInInvalid.setText("One or more textfields are incorrect. Try again!");
             signInInvalid.setStyle("-fx-background-color:#d32f2f;-fx-text-fill: white");
-        }
-        else {
+        } else {
             switch (loggedIn.getType()) {
                 case 1:
-                    System.out.println("type: "  + loggedIn.getType());
+                    System.out.println("type: " + loggedIn.getType());
                     userSession = loggedIn.getType();
                     session = loggedIn; //-opmærksom på design konsekvens
                     closeStage();
@@ -135,10 +142,6 @@ public class loginController {
         }
     }
 
-    @FXML
-    private void signUpproducer(ActionEvent event) {
-
-    }
 
     @FXML
     private void signUpUser(ActionEvent event) {
@@ -146,13 +149,13 @@ public class loginController {
         if (source.equals(btnSignUp2)) {
 
 
-           // if (tfAge.getText() == "" || tfPassword.getText() == "" || tfName.getText() == "" || tfEmail.getText() == "") {
-             //   System.out.println("Missing info (Should be from message helper system)");
-            if (tfAge.getText().trim().isEmpty() || tfPassword.getText().trim().isEmpty()|| tfName.getText().trim().isEmpty() || tfEmail.getText().isEmpty()) {
+            // if (tfAge.getText() == "" || tfPassword.getText() == "" || tfName.getText() == "" || tfEmail.getText() == "") {
+            //   System.out.println("Missing info (Should be from message helper system)");
+            if (tfAge.getText().trim().isEmpty() || tfPassword.getText().trim().isEmpty() || tfName.getText().trim().isEmpty() || tfEmail.getText().isEmpty()) {
                 signUpInvalid.setText("One or more text fields are empty. Try again!");
                 signUpInvalid.setStyle("-fx-background-color:#d32f2f;-fx-text-fill: white");
 
-        } else {
+            } else {
                 String name = tfAge.getText();
                 String password = tfPassword.getText();
                 String userName = tfName.getText();
@@ -166,7 +169,19 @@ public class loginController {
     }
 
 
-
+    @FXML
+    public void loadInfo(ActionEvent event) {
+        Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+        alert1.setTitle("Data Policy");
+        alert1.setHeaderText("Data Privacy");
+        alert1.setContentText(
+                "We only collect the information you choose to give us, and we process it with your consent, or on another legal basis; " +
+                "we only require the minimum amount of personal information that is necessary to fullfill the purpose of your interaction with us. " +
+                "\n We comply with any data regulations and compliant with GDPR at any time.");
+        alert1.setResizable(true);
+        alert1.getDialogPane().setPrefSize(500, 200);
+        alert1.showAndWait();
+    }
 
         /*
         if (event.getSource() == btnSignIn){
