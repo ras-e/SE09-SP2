@@ -9,10 +9,9 @@
     <children>
         <TextField fx:id="email" layoutX="40.0" layoutY="103.0" prefHeight="27.0" prefWidth="160.0" promptText="Email" />
         <TextField fx:id="country" layoutX="40.0" layoutY="145.0" prefHeight="27.0" prefWidth="160.0" promptText="Name" />
-        <TextField fx:id="inProgram" layoutX="40.0" layoutY="194.0" prefHeight="27.0" prefWidth="160.0" promptText="Program" />
-        <TextField fx:id="date" layoutX="290.0" layoutY="145.0" prefHeight="27.0" prefWidth="160.0" promptText="Role " />
-        <TextField fx:id="role" layoutX="290.0" layoutY="194.0" prefHeight="27.0" prefWidth="160.0" promptText="Date" />
-        <TextField layoutX="290.0" layoutY="104.0" prefHeight="25.0" prefWidth="160.0" promptText="Country" />
+        <TextField layoutX="40.0" layoutY="194.0" prefHeight="27.0" prefWidth="160.0" promptText="Username" />
+        <TextField fx:id="date" layoutX="290.0" layoutY="145.0" prefHeight="27.0" prefWidth="160.0" promptText="Account Type " />
+        <TextField fx:id="role" layoutX="290.0" layoutY="194.0" prefHeight="27.0" prefWidth="160.0" promptText="Password" />
         <HBox layoutY="275.0" prefHeight="80.0" prefWidth="500.0">
             <children>
                 <JFXButton fx:id="saveButton" mnemonicParsing="false" prefHeight="80.0" prefWidth="250.0" stylesheets="@../../css/style.css" text="Save">
@@ -25,7 +24,7 @@
                     </font></JFXButton>
             </children>
         </HBox>
-      <Label layoutX="120.0" layoutY="40.0" prefHeight="36.0" prefWidth="235.0" text="Tilføj person til kreditering">
+      <Label layoutX="120.0" layoutY="40.0" prefHeight="36.0" prefWidth="141.0" text="Add Account">
          <font>
             <Font size="20.0" />
          </font>

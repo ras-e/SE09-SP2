@@ -6,6 +6,7 @@ import domain.Facade.ProducerFacade;
 import domain.Program.Category;
 import domain.Program.Credits;
 import domain.Program.Program;
+import domain.user.UserManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -56,14 +57,29 @@ public class adminController {
 
 
     //Loading the add/del/edit scenes when button pressed
+    @FXML
+    public TextField compName;
+    @FXML
+    public TextField cvrNumb;
+    @FXML
+    public Button btnAddComp;
+
+    //Loading the add/del/edit scenes when button pressed
     public void loadAddMemberUI(MouseEvent mouseEvent) {
         loadWindow("addAcc.fxml", "Add New Acc");
     }
     public void loadDeleteMemberUI(MouseEvent mouseEvent) {
-
+        loadWindow("delMember.fxml","Delete Member");
     }
-    public void loadEditMemberUI(ActionEvent actionEvent) {
+    public void loadEditMemberUI(MouseEvent mouseEvent) {
+        loadWindow("editMember.fxml","Edit Member");
+    }
 
+    @FXML
+    private void handleAddComp (ActionEvent event) {
+        String name = compName.getText();
+        String cvr = cvrNumb.getText();
+        UserManager.addCompanys(name, cvr);
     }
 
     //Method used to load new windows (here functions; add,del,edit windows)
