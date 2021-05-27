@@ -6,10 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -33,6 +30,12 @@ public class GuestController {
     public TextField searchTextField;
     @FXML
     public Button btnLogin;
+    @FXML
+    public Button delBrugerInf;
+    @FXML
+    public Button btnGdpr;
+    @FXML
+    public Label lSearchResults;
 
     @FXML
     public void initialize(){
@@ -44,6 +47,9 @@ public class GuestController {
 
             if (userSession == 1){
                 btnLogin.setVisible(false);
+            } else if (userSession == 0) {
+                delBrugerInf.setVisible(false);
+                btnGdpr.setVisible(false);
             }
 
         }
@@ -58,6 +64,7 @@ public class GuestController {
 
 
     public void PPKselect(MouseEvent event){
+        lSearchResults.setText("Søgeresultater");
         if(event.getSource().equals(personButton)){
             searchView.setItems(oPersonList);
         } else if (event.getSource().equals(programButton)) {
@@ -74,7 +81,7 @@ public class GuestController {
     private void goLoginPage (MouseEvent event) {
         if(event.getSource() == btnLogin) {
             closeStage();
-            loadWindow("login.fxml","Login");
+            loadWindow("Logins.fxml","Login");
         }
     }
     void loadWindow(String path, String title)
@@ -94,5 +101,22 @@ public class GuestController {
         ((Stage) btnLogin.getScene().getWindow()).close();
     }
 
+    //delete user info
+    public void delUserRequest(){
+        System.out.println("delete logging user info");
+    }
+
+    //show user info
+    public void showGDPR(MouseEvent event){
+        searchView.setItems(session.returnUserInf());
+        System.out.println(session.returnUserInf());
+
+        lSearchResults.setText("Konto information");
+    }
+
+    public void logUd (){
+        closeStage();
+        loadWindow("LLogin.fxml","Login");
+    }
 
 }

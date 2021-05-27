@@ -1,7 +1,5 @@
 package org.presentation;
 
-import animatefx.animation.ZoomIn;
-import domain.user.User;
 import domain.user.UserManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
