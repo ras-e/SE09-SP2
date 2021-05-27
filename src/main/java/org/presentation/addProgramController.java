@@ -69,10 +69,10 @@ public class addProgramController {
     @FXML
     private void addprogramandcategory (ActionEvent event) {
         Object source = event.getSource();
-    if (source==saveButton) {
-        LoginFacade.addprogramkategori(kategorich.getSelectionModel().getSelectedItem().toString());
-        LoginFacade.addprogram(nametf.getText());
-    }
+        if (source==saveButton) {
+            LoginFacade.addprogramkategori(kategorich.getSelectionModel().getSelectedItem().toString());
+            LoginFacade.addprogram(nametf.getText());
+        }
     }
 }
 
