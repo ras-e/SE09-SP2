@@ -81,7 +81,7 @@ public class GuestController {
     private void goLoginPage (MouseEvent event) {
         if(event.getSource() == btnLogin) {
             closeStage();
-            loadWindow("login.fxml","Login");
+            loadWindow("Login.fxml","Login");
         }
     }
     void loadWindow(String path, String title)
@@ -116,7 +116,7 @@ public class GuestController {
 
     public void logUd (){
         closeStage();
-        loadWindow("login.fxml","Login");
+        loadWindow("LLogin.fxml","Login");
     }
 
 }
