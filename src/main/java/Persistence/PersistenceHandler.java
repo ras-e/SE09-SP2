@@ -1,9 +1,13 @@
 package Persistence;
 
+import domain.Program.Credits;
+import domain.Program.Program;
+import domain.Program.mvPerson;
 import domain.user.Producer;
 import domain.user.User;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class PersistenceHandler {
 
@@ -185,6 +189,47 @@ return name;
             e.printStackTrace();
         }
         return kategori;
+    }
+
+    public Program searchprogram(Program program) {
+        try {
+            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Programz WHERE name = ?");
+            stmt.setString(1, program.getName());
+
+// Useless (Already specified in DB)                stmt.setInt(3, type);
+
+            ResultSet sqlReturnValues = stmt.executeQuery();
+            if (!sqlReturnValues.next()){
+                return null;
+            }
+            return new Program(
+                    sqlReturnValues.getString(1));
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+    }
+
+
+    public ArrayList<Credits> getCreditsbyname(String programname) {
+        try {
+            PreparedStatement selectstatement = connection.prepareStatement(
+                    "SELECT * FROM medvirkende\n" +
+                            "INNER JOIN kredittering ON medvirkende.id = medvirkendeid\n" +
+                            "INNER JOIN programz ON programzid = programz.id\n" +
+                            "Where programz.name = ?;");
+            selectstatement.setString(1, programname);
+            ResultSet sqlReturnValues = selectstatement.executeQuery();
+            ArrayList<Credits> credarry = new ArrayList<>();
+            while (sqlReturnValues.next()) {
+                credarry.add(new Credits(sqlReturnValues.getString(1),
+                        (mvPerson) sqlReturnValues.getObject(String.valueOf(new mvPerson(sqlReturnValues.getString(2))))));
+            }
+            return credarry;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            return null;
+        }
     }
 
 
