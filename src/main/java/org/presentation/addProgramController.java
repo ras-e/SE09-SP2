@@ -2,6 +2,7 @@ package org.presentation;
 
 import Persistence.PersistenceHandler;
 import domain.Facade.LoginFacade;
+import domain.Facade.ProducerFacade;
 import domain.Program.Category;
 import domain.Program.Program;
 import domain.user.User;
@@ -55,17 +56,14 @@ public class addProgramController {
 
 
     @FXML
-    private void choicebox (MouseEvent event) {
-        Object source = event.getSource();
-
+    private void choicebox () {
             ObservableList<String> navnPåString = FXCollections.observableArrayList();
-
             for (Category k : Category.values()) {
                 navnPåString.add(k.toString());
             }
             kategorich.setItems(navnPåString);
-    }
 
+    }
     @FXML
     private void addprogramandcategory (ActionEvent event) {
         Object source = event.getSource();
@@ -74,6 +72,11 @@ public class addProgramController {
         LoginFacade.addprogram(nametf.getText());
     }
     }
+
+
+
+
+
 }
 
 

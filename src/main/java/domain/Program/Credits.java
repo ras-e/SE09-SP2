@@ -4,17 +4,15 @@ package domain.Program;
 public class Credits {
 
 
-    tvProdRolle ProdRole;
-    int CreditID;
+//    tvProdRolle ProdRole;
+    String prodrolle;
     mvPerson person;
 
-    public  Credits (){
 
-    }
+    public Credits(String prodrolle, mvPerson person) {
 
-    public Credits(tvProdRolle prodRole, int creditID, mvPerson person) {
-        this.CreditID = creditID;
-        this.ProdRole = prodRole;
+//        this.ProdRole = prodRole;
+        this.prodrolle = prodrolle;
         this.person = person;
     }
 

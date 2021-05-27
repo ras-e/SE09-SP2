@@ -118,23 +118,19 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TextField fx:id="proID" layoutX="182.0" layoutY="42.0" prefHeight="28.0" prefWidth="137.0" promptText="ID" />
-                              <TextField fx:id="proTitle" layoutX="354.0" layoutY="42.0" prefHeight="28.0" prefWidth="162.0" promptText="Title" />
-                              <TextField fx:id="proPar" layoutX="543.0" layoutY="42.0" prefHeight="28.0" prefWidth="183.0" promptText="Participants" />
-                              <TextField fx:id="proDate" layoutX="182.0" layoutY="102.0" prefHeight="28.0" prefWidth="138.0" promptText="Date" />
-                              <TextField fx:id="proPro" layoutX="355.0" layoutY="102.0" prefHeight="28.0" prefWidth="161.0" promptText="Program" />
-                              <TableView layoutX="182.0" layoutY="153.0" prefHeight="248.0" prefWidth="527.0">
+                              <TextField fx:id="proTitle" layoutX="232.0" layoutY="108.0" prefHeight="28.0" prefWidth="137.0" promptText="Program name" />
+                              <TextField fx:id="proPar" layoutX="377.0" layoutY="108.0" prefHeight="28.0" prefWidth="137.0" promptText="Participants" />
+                              <TextField fx:id="proDate" layoutX="523.0" layoutY="108.0" prefHeight="28.0" prefWidth="138.0" promptText="Tvrole" />
+                              <TableView layoutX="182.0" layoutY="153.0" prefHeight="248.0" prefWidth="446.0">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="C1" />
-                                  <TableColumn prefWidth="75.0" text="C2" />
-                                    <TableColumn prefWidth="75.0" text="C2" />
-                                    <TableColumn prefWidth="75.0" text="C2" />
-                                    <TableColumn prefWidth="75.0" text="C2" />
-                                    <TableColumn prefWidth="75.0" text="C2" />
-                                    <TableColumn prefWidth="75.0" text="C1" />
+                                  <TableColumn fx:id="namecol" prefWidth="75.0" text="name" />
+                                  <TableColumn fx:id="tvrolecol" prefWidth="75.0" text="TV-role" />
+                                    <TableColumn fx:id="emailcol" prefWidth="75.0" text="E-mail" />
+                                    <TableColumn fx:id="datecol" prefWidth="87.0" text="creation date" />
+                                    <TableColumn prefWidth="63.0" />
+                                    <TableColumn prefWidth="75.0" />
                                 </columns>
                               </TableView>
-                              <TextField fx:id="proCategory" layoutX="543.0" layoutY="102.0" prefHeight="28.0" prefWidth="183.0" promptText="Category" />
                               <VBox layoutX="-2.0" layoutY="40.0" prefHeight="398.0" prefWidth="140.0">
                                  <children>
                                     <Button fx:id="btnAddPro" contentDisplay="TOP" mnemonicParsing="false" prefHeight="107.0" prefWidth="136.0" stylesheets="@../../css/style.css" text="Add Program">
@@ -175,6 +171,9 @@
                                     </Button>
                                  </children>
                               </VBox>
+                              <ChoiceBox fx:id="kategorich2" layoutX="369.0" layoutY="55.0" prefHeight="25.0" prefWidth="154.0" />
+                              <Label layoutX="408.0" layoutY="32.0" text="Vælg kategori" />
+                              <Button fx:id="searchbtn" layoutX="623.0" layoutY="55.0" mnemonicParsing="false" onAction="#searchprogramname" text="Search" />
                            </children>
                         </AnchorPane>
                   </content>
