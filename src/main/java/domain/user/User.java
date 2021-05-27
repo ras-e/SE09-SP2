@@ -22,7 +22,8 @@ public class User {
                 this.username = username;
                 this.password = password;
                 this.email = email;
-                type = 3;
+                //Required fix
+                type = 1;
                 infList.addAll("Name: "+name,"Username: "+username,"password: "+password,"email: "+email);
         }
 

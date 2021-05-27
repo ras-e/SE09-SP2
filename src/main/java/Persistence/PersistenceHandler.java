@@ -212,32 +212,29 @@ return name;
     }
 
 
-    public ArrayList<Credits> getCreditsbyname(String programname) {
-        try {
-            PreparedStatement selectstatement = connection.prepareStatement(
-                    "SELECT * FROM medvirkende\n" +
-                            "INNER JOIN kredittering ON medvirkende.id = medvirkendeid\n" +
-                            "INNER JOIN programz ON programzid = programz.id\n" +
-                            "Where programz.name = ?;");
-            selectstatement.setString(1, programname);
-            ResultSet sqlReturnValues = selectstatement.executeQuery();
-            ArrayList<Credits> credarry = new ArrayList<>();
-            while (sqlReturnValues.next()) {
-                credarry.add(new Credits(sqlReturnValues.getString(1),
-                        (mvPerson) sqlReturnValues.getObject(String.valueOf(new mvPerson(sqlReturnValues.getString(2))))));
-            }
-            return credarry;
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-    }
-
+//    public ArrayList<Credits> getCreditsbyname(String programname) {
+//        try {
+//            PreparedStatement selectstatement = connection.prepareStatement(
+//                    "SELECT * FROM medvirkende\n" +
+//                            "INNER JOIN kredittering ON medvirkende.id = medvirkendeid\n" +
+//                            "INNER JOIN programz ON programzid = programz.id\n" +
+//                            "Where programz.name = ?;");
+//            selectstatement.setString(1, programname);
+//            ResultSet sqlReturnValues = selectstatement.executeQuery();
+//            ArrayList<Credits> credarry = new ArrayList<>();
+//            while (sqlReturnValues.next()) {
+//                credarry.add(new Credits(sqlReturnValues.getString(1),
+//                        (mvPerson) sqlReturnValues.getObject(String.valueOf(new mvPerson(sqlReturnValues.getString(2))))));
+//            }
+//            return credarry;
+//        } catch (SQLException ex) {
+//            ex.printStackTrace();
+//            return null;
+//        }
+//    }
 
 
     //credits
-
-
 
 }
 

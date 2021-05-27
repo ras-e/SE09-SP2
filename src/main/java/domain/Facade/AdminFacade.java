@@ -7,12 +7,12 @@ import javafx.collections.ObservableList;
 
 import java.util.List;
 
-public class AdminFacade {
-
-    //    public static Program searchprogram(String programname) {
-//        return PersistenceHandler.getInstance().searchprogram();
+//public class AdminFacade {
+//
+//    //    public static Program searchprogram(String programname) {
+////        return PersistenceHandler.getInstance().searchprogram();
+////    }
+//    public static ObservableList<Credits> getcreditslist(String programname) {
+//        return (ObservableList<Credits>) PersistenceHandler.getInstance().getCreditsbyname(programname);
 //    }
-    public static ObservableList<Credits> getcreditslist(String programname) {
-        return (ObservableList<Credits>) PersistenceHandler.getInstance().getCreditsbyname(programname);
-    }
-}
+//}

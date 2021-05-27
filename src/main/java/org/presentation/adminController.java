@@ -48,7 +48,7 @@ public class adminController {
     @FXML
     private TableColumn<Credits, Date> datecol;
 
-    Presentationcontroller presentationcontroller;
+    //Presentationcontroller presentationcontroller;
 
 
     //Loading the add/del/edit scenes when button pressed
@@ -98,15 +98,15 @@ public class adminController {
         }
         kategorich2.setItems(navnPåString);
     }
-    @FXML
-    private void searchprogramname (ActionEvent event) {
-        Object source = event.getSource();
-        if (source.equals(searchbtn)) {
-            String name = namefield.getText();
-            AdminFacade.getcreditslist(name);
-
-            ObservableList<Credits> data = AdminFacade.getcreditslist(name);
-            table.setItems(data);
-        }
-    }
+//    @FXML
+//    private void searchprogramname (ActionEvent event) {
+//        Object source = event.getSource();
+//        if (source.equals(searchbtn)) {
+//            String name = namefield.getText();
+//            AdminFacade.getcreditslist(name);
+//
+//            ObservableList<Credits> data = AdminFacade.getcreditslist(name);
+//            table.setItems(data);
+//        }
+//    }
 }
