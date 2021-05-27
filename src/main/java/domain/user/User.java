@@ -17,7 +17,6 @@ public class User {
 
 
         public User(String name, String username, String password, String email) {
-
                 this.name = name;
                 this.username = username;
                 this.password = password;
@@ -29,7 +28,6 @@ public class User {
 
         public User(int id, String name, String username, String password, String email, String business, int type) {
         }
-
 
         public String getName() {
                 return name;

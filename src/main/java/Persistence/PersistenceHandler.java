@@ -137,9 +137,11 @@ public class PersistenceHandler {
     public User deleteUser(User user) {
         try {
             PreparedStatement insertStatement = connection.prepareStatement(
-                    "DELETE FROM users WHERE (username, password) VALUES (?,?)");
+                    "DELETE FROM users WHERE (name, username, password, email) VALUES (?,?,?,?)");
+            insertStatement.setString(1, user.getName());
             insertStatement.setString(2, user.getUsername());
             insertStatement.setString(3, user.getPassword());
+            insertStatement.setString(4, user.getEmail());
             insertStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();

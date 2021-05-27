@@ -29,6 +29,6 @@
          <Image url="@../../images/tv2_logo.png" />
       </image>
    </ImageView>
-   <Button fx:id="delBrugerInf" layoutX="30.0" layoutY="452.0" mnemonicParsing="false" onAction="#delUserRequest" text="Slet bruger info" />
+   <Button fx:id="delUser" layoutX="30.0" layoutY="452.0" mnemonicParsing="false" onAction="#delUserRequest" text="Slet bruger info" />
    <Button fx:id="btnGdpr" layoutX="30.0" layoutY="420.0" mnemonicParsing="false" onMouseClicked="#showGDPR" text="Om GDPR" />
 </AnchorPane>
