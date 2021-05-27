@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.delMemberController">
     <children>
         <TextField fx:id="email" layoutX="40.0" layoutY="124.0" prefHeight="27.0" prefWidth="160.0" promptText="E-mail" />
@@ -30,5 +30,6 @@
             <Font size="20.0" />
          </font>
       </Label>
+      <TextField fx:id="email1" alignment="CENTER" layoutX="170.0" layoutY="85.0" prefHeight="27.0" prefWidth="160.0" promptText="Person ID" />
     </children>
 </AnchorPane>
