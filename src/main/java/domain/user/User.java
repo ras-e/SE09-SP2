@@ -22,7 +22,7 @@ public class User {
                 this.username = username;
                 this.password = password;
                 this.email = email;
-                type = 1;
+                type = 3;
                 infList.addAll("Name: "+name,"Username: "+username,"password: "+password,"email: "+email);
         }
 

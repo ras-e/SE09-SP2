@@ -131,6 +131,19 @@ public class PersistenceHandler {
         return user;
     }
 
+    public User deleteUser(User user) {
+        try {
+            PreparedStatement insertStatement = connection.prepareStatement(
+                    "DELETE FROM users WHERE (username, password) VALUES (?,?)");
+            insertStatement.setString(2, user.getUsername());
+            insertStatement.setString(3, user.getPassword());
+            insertStatement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
+    }
+
     public String addbusiness(String business) {
         try {
             PreparedStatement insertStatement = connection.prepareStatement(
