@@ -1,8 +1,12 @@
 package org.presentation;
 
 import animatefx.animation.ZoomIn;
+import domain.Program.Category;
+import domain.Program.Credits;
 import domain.user.User;
 import domain.user.UserManager;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -54,6 +58,25 @@ public class adminController {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+    @FXML
+    private void choiceboxadmin () {
+        ObservableList<String> navnPåString = FXCollections.observableArrayList();
+        for (Category k : Category.values()) {
+            navnPåString.add(k.toString());
+        }
+        kategorich2.setItems(navnPåString);
+    }
+    @FXML
+    private void searchprogramname (ActionEvent event) {
+        Object source = event.getSource();
+        if (source.equals(searchbtn)) {
+            String name = namefield.getText();
+            AdminFacade.getcreditslist(name);
+
+            ObservableList<Credits> data = AdminFacade.getcreditslist(name);
+            table.setItems(data);
         }
     }
 }
