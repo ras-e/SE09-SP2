@@ -25,7 +25,7 @@
                     </font></JFXButton>
             </children>
         </HBox>
-      <Label layoutX="134.0" layoutY="31.0" prefHeight="35.0" prefWidth="232.0" text="Slet person fra kreditering">
+      <Label layoutX="134.0" layoutY="31.0" prefHeight="35.0" prefWidth="160.0" text="Delete Account">
          <font>
             <Font size="20.0" />
          </font>
