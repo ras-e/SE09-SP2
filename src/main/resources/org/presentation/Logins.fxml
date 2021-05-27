@@ -28,26 +28,32 @@
                     <children>
                         <Pane fx:id="pgSignUp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
                             <children>
-                                <Button fx:id="btnSignUp2" layoutX="88.0" layoutY="408.0" mnemonicParsing="false" onAction="#signUpUser" prefHeight="50.0" prefWidth="250.0" styleClass="buttonSignIn" stylesheets="@../../css/login_style.css" text="Sign up" />
-                                <TextField fx:id="tfEmail" layoutX="88.0" layoutY="248.0" onAction="#signUpUser" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" />
-                                <Label layoutX="60.0" layoutY="60.0" prefHeight="51.0" prefWidth="107.0" text="Sign Up">
+                                <Button fx:id="btnSignUp2" layoutX="88.0" layoutY="423.0" mnemonicParsing="false" onAction="#signUpUser" prefHeight="50.0" prefWidth="250.0" styleClass="buttonSignIn" stylesheets="@../../css/login_style.css" text="Sign up" />
+                                <TextField fx:id="tfEmail" layoutX="88.0" layoutY="221.0" onAction="#signUpUser" prefHeight="45.0" prefWidth="250.0" promptText="E-mail" />
+                                <Label layoutX="70.0" layoutY="52.0" prefHeight="51.0" prefWidth="107.0" text="Sign Up">
                                     <font>
                                         <Font name="System Bold" size="24.0" />
                                     </font>
                                 </Label>
 
-                                <TextField fx:id="tfPassword" layoutX="88.0" layoutY="190.0" onAction="#signUpUser" prefHeight="45.0" prefWidth="250.0" promptText="Password" />
-                                <TextField fx:id="tfName" layoutX="88.0" layoutY="132.0" onAction="#signUpUser" prefHeight="45.0" prefWidth="250.0" promptText="Username" />
-                                <TextField fx:id="tfAge" layoutX="88.0" layoutY="304.0" onAction="#signUpUser" prefHeight="45.0" prefWidth="250.0" promptText="Real name" />
+                                <TextField fx:id="tfPassword" layoutX="88.0" layoutY="164.0" onAction="#signUpUser" prefHeight="45.0" prefWidth="250.0" promptText="Password" />
+                                <TextField fx:id="tfName" layoutX="88.0" layoutY="111.0" onAction="#signUpUser" prefHeight="45.0" prefWidth="250.0" promptText="Username" />
+                                <TextField fx:id="tfAge" layoutX="88.0" layoutY="280.0" onAction="#signUpUser" prefHeight="45.0" prefWidth="250.0" promptText="Real name" />
                                 <ImageView fx:id="signUpToLogin" fitHeight="49.0" fitWidth="46.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#handleMouseEvent" pickOnBounds="true" preserveRatio="true">
 
                                     <image>
                                         <Image url="@../../images/back_arrow.png" />
                                     </image>
                                 </ImageView>
-                        <Label fx:id="signUpInvalid" alignment="CENTER" layoutX="54.0" layoutY="362.0" prefHeight="32.0" prefWidth="318.0">
+                        <Label fx:id="signUpInvalid" alignment="CENTER" layoutX="54.0" layoutY="331.0" prefHeight="30.0" prefWidth="318.0">
                            <font>
                               <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnDialog" layoutX="117.0" layoutY="394.0" mnemonicParsing="false" onAction="#loadInfo" prefHeight="25.0" prefWidth="193.0" text="(Press this button to read more)" />
+                        <Label layoutX="80.0" layoutY="353.0" prefHeight="51.0" prefWidth="267.0" text="By registering you agree to our Data Policy">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
                             </children></Pane>

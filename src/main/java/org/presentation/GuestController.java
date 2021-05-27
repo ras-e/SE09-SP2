@@ -38,6 +38,8 @@ public class GuestController {
     public Button btnGdpr;
     @FXML
     public Label lSearchResults;
+    @FXML
+    private Button favPro;
 
     @FXML
     public void initialize(){
@@ -52,6 +54,7 @@ public class GuestController {
             } else if (userSession == 0) {
                 delUser.setVisible(false);
                 btnGdpr.setVisible(false);
+                favPro.setVisible(false);
             }
 
         }
@@ -115,13 +118,14 @@ public class GuestController {
                 "We at TV 2 care highly about your private details. Feel free to sign up again and enjoy all the benefits as a registered user");
 
         Optional<ButtonType> result = alert.showAndWait();
+
+        // ... user chose OK
         if (result.get() == ButtonType.OK){
             LoginFacade.delUser(session);
 
-            // ... user chose OK
         } else {
-            if (result.get() == ButtonType.CANCEL);
             // ... user chose CANCEL or closed the dialog
+            if (result.get() == ButtonType.CANCEL);
         }
 
         System.out.println("delete logging user info");
