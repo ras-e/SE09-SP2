@@ -100,23 +100,28 @@ public class loginController {
 
 
         User loggedIn = LoginFacade.login(username, password);
+
         if (loggedIn == null) {
             System.out.println("FAILURE");
         }
         else {
             switch (loggedIn.getType()) {
                 case 1:
+                    System.out.println("type: "  + loggedIn.getType());
                     userSession = loggedIn.getType();
                     session = loggedIn; //-opmærksom på design konsekvens
                     closeStage();
                     loadMain();
                     System.out.println("vis logged in guest vindue");
                     break;
+
                 case 2:
-                    System.out.println("vis prod vindue");
+                    closeStage();
+                    loadVerifiedProducer();
                     break;
                 case 3:
-                    System.out.println("vis admin vindue");
+                    closeStage();
+                    loadAdmin();
                     break;
                 case 4:
                     //System.out.println("user");
@@ -180,6 +185,32 @@ public class loginController {
             Parent parent = FXMLLoader.load(getClass().getResource("guest.fxml"));
             Stage stage = new Stage(StageStyle.DECORATED);
             stage.setTitle("Menu");
+            stage.setScene(new Scene(parent));
+            stage.show();
+
+        }
+        catch (IOException ex) {
+        }
+    }
+
+    private void loadVerifiedProducer() {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("adminUI.fxml"));
+            Stage stage = new Stage(StageStyle.DECORATED);
+            stage.setTitle("Registreret Producer");
+            stage.setScene(new Scene(parent));
+            stage.show();
+
+        }
+        catch (IOException ex) {
+        }
+    }
+
+    private void loadAdmin() {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("adminUI.fxml"));
+            Stage stage = new Stage(StageStyle.DECORATED);
+            stage.setTitle("Admin");
             stage.setScene(new Scene(parent));
             stage.show();
 
