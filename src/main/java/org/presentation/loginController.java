@@ -31,7 +31,7 @@ public class loginController {
     public AnchorPane layersignup;
 
 
-    //signup
+    //Sign-up
     @FXML
     public TextField tfEmail;
     @FXML
@@ -45,7 +45,10 @@ public class loginController {
     public TextField tfName;
     @FXML
     public TextField tfBusiness;
-    // sign in
+    @FXML
+    private Label signUpInvalid;
+
+    // Sign-in
     @FXML
     public TextField tfEmail1;
 
@@ -66,12 +69,9 @@ public class loginController {
     public RadioButton bntExit;
     @FXML
     public Button btnGoGuest;
+
     @FXML
-    public Label txtInvalid1;
-    @FXML
-    public Label signInInvalid;
-    @FXML
-    public Label signUpInvalid;
+    private Label signInInvalid;
 
     //Signup -> Login
     @FXML
@@ -105,7 +105,7 @@ public class loginController {
         User loggedIn = LoginFacade.login(username, password);
 
         if (loggedIn == null) {
-            signInInvalid.setText("One or more text fields are empty. Try again!");
+            signInInvalid.setText("One or more textfields are incorrect. Try again!");
             signInInvalid.setStyle("-fx-background-color:#d32f2f;-fx-text-fill: white");
         }
         else {
