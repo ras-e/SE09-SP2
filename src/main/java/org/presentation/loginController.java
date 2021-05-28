@@ -29,7 +29,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 import static domain.sysController.session;
-import static domain.sysController.userSession;
+import static domain.sysController.userSessionType;
 
 
 public class loginController {
@@ -119,10 +119,11 @@ public class loginController {
             switch (loggedIn.getType()) {
                 case 1:
                     System.out.println("type: " + loggedIn.getType());
-                    userSession = loggedIn.getType();
+                    userSessionType = loggedIn.getType();
                     session = loggedIn; //-opmærksom på design konsekvens
                     closeStage();
-                    loadMain();
+                    //loadMain();
+                    loadAdmin();
                     System.out.println("vis logged in guest vindue");
                     break;
 

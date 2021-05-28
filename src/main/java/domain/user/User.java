@@ -26,8 +26,16 @@ public class User {
                 infList.addAll("Name: "+name,"Username: "+username,"password: "+password,"email: "+email);
         }
 
-        public User(int id, String name, String username, String password, String email, String business, int type) {
+        public User(String name, String username, String password, String email, int type) {
+                this.name = name;
+                this.username = username;
+                this.password = password;
+                this.email = email;
+                this.type = type;
+                infList.addAll("Name: "+name,"Username: "+username,"password: "+password,"email: "+email, "accout type: "+type);
         }
+
+
 
         public String getName() {
                 return name;

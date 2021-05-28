@@ -16,7 +16,7 @@ public class sysController {
    static ArrayList<User> user;
 
    //user session - bestemmer vindue der åbnes. 0=ikkeRegistreret,1=logged ind, 2= producer, 3=admin. bør lave en enum.
-   public static int userSession = 0;
+   public static int userSessionType = 0;
    public static User session;
 
 

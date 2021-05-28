@@ -16,7 +16,7 @@ public class PersistenceHandler {
         private int port = 5432;
         private String databaseName = "SE03";
         private String username = "postgres";
-        private String password = "aaaa2104A100";
+        private String password = "Pletmus123";
         private Connection connection = null;
         private static PersistenceHandler instance;
 
@@ -56,13 +56,14 @@ public class PersistenceHandler {
                 if (!sqlReturnValues.next()){
                     return null;
                 }
+                User someUser = new User("name", "username","password","email",2);
                 return new User(
                         sqlReturnValues.getString(2),
                         sqlReturnValues.getString(3),
                         sqlReturnValues.getString(4),
-                        sqlReturnValues.getString(5));
+                        sqlReturnValues.getString(5),
                        // sqlReturnValues.getString(6);
-                        //sqlReturnValues.getInt(7));
+                        sqlReturnValues.getInt(7));
 
             } catch (SQLException ex) {
                 ex.printStackTrace();
@@ -136,13 +137,14 @@ public class PersistenceHandler {
 
     public User deleteUser(User user) {
         try {
-            PreparedStatement insertStatement = connection.prepareStatement(
-                    "DELETE FROM users WHERE (name, username, password, email) VALUES (?,?,?,?)");
-            insertStatement.setString(1, user.getName());
-            insertStatement.setString(2, user.getUsername());
-            insertStatement.setString(3, user.getPassword());
-            insertStatement.setString(4, user.getEmail());
-            insertStatement.execute();
+            PreparedStatement delStatement = connection.prepareStatement(
+                    "DELETE FROM users WHERE username = ? AND password = ?");
+
+            delStatement.setString(1, user.getUsername());
+            delStatement.setString(2, user.getPassword());
+
+
+            delStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
         }

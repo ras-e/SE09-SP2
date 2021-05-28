@@ -49,9 +49,9 @@ public class GuestController {
             createmvPerson("Jens"+i,"jensen");
             oCreditList.add(new Credits());
 
-            if (userSession == 1){
+            if (userSessionType == 1){
                 btnLogin.setVisible(false);
-            } else if (userSession == 0) {
+            } else if (userSessionType == 0) {
                 delUser.setVisible(false);
                 btnGdpr.setVisible(false);
                 favPro.setVisible(false);
@@ -122,13 +122,14 @@ public class GuestController {
         // ... user chose OK
         if (result.get() == ButtonType.OK){
             LoginFacade.delUser(session);
+            searchView.setItems(oProgramList);
 
         } else {
             // ... user chose CANCEL or closed the dialog
             if (result.get() == ButtonType.CANCEL);
         }
 
-        System.out.println("delete logging user info");
+
     }
 
     //show user info
