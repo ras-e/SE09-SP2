@@ -30,16 +30,6 @@ public class addProgramController {
     @FXML
     private ChoiceBox kategorich;
 
-
-    //Movement on login screen + Guest -> Main Menu
-//    @FXML
-//    private void handleMouseEvent (MouseEvent event) {
-//        if (event.getSource() == bntExit) {
-//            System.exit(0); }
-//        if (event.getSource().equals(btnBack))
-//        { pgSignIn.toFront(); }
-//
-//    }
     @FXML
     public void cancelAction(ActionEvent actionEvent) {
         closeStage();

@@ -25,18 +25,14 @@ import static domain.sysController.userSessionType;
 
 public class loginController {
 
-
     @FXML
     public AnchorPane layersignup;
-
-
     //Sign-up
     @FXML
     public TextField tfEmail;
     @FXML
-
     public PasswordField tfPass;
-
+    @FXML
     public TextField tfPassword;
     @FXML
     public TextField tfAge;
@@ -54,14 +50,12 @@ public class loginController {
     // Sign-in
     @FXML
     public TextField tfEmail1;
-
     @FXML
     public Button btnSignIn;
     @FXML
     public Button btnSignUp;
     @FXML
     public Button btnSignUp2;
-
     @FXML
     public Pane pgSignUp;
     @FXML
@@ -95,12 +89,11 @@ public class loginController {
             loadMain();
         }
     }
-
+    // Login (Facade + Session)
     @FXML
     private void handleSignIn(MouseEvent event) {
         String username = tfEmail1.getText();
         String password = tfPass.getText();
-
         User loggedIn = LoginFacade.login(username, password);
 
         if (loggedIn == null) {
@@ -111,12 +104,11 @@ public class loginController {
                 case 1:
                     System.out.println("type: " + loggedIn.getType());
                     userSessionType = loggedIn.getType();
-                    session = loggedIn; //-opmærksom på design konsekvens
+                    session = loggedIn;
                     closeStage();
-                    //loadMain();
-                    loadAdmin();                    System.out.println("vis logged in guest vindue");
+                    loadAdmin();
+                    System.out.println("Show Admin page");
                     break;
-
                 case 2:
                     closeStage();
                     loadVerifiedProducer();
@@ -126,9 +118,7 @@ public class loginController {
                     loadAdmin();
                     break;
                 case 4:
-                    //System.out.println("user");
                     break;
-
             }
         }
     }
@@ -139,9 +129,6 @@ public class loginController {
         Object source = event.getSource();
         if (source.equals(btnSignUp2)) {
 
-
-            // if (tfAge.getText() == "" || tfPassword.getText() == "" || tfName.getText() == "" || tfEmail.getText() == "") {
-            //   System.out.println("Missing info (Should be from message helper system)");
             if (tfAge.getText().trim().isEmpty() || tfPassword.getText().trim().isEmpty() || tfName.getText().trim().isEmpty() || tfEmail.getText().isEmpty()) {
                 signUpInvalid.setText("One or more text fields are empty. Try again!");
                 signUpInvalid.setStyle("-fx-background-color:#d32f2f;-fx-text-fill: white");
@@ -151,14 +138,12 @@ public class loginController {
                 String password = tfPassword.getText();
                 String userName = tfName.getText();
                 String email = tfEmail.getText();
-                //String business = tfBusiness.getText();
-                System.out.println("user created!");
+                System.out.println("User created!");
                 User user = new User(name, userName, password, email);
                 LoginFacade.addUser(user);
             }
         }
     }
-
 
     @FXML
     public void loadInfo(ActionEvent event) {
@@ -173,14 +158,6 @@ public class loginController {
         alert1.getDialogPane().setPrefSize(500, 200);
         alert1.showAndWait();
     }
-
-        /*
-        if (event.getSource() == btnSignIn){
-            if (tfEmail.getText() == null || tfEmail.getText().trim().isEmpty())
-            else (tfPass.getText() == null || tfPass.getText().trim().isEmpty()) {
-                System.out.println("Empty");
-            }
-*/
 
     private void loadProducer() {
         try {

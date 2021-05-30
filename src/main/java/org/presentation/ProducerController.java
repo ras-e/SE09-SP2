@@ -16,8 +16,6 @@ import static org.presentation.PresentationHelper.loadWindows;
 
 public class ProducerController {
 
-
-
     @FXML
     public ChoiceBox programListBox;
     @FXML
@@ -27,7 +25,6 @@ public class ProducerController {
     @FXML
     public Button editKreditteringBtn;
     @FXML Button delKreditteringBtn;
-
 
 
     public void initialize(){
@@ -44,9 +41,9 @@ public class ProducerController {
     }
 
     public void programListClick(){
-       // System.out.println(programListBox.getValue());
         currentProgram = (Program) programListBox.getValue();
         if(currentProgram!=null){
+
             //Vis currentprogram i tabelview
             ObservableList<Credits> oCurrentProgramCredits = FXCollections.observableArrayList(currentProgram.getCredits());
             creditListView.setItems(oCurrentProgramCredits);

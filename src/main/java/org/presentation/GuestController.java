@@ -58,15 +58,7 @@ public class GuestController {
             }
 
         }
-//        Search filter work in progress
-//        FilteredList<mvPerson> fPersonList = new FilteredList<>(FXCollections.observableArrayList(oPersonList));
-//        fPersonList.setPredicate(p ->{
-//            return true;
-//        });
-//        searchView.setItems(fPersonList);
     }
-
-
 
     public void PPKselect(MouseEvent event){
         lSearchResults.setText("Søgeresultater");
@@ -106,7 +98,7 @@ public class GuestController {
         ((Stage) btnLogin.getScene().getWindow()).close();
     }
 
-    //delete user info
+    //Delete user info & Alert function (GDPR related)
     public void delUserRequest(){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation Dialog");
@@ -128,11 +120,9 @@ public class GuestController {
             // ... user chose CANCEL or closed the dialog
             if (result.get() == ButtonType.CANCEL);
         }
-
-
     }
 
-    //show user info
+    //Print user info
     public void showGDPR(MouseEvent event){
         searchView.setItems(session.returnUserInf());
         System.out.println(session.returnUserInf());

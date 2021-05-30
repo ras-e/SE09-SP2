@@ -12,11 +12,7 @@ public class App extends Application {
     public void start(Stage stage) throws Exception{
 
         Parent root = FXMLLoader.load(getClass().getResource("Logins.fxml")); //logins er den rigtige
-
-        //primaryStage.setTitle("Hello World");
         Scene scene = new Scene(root);
-        //scene.getStylesheets().add(getClass().getResource("login.css").toExternalForm());
-
         stage.setScene(scene);
         stage.show();
     }
