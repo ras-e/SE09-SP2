@@ -2,7 +2,6 @@ package domain.Facade;
 
 
 import Persistence.PersistenceHandler;
-
 import domain.user.User;
 
 public class LoginFacade {
@@ -27,5 +26,21 @@ public class LoginFacade {
     }
     public static String addprogram(String name) {
         return PersistenceHandler.getInstance().addprogram(name);
+    }
+
+    public static void addKredittering(){}
+
+    public static void deleKredittering(){}
+
+    public static void getProgramObject(String name){
+
+    }
+
+    public static String addPerson(){
+        return "";
+    }
+
+    public static String addKreditering(){
+        return "";
     }
 }

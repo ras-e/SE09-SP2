@@ -1,11 +1,8 @@
 package org.presentation;
 
-import Persistence.PersistenceHandler;
 import domain.Facade.LoginFacade;
 import domain.Program.Category;
 import domain.Program.Program;
-import domain.user.User;
-import javafx.beans.value.ObservableStringValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,13 +13,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-
-import static domain.Program.Category.gyser;
+import static domain.sysController.oProgramList;
 
 public class addProgramController {
 
     @FXML
-    private Button cancelBtn;
+    private Button cancelButton;
     @FXML
     private Button saveButton;
     @FXML
@@ -50,7 +46,13 @@ public class addProgramController {
     }
     @FXML
     public void closeStage() {
-        ((Stage) cancelBtn.getScene().getWindow()).close();
+        ((Stage) cancelButton.getScene().getWindow()).close();
+    }
+    @FXML void cancelWindow(MouseEvent mouseEvent){
+        System.out.println(mouseEvent.getSource().toString());
+        if (mouseEvent.getSource()==cancelButton){
+            closeStage();
+        }
     }
 
 
@@ -70,8 +72,15 @@ public class addProgramController {
     private void addprogramandcategory (ActionEvent event) {
         Object source = event.getSource();
         if (source==saveButton) {
+
+            Program program = new Program(nametf.getText()); //opretter program--------------- har intet med producer at gøre
+
+            oProgramList.add(program); //<- tilføjer til global liste af programmer alle kan se
+
             LoginFacade.addprogramkategori(kategorich.getSelectionModel().getSelectedItem().toString());
-            LoginFacade.addprogram(nametf.getText());
+            LoginFacade.addprogram(nametf.getText()); // gemmer program i db
+
+            closeStage();
         }
     }
 }

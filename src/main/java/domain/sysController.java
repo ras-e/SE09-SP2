@@ -20,12 +20,12 @@ public class sysController {
    public static User session;
 
 
+   //Blok af dårligt design:
    public static ObservableList<mvPerson> oPersonList = FXCollections.observableArrayList();
    public static ObservableList<Program> oProgramList = FXCollections.observableArrayList();
    public static ObservableList<Credits> oCreditList =FXCollections.observableArrayList();
    public static ObservableList<User> oUserList = FXCollections.observableArrayList();
-
-
+   public static Program currentProgram = new Program("Empty production");
 
 
 
@@ -38,6 +38,8 @@ public class sysController {
         mvPerson person = new mvPerson(fName,lName);
         mvPersons.add(person);
         oPersonList.add(person);
+
+
 
        // ioFacade.writeObjectToFiles(person,"C:\\Users\\ander\\IdeaProjects\\SE09-SP2_ny\\src\\main\\resources\\files\\personBinaryFileList");
 

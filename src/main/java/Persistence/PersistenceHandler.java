@@ -1,13 +1,10 @@
 package Persistence;
 
-import domain.Program.Credits;
 import domain.Program.Program;
-import domain.Program.mvPerson;
 import domain.user.Producer;
 import domain.user.User;
 
 import java.sql.*;
-import java.util.ArrayList;
 
 public class PersistenceHandler {
 
@@ -112,7 +109,6 @@ public class PersistenceHandler {
     }
 
 
-
     public User addUser(User user) {
         int account_type = 1;
 
@@ -179,8 +175,32 @@ public class PersistenceHandler {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-return name;
+        return name;
     }
+
+//    public Program getProgram(String name){
+//        try {
+//            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM programz WHERE name = ?");
+//            stmt.setString(1, name);
+//
+//            ResultSet sqlReturnValues = stmt.executeQuery();
+//            if (!sqlReturnValues.next()){
+//                return null;
+//            }
+//
+//            return new Program(
+//                    sqlReturnValues.getInt(1),
+//                    sqlReturnValues.getArray(2),
+//                    sqlReturnValues.getString(3),
+//
+//
+//
+//        } catch (SQLException ex) {
+//            ex.printStackTrace();
+//            return null;
+//        }
+//    }
+
     public String addprogramkategori (String kategori) {
         try {
             PreparedStatement insertStatement = connection.prepareStatement(

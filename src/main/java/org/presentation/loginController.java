@@ -2,15 +2,9 @@ package org.presentation;
 
 
 import animatefx.animation.ZoomIn;
-import animatefx.animation.ZoomOut;
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXDialog;
-import com.jfoenix.controls.JFXDialogLayout;
 import domain.Facade.LoginFacade;
-import domain.sysController;
 import domain.user.User;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,14 +13,11 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
-import java.util.Optional;
 
 import static domain.sysController.session;
 import static domain.sysController.userSessionType;
@@ -123,8 +114,7 @@ public class loginController {
                     session = loggedIn; //-opmærksom på design konsekvens
                     closeStage();
                     //loadMain();
-                    loadAdmin();
-                    System.out.println("vis logged in guest vindue");
+                    loadAdmin();                    System.out.println("vis logged in guest vindue");
                     break;
 
                 case 2:

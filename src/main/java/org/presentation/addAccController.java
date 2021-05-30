@@ -1,9 +1,7 @@
 package org.presentation;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -24,10 +22,12 @@ public class addAccController {
     }
 
     public void saveButton(ActionEvent actionEvent) {
-
-
     }
     private void closeStage() { ((Stage) cancelButton.getScene().getWindow()).close();
+    }
+
+    public void initialize(){
+        System.out.println("add account controller");
     }
 }
 

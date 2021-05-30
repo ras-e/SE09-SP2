@@ -3,15 +3,20 @@ package domain.Program;
 import java.util.ArrayList;
 
 public class Program {
-
         int ProdID;
-        ArrayList<Credits> credlist;
+        ArrayList<Credits> credlist = new ArrayList<>();
         String Name;
         String prodName;
         Enum Category;
 
     public Program(String prodName){
         this.prodName = prodName;
+
+    }
+
+    public Program(String prodName, int ProdID){
+        this.prodName = prodName;
+        this.ProdID = ProdID;
     }
 
     public Program(int prodID, ArrayList<Credits> credlist, String name, String prodName, Enum chategory) {
@@ -37,15 +42,28 @@ public class Program {
 
     @Override
     public String toString(){
-        return "Program name: "+this.prodName;
+        return this.prodName;
     }
 
     public String getName() {
-        return Name;
+        return this.Name;
+    }
+
+    public String getProdName(){
+        return this.prodName;
     }
 
     public void setName(String name) {
         Name = name;
     }
+
+    public void addCredit(Credits credit){
+        this.credlist.add(credit);
+    }
+
+    public ArrayList<Credits> getCredits(){
+        return credlist;
+    }
+
 }
 

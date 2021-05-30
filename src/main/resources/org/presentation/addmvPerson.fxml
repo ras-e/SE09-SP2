@@ -5,14 +5,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.editMemberController">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.addAccController">
     <children>
-        <TextField fx:id="Edit_email" layoutX="40.0" layoutY="124.0" prefHeight="27.0" prefWidth="160.0" promptText="E-mail" />
-        <TextField fx:id="country" layoutX="40.0" layoutY="164.0" prefHeight="27.0" prefWidth="160.0" promptText="Name" />
-        <TextField fx:id="inProgram" layoutX="40.0" layoutY="208.0" prefHeight="27.0" prefWidth="160.0" promptText="Program" />
-        <TextField fx:id="date" layoutX="290.0" layoutY="164.0" prefHeight="27.0" prefWidth="160.0" promptText="Role " />
-        <TextField fx:id="role" layoutX="290.0" layoutY="208.0" prefHeight="27.0" prefWidth="160.0" promptText="Birth Date" />
-        <TextField layoutX="290.0" layoutY="125.0" prefHeight="25.0" prefWidth="160.0" promptText="Country" />
+        <TextField fx:id="country" layoutX="40.0" layoutY="145.0" prefHeight="27.0" prefWidth="160.0" promptText="Name" text="Fornavn" />
+        <TextField fx:id="role" layoutX="286.0" layoutY="145.0" prefHeight="27.0" prefWidth="160.0" promptText="Password" text="Efternavn" />
         <HBox layoutY="275.0" prefHeight="80.0" prefWidth="500.0">
             <children>
                 <JFXButton fx:id="saveButton" mnemonicParsing="false" prefHeight="80.0" prefWidth="250.0" stylesheets="@../../css/style.css" text="Save">
@@ -25,7 +21,7 @@
                     </font></JFXButton>
             </children>
         </HBox>
-      <Label layoutX="99.0" layoutY="43.0" prefHeight="30.0" prefWidth="350.0" text="Ændre konto oplysninger for person ">
+      <Label layoutX="120.0" layoutY="40.0" prefHeight="36.0" prefWidth="262.0" text="Tilføj medvirkende person">
          <font>
             <Font size="20.0" />
          </font>

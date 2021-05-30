@@ -1,9 +1,7 @@
 package org.presentation;
 
-import animatefx.animation.ZoomIn;
-import domain.Program.Category;
 import domain.Program.Credits;
-import domain.user.User;
+import domain.Program.Program;
 import domain.user.UserManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,6 +17,8 @@ import javafx.stage.StageStyle;
 
 import java.util.Date;
 import java.util.Objects;
+
+import static domain.sysController.oProgramList;
 
 public class adminController {
 
@@ -37,7 +37,9 @@ public class adminController {
     @FXML
     private Button searchbtn;
     @FXML
+    private TableView<Program> programTable;
 
+    @FXML
     private TableView<Credits> table;
     @FXML
     private TableColumn<Credits,String> namecol;
@@ -48,10 +50,8 @@ public class adminController {
     @FXML
     private TableColumn<Credits, Date> datecol;
 
-    //Presentationcontroller presentationcontroller;
 
-
-    //Loading the add/del/edit scenes when button pressed
+    //Accoutn management tab - Loading the add/del/edit scenes when button pressed
     @FXML
     public TextField compName;
     @FXML
@@ -59,7 +59,14 @@ public class adminController {
     @FXML
     public Button btnAddComp;
 
-    //Loading the add/del/edit scenes when button pressed
+
+
+    //Program management tab
+    public void loadAddProgram(MouseEvent mouseEvent){loadWindow("addProgram.fxml","Add new program");}
+    public void loadEditProgram(MouseEvent mouseEvent){loadWindow("editProgram.fxml","Edit program");}
+    public void loadDeleteProgram(MouseEvent mouseEvent){loadWindow("delProgram.fxml","Delete program");}
+
+    //Account management tab
     public void loadAddMemberUI(MouseEvent mouseEvent) {
         loadWindow("addAcc.fxml", "Add New Acc");
     }
@@ -70,14 +77,19 @@ public class adminController {
         loadWindow("editMember.fxml","Edit Member");
     }
 
+    //Production company tab
     @FXML
     private void handleAddComp (ActionEvent event) {
     String name = compName.getText();
     String cvr = cvrNumb.getText();
         UserManager.addCompanys(name, cvr);
     }
+
+    @FXML
+    private void searchprogramname(ActionEvent action){}
+
     //Method used to load new windows (here functions; add,del,edit windows)
-    void loadWindow(String path, String title)
+   public void loadWindow(String path, String title)
     {
         try {
             Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(path)));
@@ -93,11 +105,17 @@ public class adminController {
     @FXML
     private void choiceboxadmin () {
         ObservableList<String> navnPåString = FXCollections.observableArrayList();
-        for (Category k : Category.values()) {
-            navnPåString.add(k.toString());
+        for (Program k : oProgramList) {
+            System.out.println(k.getProdName());
+            navnPåString.add(k.getProdName());
         }
         kategorich2.setItems(navnPåString);
     }
+
+    public void visProgram(){
+        loadWindow("producerUI.FXML","Producer page");
+    }
+
 //    @FXML
 //    private void searchprogramname (ActionEvent event) {
 //        Object source = event.getSource();

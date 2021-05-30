@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -36,16 +35,15 @@
                         <Tab text="Admin Page">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                    <children>
-                                        <AreaChart layoutX="29.0" layoutY="103.0" prefHeight="296.0" prefWidth="325.0">
-                                            <xAxis>
-                                                <CategoryAxis side="BOTTOM" />
-                                            </xAxis>
-                                            <yAxis>
-                                                <NumberAxis side="LEFT" />
-                                            </yAxis>
-                                        </AreaChart>
-                                    </children>
+                           <children>
+                              <Label layoutX="22.0" layoutY="31.0" text="Velkommen til din admin page!">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="22.0" layoutY="78.0" text="I toppen ses de forskellige kontrol hubs. Fra disse hubs kan dit admin arbejde udføres!" />
+                              <Label layoutX="22.0" layoutY="114.0" text="Snart vil reports omhandlende data også ses på denne side!" />
+                           </children>
                                 </AnchorPane>
                             </content>
                         </Tab>
@@ -121,7 +119,7 @@
                                         <TextField fx:id="proTitle" layoutX="232.0" layoutY="108.0" prefHeight="28.0" prefWidth="137.0" promptText="Program name" />
                                         <TextField fx:id="proPar" layoutX="377.0" layoutY="108.0" prefHeight="28.0" prefWidth="137.0" promptText="Participants" />
                                         <TextField fx:id="proDate" layoutX="523.0" layoutY="108.0" prefHeight="28.0" prefWidth="138.0" promptText="Tvrole" />
-                                        <TableView layoutX="182.0" layoutY="153.0" prefHeight="248.0" prefWidth="446.0">
+                                        <TableView fx:id="programTable" layoutX="182.0" layoutY="153.0" prefHeight="248.0" prefWidth="446.0">
                                             <columns>
                                                 <TableColumn fx:id="namecol" prefWidth="75.0" text="name" />
                                                 <TableColumn fx:id="tvrolecol" prefWidth="75.0" text="TV-role" />
@@ -133,7 +131,7 @@
                                         </TableView>
                                         <VBox layoutX="-2.0" layoutY="40.0" prefHeight="398.0" prefWidth="140.0">
                                             <children>
-                                                <Button fx:id="btnAddPro" contentDisplay="TOP" mnemonicParsing="false" prefHeight="107.0" prefWidth="136.0" stylesheets="@../../css/style.css" text="Add Program">
+                                                <Button fx:id="btnAddPro" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#loadAddProgram" prefHeight="107.0" prefWidth="136.0" stylesheets="@../../css/style.css" text="Add Program">
                                                     <graphic>
                                                         <ImageView fitHeight="66.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
@@ -145,7 +143,7 @@
                                                         <Font name="System Bold" size="15.0" />
                                                     </font>
                                                 </Button>
-                                                <Button fx:id="btnEditPro" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="108.0" prefWidth="137.0" stylesheets="@../../css/style.css" text="Edit Program">
+                                                <Button fx:id="btnEditPro" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#loadEditProgram" prefHeight="108.0" prefWidth="137.0" stylesheets="@../../css/style.css" text="Edit Program">
                                                     <graphic>
                                                         <ImageView fitHeight="61.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                                                             <image>
@@ -157,7 +155,7 @@
                                                         <Font name="System Bold" size="15.0" />
                                                     </font>
                                                 </Button>
-                                                <Button fx:id="btnDelPro" contentDisplay="TOP" layoutX="10.0" layoutY="124.0" mnemonicParsing="false" prefHeight="110.0" prefWidth="138.0" stylesheets="@../../css/style.css" text="Delete Program">
+                                                <Button fx:id="btnDelPro" contentDisplay="TOP" layoutX="10.0" layoutY="124.0" mnemonicParsing="false" onMouseClicked="#loadDeleteProgram" prefHeight="110.0" prefWidth="138.0" stylesheets="@../../css/style.css" text="Delete Program">
                                                     <font>
                                                         <Font name="System Bold" size="15.0" />
                                                     </font>
@@ -171,9 +169,9 @@
                                                 </Button>
                                             </children>
                                         </VBox>
-                                        <ChoiceBox fx:id="kategorich2" layoutX="369.0" layoutY="55.0" prefHeight="25.0" prefWidth="154.0" />
-                                        <Label layoutX="408.0" layoutY="32.0" text="Vælg kategori" />
-                                        <Button fx:id="searchbtn" layoutX="623.0" layoutY="55.0" mnemonicParsing="false" onAction="#searchprogramname" text="Search" />
+                                        <ChoiceBox fx:id="kategorich2" layoutX="369.0" layoutY="55.0" onMouseClicked="#choiceboxadmin" prefHeight="25.0" prefWidth="154.0" />
+                                        <Label layoutX="408.0" layoutY="32.0" text="Vælg program" />
+                                        <Button fx:id="visProgramBtn" layoutX="552.0" layoutY="55.0" mnemonicParsing="false" onAction="#visProgram" text="Vis Program" />
                                     </children>
                                 </AnchorPane>
                             </content>

@@ -18,6 +18,15 @@ public class Credits {
         this.person = person;
     }
 
+    public Credits(tvProdRolle prodRole, mvPerson person){
+        this.ProdRole = prodRole;
+        this.person = person;
+    }
 
+    public String toString(){
+        return "creditID: "+CreditID +"\n"
+                +"Prodrole: "+ProdRole+"\n"
+                +"Person"+person;
+    }
 
 }
