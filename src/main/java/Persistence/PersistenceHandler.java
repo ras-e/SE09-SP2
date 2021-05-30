@@ -47,7 +47,6 @@ public class PersistenceHandler {
                 PreparedStatement stmt = connection.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
                 stmt.setString(1, username);
                 stmt.setString(2, password);
-// Useless (Already specified in DB)                stmt.setInt(3, type);
 
                 ResultSet sqlReturnValues = stmt.executeQuery();
                 if (!sqlReturnValues.next()){
@@ -59,7 +58,6 @@ public class PersistenceHandler {
                         sqlReturnValues.getString(3),
                         sqlReturnValues.getString(4),
                         sqlReturnValues.getString(5),
-                       // sqlReturnValues.getString(6);
                         sqlReturnValues.getInt(7));
 
             } catch (SQLException ex) {
