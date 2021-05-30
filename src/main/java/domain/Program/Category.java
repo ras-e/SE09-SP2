@@ -12,9 +12,7 @@ public enum Category {drama("Drama"),
     Musikals("Musikals"),
     Drama("Drama");
 
-
-    //indsæt evt kategorier her
-    // f.eks. SUNDAY, MONDAY, THUESDAY..
+    // f.eks. SUNDAY, MONDAY, THUESDAY.
     private String kategori;
     Category(String kategori) {
         this.kategori = kategori;

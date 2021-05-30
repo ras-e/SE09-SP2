@@ -17,14 +17,15 @@ import static org.presentation.PresentationHelper.loadWindows;
 public class ProducerController {
 
     @FXML
-    public ChoiceBox programListBox;
+    private ChoiceBox programListBox;
     @FXML
-    public ListView creditListView;
+    private ListView creditListView;
     @FXML
-    public Button addKredditeringBtn;
+    private Button addKredditeringBtn;
     @FXML
-    public Button editKreditteringBtn;
-    @FXML Button delKreditteringBtn;
+    private Button editKreditteringBtn;
+    @FXML
+    Button delKreditteringBtn;
 
 
     public void initialize(){
@@ -37,7 +38,6 @@ public class ProducerController {
 
     public void addKredditering(){
        loadWindows("addKredittering.fxml","Tilføj kredittering");
-       // loadWindow("sti","title");
     }
 
     public void programListClick(){

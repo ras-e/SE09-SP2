@@ -22,11 +22,10 @@
                     </font></Button>
             </children>
         </HBox>
-      <Label layoutX="40.0" layoutY="55.0" prefHeight="36.0" prefWidth="235.0" text="Tilføj person til kreditering">
+      <Label layoutX="133.0" layoutY="54.0" prefHeight="36.0" prefWidth="235.0" text="Tilføj person til kreditering">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <ChoiceBox layoutX="300.0" layoutY="99.0" prefWidth="150.0" />
     </children>
 </AnchorPane>

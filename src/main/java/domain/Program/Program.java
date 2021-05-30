@@ -31,15 +31,6 @@ public class Program {
         return this.prodName;
     }
 
-//        public static void main(String args[]) {
-//
-//            ioFacade objectio = new ioFacade();
-//
-//            // actionhandler på "opretkreditering" knap
-//            ArrayList<Credits> credlist = new ArrayList<Credits>();
-//           // objectio.writeobjecttofile(new Credits(), "et eller andet krediteringsliste navn");
-//        }
-
     @Override
     public String toString(){
         return this.prodName;

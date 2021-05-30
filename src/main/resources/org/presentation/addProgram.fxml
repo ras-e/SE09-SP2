@@ -19,12 +19,12 @@
                     </font></JFXButton>
             </children>
         </HBox>
-        <Label layoutX="14.0" layoutY="14.0" prefHeight="36.0" prefWidth="235.0" text="Opret program">
+        <Label layoutX="180.0" layoutY="27.0" prefHeight="36.0" prefWidth="141.0" text="Opret program">
             <font>
                 <Font size="20.0" />
             </font>
         </Label>
-        <TextField fx:id="nametf" layoutX="170.0" layoutY="76.0" onAction="#addprogramandcategory" prefHeight="25.0" prefWidth="160.0" promptText="navn" />
+        <TextField fx:id="nametf" layoutX="170.0" layoutY="76.0" onAction="#addprogramandcategory" prefHeight="25.0" prefWidth="160.0" promptText="Navn" />
         <TextField fx:id="datetf" layoutX="169.0" layoutY="143.0" prefHeight="27.0" prefWidth="160.0" promptText="Dato" />
       <ChoiceBox fx:id="kategorich" layoutX="170.0" layoutY="214.0" onMouseClicked="#choicebox" prefHeight="25.0" prefWidth="160.0" />
     </children>

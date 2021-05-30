@@ -8,8 +8,8 @@
 
 <AnchorPane onKeyPressed="#cancelAction" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.AddKredditeringController">
     <children>
-        <TextField fx:id="tfFornavn" layoutX="40.0" layoutY="109.0" prefHeight="27.0" prefWidth="150.0" promptText="Username" text="Fornavn" />
-        <TextField fx:id="tfEfternavn" layoutX="207.0" layoutY="109.0" prefHeight="27.0" prefWidth="150.0" promptText="Password" text="Efternavn" />
+        <TextField fx:id="tfFornavn" layoutX="40.0" layoutY="109.0" prefHeight="27.0" prefWidth="150.0" promptText="Fornavn" />
+        <TextField fx:id="tfEfternavn" accessibleRoleDescription="E" layoutX="207.0" layoutY="109.0" prefHeight="27.0" prefWidth="150.0" promptText="Efternavn" />
         <HBox layoutY="275.0" prefHeight="80.0" prefWidth="500.0">
             <children>
                 <JFXButton fx:id="saveButton" mnemonicParsing="false" onMouseClicked="#saveButton" prefHeight="80.0" prefWidth="250.0" stylesheets="@../../css/style.css" text="Save">

@@ -1,8 +1,8 @@
 package domain.user;
 
 public class Companys {
-    public String name;
-    public String cvrNumb;
+    private String name;
+    private String cvrNumb;
 
     public Companys(String name, String cvrNumb) {
         this.name = name;

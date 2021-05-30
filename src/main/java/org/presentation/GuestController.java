@@ -21,23 +21,23 @@ import static domain.sysController.*;
 
 public class GuestController {
     @FXML
-    public RadioButton programButton;
+    private RadioButton programButton;
     @FXML
-    public RadioButton personButton;
+    private RadioButton personButton;
     @FXML
-    public RadioButton kreditButton;
+    private RadioButton kreditButton;
     @FXML
-    public ListView searchView;
+    private ListView searchView;
     @FXML
-    public TextField searchTextField;
+    private TextField searchTextField;
     @FXML
-    public Button btnLogin;
+    private Button btnLogin;
     @FXML
-    public Button delUser;
+    private Button delUser;
     @FXML
-    public Button btnGdpr;
+    private Button btnGdpr;
     @FXML
-    public Label lSearchResults;
+    private Label lSearchResults;
     @FXML
     private Button favPro;
 

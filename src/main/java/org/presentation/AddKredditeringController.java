@@ -16,20 +16,20 @@ import static org.presentation.PresentationHelper.choiceboxRollePopulate;
 public class AddKredditeringController {
 
 
-    public TextField email;
-    public TextField country;
-    public TextField inProgram;
-    public TextField name;
-    public TextField date;
-    public TextField role;
+    protected TextField email;
+    protected TextField country;
+    protected TextField inProgram;
+    protected TextField name;
+    protected TextField date;
+    protected TextField role;
 
-    public TextField tfFornavn;
-    public TextField tfEfternavn;
-    public JFXButton saveButton;
-    public JFXButton cancelButton;
-    public JFXButton opretPerson;
-    public ChoiceBox personBox;
-    public ChoiceBox rolleBox;
+    protected TextField tfFornavn;
+    protected TextField tfEfternavn;
+    protected JFXButton saveButton;
+    protected JFXButton cancelButton;
+    protected JFXButton opretPerson;
+    protected ChoiceBox personBox;
+    protected ChoiceBox rolleBox;
     public JFXButton opretKredittering;
 
 
