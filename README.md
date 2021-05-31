@@ -19,10 +19,10 @@ The source code is mainly focused on Postgres SQL language and their DB. It is t
 If above is fullfilled, run the SQL files found in the source code. Start with 1_SETUP_SQL and follow up with the insert statements given in 2_NEXT_SETUP.
 
 If above is fullfilled, 3 demo-users are available. 
-Log in with username "admin" pw "admin" to access the admin accesscontrol and explore connected features.
-Log in with username "producer" pw "producer" to access the producer accesscontrol and explore connected features.
-Log in with username "user" pw "user" to access the general user accesscontrol and explore connected features.
- - You're also able to sign up your own user, but it will be based as a normal user.
+- Log in with username "admin" pw "admin" to access the admin accesscontrol and explore connected features.
+- Log in with username "producer" pw "producer" to access the producer accesscontrol and explore connected features.
+- Log in with username "user" pw "user" to access the general user accesscontrol and explore connected features.
+  - You're also able to sign up your own user, but it will be based as a normal user.
 
 Please contact us for any issues that may occure. 
 
