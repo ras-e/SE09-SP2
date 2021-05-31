@@ -106,8 +106,7 @@ public class loginController {
                     userSessionType = loggedIn.getType();
                     session = loggedIn;
                     closeStage();
-                    loadAdmin();
-                    System.out.println("Show Admin page");
+                    loadMain();
                     break;
                 case 2:
                     closeStage();
