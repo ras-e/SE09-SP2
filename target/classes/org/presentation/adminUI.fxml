@@ -36,7 +36,7 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <Label layoutX="22.0" layoutY="31.0" text="Velkommen til din admin page!">
+                              <Label layoutX="22.0" layoutY="31.0" text="Velkommen til dit Admin dashboard!">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -119,12 +119,12 @@
                                         <TextField fx:id="proTitle" layoutX="232.0" layoutY="108.0" prefHeight="28.0" prefWidth="137.0" promptText="Program name" />
                                         <TextField fx:id="proPar" layoutX="377.0" layoutY="108.0" prefHeight="28.0" prefWidth="137.0" promptText="Participants" />
                                         <TextField fx:id="proDate" layoutX="523.0" layoutY="108.0" prefHeight="28.0" prefWidth="138.0" promptText="Tvrole" />
-                                        <TableView fx:id="programTable" layoutX="182.0" layoutY="153.0" prefHeight="248.0" prefWidth="446.0">
+                                        <TableView fx:id="programTable" layoutX="223.0" layoutY="153.0" prefHeight="248.0" prefWidth="446.0">
                                             <columns>
-                                                <TableColumn fx:id="namecol" prefWidth="75.0" text="name" />
+                                                <TableColumn fx:id="namecol" prefWidth="75.0" text="Name" />
                                                 <TableColumn fx:id="tvrolecol" prefWidth="75.0" text="TV-role" />
                                                 <TableColumn fx:id="emailcol" prefWidth="75.0" text="E-mail" />
-                                                <TableColumn fx:id="datecol" prefWidth="87.0" text="creation date" />
+                                                <TableColumn fx:id="datecol" prefWidth="87.0" text="Creation date" />
                                                 <TableColumn prefWidth="63.0" />
                                                 <TableColumn prefWidth="75.0" />
                                             </columns>
@@ -180,7 +180,7 @@
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                                        <Button fx:id="btnAddComp" layoutX="-2.0" layoutY="40.0" mnemonicParsing="false" onAction="#handleAddComp" prefHeight="107.0" prefWidth="136.0" text="Add Compeny" />
+                                        <Button fx:id="btnAddComp" layoutX="-2.0" layoutY="40.0" mnemonicParsing="false" onAction="#handleAddComp" prefHeight="107.0" prefWidth="136.0" text="Add Company" />
                                         <TextField fx:id="compName" layoutX="187.0" layoutY="69.0" promptText="Company Name" />
                                         <TextField fx:id="cvrNumb" layoutX="361.0" layoutY="69.0" promptText="CVR-number" />
                                     </children></AnchorPane>

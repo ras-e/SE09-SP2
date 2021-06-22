@@ -11,7 +11,7 @@ public class PersistenceHandler {
 //        private static PersistanceHandler instance;
         private String url = "localhost";
         private int port = 5432;
-        private String databaseName = "SE03";
+        private String databaseName = "rasmustv2Play";
         private String username = "postgres";
         private String password = "Pletmus123";
         private Connection connection = null;
@@ -118,7 +118,7 @@ public class PersistenceHandler {
             insertStatement.setString(2, user.getUsername());
             insertStatement.setString(3, user.getPassword());
             insertStatement.setString(4, user.getEmail());
-            //.setDate(5, new Date(620611200000L));
+          //  insertStatement.setDate(5, new Date(620611200000L));
             insertStatement.setInt(5, account_type);
             //insertStatement.setInt(7, user.getId());
             insertStatement.execute();

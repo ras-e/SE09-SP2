@@ -7,7 +7,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.presentation.DelProgramController">
    <children>
-      <TextField fx:id="email" alignment="CENTER" layoutX="158.0" layoutY="136.0" prefHeight="31.0" prefWidth="184.0" promptText="Enter Program ID">
+      <TextField fx:id="email" alignment="CENTER" layoutX="148.0" layoutY="134.0" prefHeight="44.0" prefWidth="213.0" promptText="Enter Program Name">
          <font>
             <Font size="20.0" />
          </font></TextField>
@@ -23,7 +23,7 @@
                </font></JFXButton>
          </children>
       </HBox>
-      <Text layoutX="138.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Specify the ID for your program" wrappingWidth="257.13671875">
+      <Text layoutX="138.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Specify the name for the program" wrappingWidth="257.13671875">
          <font>
             <Font size="16.0" />
          </font>

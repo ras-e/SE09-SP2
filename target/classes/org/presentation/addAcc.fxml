@@ -24,7 +24,7 @@
                     </font></JFXButton>
             </children>
         </HBox>
-      <Label layoutX="120.0" layoutY="40.0" prefHeight="36.0" prefWidth="141.0" text="Add Account">
+      <Label layoutX="180.0" layoutY="43.0" prefHeight="36.0" prefWidth="141.0" text="Add Account">
          <font>
             <Font size="20.0" />
          </font>

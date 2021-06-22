@@ -5,6 +5,7 @@ import domain.Program.Credits;
 import domain.Program.mvPerson;
 import domain.Program.tvProdRolle;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -23,12 +24,18 @@ public class AddKredditeringController {
     protected TextField date;
     protected TextField role;
 
+    @FXML
     protected TextField tfFornavn;
+    @FXML
     protected TextField tfEfternavn;
+    @FXML
     protected JFXButton saveButton;
+    @FXML
     protected JFXButton cancelButton;
     protected JFXButton opretPerson;
+    @FXML
     protected ChoiceBox personBox;
+    @FXML
     protected ChoiceBox rolleBox;
     public JFXButton opretKredittering;
 
@@ -44,7 +51,7 @@ public class AddKredditeringController {
     private void closeStage() { ((Stage) cancelButton.getScene().getWindow()).close();  }
 
     public void initialize(){
-        personBox.setItems(oPersonList);
+        //personBox.setItems(oPersonList);
     }
 
     public void opretPerson(MouseEvent event){
